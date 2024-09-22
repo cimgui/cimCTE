@@ -159,6 +159,7 @@ CIMGUI_API void TextEditor_SetPalette_RetroBluePalette(TextEditor* ed)
 {
 	ed->SetPalette(TextEditor::GetRetroBluePalette());
 }
+/*
 #include <iostream>
 static const char* ppnames[] = { "NULL", "PM_REMOVE"};
 static const char* ppvalues[] = { "NULLval", "PM_REMOVEval"};
@@ -189,4 +190,4 @@ CIMGUI_API void Test()
     std::cout << "\nIterate and print key-value pairs using C++17 structured binding:\n";
     for (const std::pair<const std::string, TextEditor::Identifier>& n : lang2.mPreprocIdentifiers)
         print_key_value(n.first, n.second);
-}
+}*/

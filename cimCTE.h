@@ -59,5 +59,4 @@ CIMGUI_API void TextEditor_Coordinates_destroy(Coordinates * co);
 CIMGUI_API void TextEditor_SetPalette_DarkPalette(TextEditor* ed);
 CIMGUI_API void TextEditor_SetPalette_LightPalette(TextEditor* ed);
 CIMGUI_API void TextEditor_SetPalette_RetroBluePalette(TextEditor* ed);
-CIMGUI_API void Test();
 #endif //CIMCTE_INCLUDED
