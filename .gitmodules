@@ -1,0 +1,4 @@
+[submodule "ImGuiColorTextEdit"]
+	path = ImGuiColorTextEdit
+	url = https://github.com/sonoro1234/ImGuiColorTextEdit.git
+	branch = dev
