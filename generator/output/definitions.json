@@ -1,0 +1,500 @@
+{
+	 "ErrorMarkers_insert": [
+	  {
+	   "args": "(ErrorMarkers *mark, int n,const char* text)",
+	   "argsT": [
+	    {
+	     "name": "*mark",
+	     "type": "ErrorMarkers"
+	    },
+	    {
+	     "name": "int",
+	     "type": ""
+	    },
+	    {
+	     "name": "char*",
+	     "type": "const"
+	    }
+	   ],
+	   "ov_cimguiname": "ErrorMarkers_insert",
+	   "ret": "void"
+	  }
+	 ],
+	 "LanguageDefinition_CPlusPlus": [
+	  {
+	   "args": "()",
+	   "argsT": [],
+	   "ov_cimguiname": "LanguageDefinition_CPlusPlus",
+	   "ret": "LangDef*"
+	  }
+	 ],
+	 "LanguageDefinition_Identifiers_insert": [
+	  {
+	   "args": "(LangDef *self, const char* identifier, const char* idcl)",
+	   "argsT": [
+	    {
+	     "name": "*self",
+	     "type": "LangDef"
+	    },
+	    {
+	     "name": "const",
+	     "type": ""
+	    },
+	    {
+	     "name": "const",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "LanguageDefinition_Identifiers_insert",
+	   "ret": "void"
+	  }
+	 ],
+	 "LanguageDefinition_Lua": [
+	  {
+	   "args": "()",
+	   "argsT": [],
+	   "ov_cimguiname": "LanguageDefinition_Lua",
+	   "ret": "LangDef*"
+	  }
+	 ],
+	 "LanguageDefinition_PIdentifiers_insert": [
+	  {
+	   "args": "(LangDef *self, const char* ppnames, const char* ppvalues)",
+	   "argsT": [
+	    {
+	     "name": "*self",
+	     "type": "LangDef"
+	    },
+	    {
+	     "name": "const",
+	     "type": ""
+	    },
+	    {
+	     "name": "const",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "LanguageDefinition_PIdentifiers_insert",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_CanRedo": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_CanRedo",
+	   "ret": "bool"
+	  }
+	 ],
+	 "TextEditor_CanUndo": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_CanUndo",
+	   "ret": "bool"
+	  }
+	 ],
+	 "TextEditor_Coordinates_Int": [
+	  {
+	   "args": "(int aLine, int aColumn)",
+	   "argsT": [
+	    {
+	     "name": "aLine",
+	     "type": "int"
+	    },
+	    {
+	     "name": "int",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Coordinates_Int",
+	   "ret": "Coordinates*"
+	  }
+	 ],
+	 "TextEditor_Coordinates_Nil": [
+	  {
+	   "args": "()",
+	   "argsT": [],
+	   "ov_cimguiname": "TextEditor_Coordinates_Nil",
+	   "ret": "Coordinates*"
+	  }
+	 ],
+	 "TextEditor_Coordinates_destroy": [
+	  {
+	   "args": "(Coordinates * co)",
+	   "argsT": [
+	    {
+	     "name": "*",
+	     "type": "Coordinates"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Coordinates_destroy",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_Copy": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Copy",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_Cut": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Cut",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_Delete": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Delete",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_ErrorMarkers": [
+	  {
+	   "args": "()",
+	   "argsT": [],
+	   "ov_cimguiname": "TextEditor_ErrorMarkers",
+	   "ret": "void*"
+	  }
+	 ],
+	 "TextEditor_GetCursorPosition": [
+	  {
+	   "args": "(TextEditor* self)",
+	   "argsT": [
+	    {
+	     "name": "self",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_GetCursorPosition",
+	   "ret": "Coordinates*"
+	  }
+	 ],
+	 "TextEditor_GetLanguageDefinition": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_GetLanguageDefinition",
+	   "ret": "LangDef*"
+	  }
+	 ],
+	 "TextEditor_GetTotalLines": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_GetTotalLines",
+	   "ret": "int"
+	  }
+	 ],
+	 "TextEditor_HasSelection": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_HasSelection",
+	   "ret": "bool"
+	  }
+	 ],
+	 "TextEditor_IsOverwrite": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_IsOverwrite",
+	   "ret": "bool"
+	  }
+	 ],
+	 "TextEditor_IsReadOnly": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_IsReadOnly",
+	   "ret": "bool"
+	  }
+	 ],
+	 "TextEditor_Paste": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Paste",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_Redo": [
+	  {
+	   "args": "(TextEditor* ed, int aSteps)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "int",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Redo",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_Render": [
+	  {
+	   "args": "(TextEditor* self, const char *title)",
+	   "argsT": [
+	    {
+	     "name": "self",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "const",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Render",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetErrorMarkers": [
+	  {
+	   "args": "(TextEditor* ed, ErrorMarkers* mark)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "ErrorMarkers*",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetErrorMarkers",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetLangDef": [
+	  {
+	   "args": "(TextEditor* self, LangDef* lang)",
+	   "argsT": [
+	    {
+	     "name": "self",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "LangDef*",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetLangDef",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetPalette_DarkPalette": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetPalette_DarkPalette",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetPalette_LightPalette": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetPalette_LightPalette",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetPalette_RetroBluePalette": [
+	  {
+	   "args": "(TextEditor* ed)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetPalette_RetroBluePalette",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetReadOnly": [
+	  {
+	   "args": "(TextEditor* ed,bool aValue)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "aValue",
+	     "type": "bool"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetReadOnly",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetSelection": [
+	  {
+	   "args": "(TextEditor* ed, Coordinates* aStart, Coordinates* aEnd, SelectionMode sem)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "Coordinates*",
+	     "type": ""
+	    },
+	    {
+	     "name": "Coordinates*",
+	     "type": ""
+	    },
+	    {
+	     "name": "SelectionMode",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetSelection",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_SetText": [
+	  {
+	   "args": "(TextEditor* self,const char* text)",
+	   "argsT": [
+	    {
+	     "name": "self",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "char*",
+	     "type": "const"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_SetText",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_TextEditor": [
+	  {
+	   "args": "()",
+	   "argsT": [],
+	   "ov_cimguiname": "TextEditor_TextEditor",
+	   "ret": "void*"
+	  }
+	 ],
+	 "TextEditor_Undo": [
+	  {
+	   "args": "(TextEditor* ed, int aSteps)",
+	   "argsT": [
+	    {
+	     "name": "ed",
+	     "type": "TextEditor*"
+	    },
+	    {
+	     "name": "int",
+	     "type": ""
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_Undo",
+	   "ret": "void"
+	  }
+	 ],
+	 "TextEditor_destroy": [
+	  {
+	   "args": "(TextEditor * self)",
+	   "argsT": [
+	    {
+	     "name": "*",
+	     "type": "TextEditor"
+	    }
+	   ],
+	   "ov_cimguiname": "TextEditor_destroy",
+	   "ret": "void"
+	  }
+	 ],
+	 "char* LanguageDefinition_getName": [
+	  {
+	   "args": "(LangDef* self)",
+	   "argsT": [
+	    {
+	     "name": "self",
+	     "type": "LangDef*"
+	    }
+	   ],
+	   "ov_cimguiname": "char* LanguageDefinition_getName",
+	   "ret": "const"
+	  }
+	 ]
+	}

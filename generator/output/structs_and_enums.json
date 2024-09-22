@@ -1,0 +1,19 @@
+{
+	 "structs": {},
+	 "enums": {
+	  "SelectionMode": [
+	   {
+	    "name": "Normal",
+	    "calc_value": "0"
+	   },
+	   {
+	    "name": "Word",
+	    "calc_value": "1"
+	   },
+	   {
+	    "name": "Line",
+	    "calc_value": "2"
+	   }
+	  ]
+	 }
+	}
