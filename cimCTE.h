@@ -24,7 +24,7 @@ typedef TextEditor::Coordinates Coordinates;
 typedef TextEditor::ErrorMarkers ErrorMarkers;
 typedef TextEditor::SelectionMode SelectionMode;
 #endif
-CIMGUI_API void* TextEditor_TextEditor();
+CIMGUI_API TextEditor* TextEditor_TextEditor();
 CIMGUI_API void TextEditor_destroy(TextEditor * self);
 CIMGUI_API void TextEditor_SetLangDef(TextEditor* self, LangDef* lang);
 CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* text);
@@ -41,7 +41,8 @@ CIMGUI_API LangDef* LanguageDefinition_Lua();
 CIMGUI_API const char* LanguageDefinition_getName(LangDef* self);
 CIMGUI_API void LanguageDefinition_PIdentifiers_insert(LangDef *self, const char* ppnames, const char* ppvalues);
 CIMGUI_API void LanguageDefinition_Identifiers_insert(LangDef *self, const char* identifier, const char* idcl);
-CIMGUI_API void* TextEditor_ErrorMarkers();
+CIMGUI_API ErrorMarkers* TextEditor_ErrorMarkers();
+CIMGUI_API void ErrorMarkers_destroy(ErrorMarkers *mark);
 CIMGUI_API void ErrorMarkers_insert(ErrorMarkers *mark, int n,const char* text);
 CIMGUI_API void TextEditor_SetErrorMarkers(TextEditor* ed, ErrorMarkers* mark);
 CIMGUI_API int TextEditor_GetTotalLines(TextEditor* ed);

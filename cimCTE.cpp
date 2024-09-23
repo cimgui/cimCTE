@@ -5,7 +5,7 @@
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "cimCTE.h"
 
-CIMGUI_API void* TextEditor_TextEditor()
+CIMGUI_API TextEditor* TextEditor_TextEditor()
 {
 	return new(TextEditor)();
 }
@@ -123,9 +123,13 @@ CIMGUI_API void LanguageDefinition_Identifiers_insert(LangDef *self, const char*
 	id.mDeclaration = std::string(idcl);
 	(*self).mPreprocIdentifiers.insert(std::make_pair(std::string(identifier), id));
 }
-CIMGUI_API void* TextEditor_ErrorMarkers()
+CIMGUI_API ErrorMarkers* TextEditor_ErrorMarkers()
 {
-	return new(TextEditor::ErrorMarkers)();
+	return IM_NEW(TextEditor::ErrorMarkers)();
+}
+CIMGUI_API void ErrorMarkers_destroy(ErrorMarkers *mark)
+{
+	IM_DELETE(mark);
 }
 CIMGUI_API void ErrorMarkers_insert(ErrorMarkers *mark, int n,const char* text)
 {
