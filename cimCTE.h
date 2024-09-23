@@ -12,7 +12,7 @@ struct Coordinates
 {
     int mLine, mColumn;
 };
-typedef enum 
+typedef enum SelectionMode_
 	{
 		Normal,
 		Word,
