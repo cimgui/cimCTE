@@ -1,0 +1,6 @@
+{
+  "Coordinates": "struct Coordinates",
+  "ErrorMarkers": "struct ErrorMarkers",
+  "LangDef": "struct LanguageDefinition",
+  "TextEditor": "struct TextEditor"
+}
