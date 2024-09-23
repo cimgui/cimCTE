@@ -25,6 +25,7 @@ CIMGUI_API void TextEditor_SetText(TextEditor* self, const char* text)
 CIMGUI_API Coordinates* TextEditor_GetCursorPosition(TextEditor* self)
 {
 	static TextEditor::Coordinates co = self->GetCursorPosition();
+	co = self->GetCursorPosition();
 	return &(co);
 }
 CIMGUI_API void TextEditor_Render(TextEditor* self, const char *title)
@@ -92,19 +93,22 @@ CIMGUI_API void TextEditor_SetSelection(TextEditor* ed, Coordinates* aStart, Coo
 CIMGUI_API LangDef* TextEditor_GetLanguageDefinition(TextEditor* ed)
 {
 	static TextEditor::LanguageDefinition lang1 = ed->GetLanguageDefinition();
+	lang1 = ed->GetLanguageDefinition();
 	return &lang1;
 }
 
 
 CIMGUI_API LangDef* LanguageDefinition_CPlusPlus()
 {
-	//return &(TextEditor::LanguageDefinition::CPlusPlus());
+
 	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::CPlusPlus();
+	lang1 = TextEditor::LanguageDefinition::CPlusPlus();
 	return &lang1;
 }
 CIMGUI_API LangDef* LanguageDefinition_Lua()
 {
 	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::Lua();
+	lang1 = TextEditor::LanguageDefinition::Lua();
 	return &lang1;
 }
 CIMGUI_API const char* LanguageDefinition_getName(LangDef* self)
