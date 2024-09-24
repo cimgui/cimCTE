@@ -97,18 +97,57 @@ CIMGUI_API LangDef* TextEditor_GetLanguageDefinition(TextEditor* ed)
 	return &lang1;
 }
 
+CIMGUI_API LangDef* LanguageDefinition()
+{
+
+	static TextEditor::LanguageDefinition lang1;
+	//lang1 = TextEditor::LanguageDefinition();
+	return &lang1;
+}
 
 CIMGUI_API LangDef* LanguageDefinition_CPlusPlus()
 {
 
-	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::CPlusPlus();
+	static TextEditor::LanguageDefinition lang1;// = TextEditor::LanguageDefinition::CPlusPlus();
 	lang1 = TextEditor::LanguageDefinition::CPlusPlus();
 	return &lang1;
 }
 CIMGUI_API LangDef* LanguageDefinition_Lua()
 {
-	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::Lua();
+	static TextEditor::LanguageDefinition lang1;// = TextEditor::LanguageDefinition::Lua();
 	lang1 = TextEditor::LanguageDefinition::Lua();
+	return &lang1;
+}
+CIMGUI_API LangDef* LanguageDefinition_HLSL()
+{
+
+	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::HLSL();
+	lang1 = TextEditor::LanguageDefinition::HLSL();
+	return &lang1;
+}
+CIMGUI_API LangDef* LanguageDefinition_GLSL()
+{
+	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::GLSL();
+	lang1 = TextEditor::LanguageDefinition::GLSL();
+	return &lang1;
+}
+CIMGUI_API LangDef* LanguageDefinition_C()
+{
+
+	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::C();
+	lang1 = TextEditor::LanguageDefinition::C();
+	return &lang1;
+}
+CIMGUI_API LangDef* LanguageDefinition_SQL()
+{
+	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::SQL();
+	lang1 = TextEditor::LanguageDefinition::SQL();
+	return &lang1;
+}
+CIMGUI_API LangDef* LanguageDefinition_AngelScript()
+{
+	static TextEditor::LanguageDefinition lang1 = TextEditor::LanguageDefinition::AngelScript();
+	lang1 = TextEditor::LanguageDefinition::AngelScript();
 	return &lang1;
 }
 CIMGUI_API const char* LanguageDefinition_getName(LangDef* self)
