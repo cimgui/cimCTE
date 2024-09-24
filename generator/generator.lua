@@ -9,10 +9,10 @@ local COMPILER = script_args[1]
 
 local CPRE,CTEST
 if COMPILER == "gcc" or COMPILER == "clang" or COMPILER == "g++" then
-    CPRE = COMPILER..[[ -E -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS -DIMGUI_API="" -DIMGUI_IMPL_API="" -DCIMGUI_API=""]]
+    CPRE = COMPILER..[[ -E -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
     CTEST = COMPILER.." --version"
 elseif COMPILER == "cl" then
-    CPRE = COMPILER..[[ /E /DIMGUI_DISABLE_OBSOLETE_FUNCTIONS /DCIMGUI_DEFINE_ENUMS_AND_STRUCTS /DIMGUI_API="" /DIMGUI_IMPL_API="" /DCIMGUI_API=""]]
+    CPRE = COMPILER..[[ /E /DIMGUI_DISABLE_OBSOLETE_FUNCTIONS /DCIMGUI_DEFINE_ENUMS_AND_STRUCTS /DIMGUI_API="" /DIMGUI_IMPL_API="" ]]
     CTEST = COMPILER
 else
     print("Working without compiler ")
@@ -44,8 +44,13 @@ print("HAVE_COMPILER",HAVE_COMPILER)
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
 local cimgui_manuals = {
-    -- igLogText = true,
-    -- ImGuiTextBuffer_appendf = true,
+    TextEditor_SetText = true,
+    TextEditor_GetText = true,
+	TextEditor_ImGuiDebugPanel = true
+}
+local cimgui_skipped = {
+	TextEditor_SetTextLines = true,
+	TextEditor_GetTextLines = true,
 }
 --------------------------------------------------------------------------
 --this table is a dictionary to force a naming of function overloading (instead of algorythmic generated)
@@ -93,7 +98,7 @@ local function cimgui_generation(parser,name)
     hstrfile = hstrfile:gsub([[#include "imgui_structs%.h"]],cstructsstr)
     local cfuncsstr = func_header_generate(parser)
     hstrfile = hstrfile:gsub([[#include "auto_funcs%.h"]],cfuncsstr)
-    --save_data("./output/"..name..".h",cimgui_header,hstrfile)
+    save_data("./output/"..name..".h",cimgui_header,hstrfile)
     
     --merge it in cimplot_template.cpp to cimplot.cpp
     local cimplem = func_implementation(parser)
@@ -101,7 +106,7 @@ local function cimgui_generation(parser,name)
     local hstrfile = read_data("./"..name.."_template.cpp")
 
     hstrfile = hstrfile:gsub([[#include "auto_funcs%.cpp"]],cimplem)
-    --save_data("./output/"..name..".cpp",cimgui_header,hstrfile)
+    save_data("./output/"..name..".cpp",cimgui_header,hstrfile)
 
 end
 --------------------------------------------------------
@@ -134,10 +139,13 @@ local function parseImGuiHeader(header,names)
 	end
 	parser.cname_overloads = cimgui_overloads
 	parser.manuals = cimgui_manuals
+	parser.skipped = cimgui_skipped
 	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
 	local extra_includes = include_cmd.." ../../cimgui "
+	..include_cmd.." ../ImguiColorTextEdit/vendor/regex/include "
+	..include_cmd.." ../../cimgui/imgui "
 	
 	parser:take_lines(CPRE..extra_includes..header, names, COMPILER)
 	
@@ -145,17 +153,17 @@ local function parseImGuiHeader(header,names)
 end
 --generation
 print("------------------generation with "..COMPILER.."------------------------")
-local modulename = "cimguicolortextedit"
---local parser1 = parseImGuiHeader([[../ImGuiColorTextEdit/TextEditor.h]],{[[TextEditor]]})
-local parser1 = parseImGuiHeader([[../cimCTE.h]],{[[cimCTE]]})
+local modulename = "cimCTE"
+local parser1 = parseImGuiHeader([[../ImGuiColorTextEdit/TextEditor.h]],{[[TextEditor]]})
+--local parser1 = parseImGuiHeader([[../cimCTE.h]],{[[cimCTE]]})
 parser1:do_parse()
 
 --save_data("./output/overloads.txt",parser1.overloadstxt)
 cimgui_generation(parser1,modulename)
---save_data("./output/definitions.lua",serializeTableF(parser1.defsT))
+save_data("./output/definitions.lua",serializeTableF(parser1.defsT))
 local structs_and_enums_table = parser1.structs_and_enums_table
---save_data("./output/structs_and_enums.lua",serializeTableF(structs_and_enums_table))
---save_data("./output/typedefs_dict.lua",serializeTableF(parser1.typedefs_dict))
+save_data("./output/structs_and_enums.lua",serializeTableF(structs_and_enums_table))
+save_data("./output/typedefs_dict.lua",serializeTableF(parser1.typedefs_dict))
 
 -------------------------------json saving
 --avoid mixed tables (with string and integer keys)
@@ -178,8 +186,8 @@ save_data("./output/structs_and_enums.json",json.encode(structs_and_enums_table)
 save_data("./output/typedefs_dict.json",json.encode(parser1.typedefs_dict))
 --]]
 -------------------copy C files to repo root
--- copyfile("./output/"..modulename..".h", "../"..modulename..".h")
--- copyfile("./output/"..modulename..".cpp", "../"..modulename..".cpp")
--- os.remove("./output/"..modulename..".h")
--- os.remove("./output/"..modulename..".cpp")
+copyfile("./output/"..modulename..".h", "../"..modulename..".h")
+copyfile("./output/"..modulename..".cpp", "../"..modulename..".cpp")
+os.remove("./output/"..modulename..".h")
+os.remove("./output/"..modulename..".cpp")
 print"all done!!"
