@@ -77,10 +77,10 @@ defs["enums"]["SetViewAtLineMode"][3]["name"] = "LastVisibleLine"
 defs["enums"]["SetViewAtLineMode"][3]["value"] = "2"
 defs["enumtypes"] = {}
 defs["locations"] = {}
-defs["locations"]["LanguageDefinitionId"] = "TextEditor:27"
-defs["locations"]["PaletteId"] = "TextEditor:23"
-defs["locations"]["SetViewAtLineMode"] = "TextEditor:31"
-defs["locations"]["TextEditor"] = "TextEditor:15"
+defs["locations"]["LanguageDefinitionId"] = "TextEditor:28"
+defs["locations"]["PaletteId"] = "TextEditor:24"
+defs["locations"]["SetViewAtLineMode"] = "TextEditor:32"
+defs["locations"]["TextEditor"] = "TextEditor:16"
 defs["structs"] = {}
 defs["structs"]["TextEditor"] = {}
 
