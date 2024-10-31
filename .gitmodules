@@ -1,4 +1,4 @@
 [submodule "ImGuiColorTextEdit"]
 	path = ImGuiColorTextEdit
-	url = https://github.com/sonoro1234/ImGuiColorTextEdit.git
-	branch = master_santa
+	url = https://github.com/santaclose/ImGuiColorTextEdit.git
+	branch = master
