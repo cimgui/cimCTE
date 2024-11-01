@@ -130,7 +130,7 @@ print("IMNODES_VERSION",implot_version)
 --]=]
 
 -------------funtion for parsing implot headers
-local function parseImGuiHeader(header,names)
+local function parseImGuiHeader(header, names, modulename)
 	--prepare parser
 	local parser = cpp2ffi.Parser()
 	parser.getCname = function(stname,funcname,namespace)
@@ -138,7 +138,8 @@ local function parseImGuiHeader(header,names)
 		return pre..funcname
 	end
 	parser.cname_overloads = cimgui_overloads
-	parser.manuals = cimgui_manuals
+	--parser.manuals = cimgui_manuals
+	parser:set_manuals(cimgui_manuals, modulename)
 	parser.skipped = cimgui_skipped
 	parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
 	
@@ -154,7 +155,7 @@ end
 --generation
 print("------------------generation with "..COMPILER.."------------------------")
 local modulename = "cimCTE"
-local parser1 = parseImGuiHeader([[../ImGuiColorTextEdit/TextEditor.h]],{[[TextEditor]]})
+local parser1 = parseImGuiHeader([[../ImGuiColorTextEdit/TextEditor.h]], {[[TextEditor]]}, modulename)
 --local parser1 = parseImGuiHeader([[../cimCTE.h]],{[[cimCTE]]})
 parser1:do_parse()
 
