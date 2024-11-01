@@ -145,7 +145,7 @@ local function parseImGuiHeader(header, names, modulename)
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
 	local extra_includes = include_cmd.." ../../cimgui "
-	..include_cmd.." ../ImguiColorTextEdit/vendor/regex/include "
+	..include_cmd.." ../ImGuiColorTextEdit/vendor/regex/include "
 	..include_cmd.." ../../cimgui/imgui "
 	
 	parser:take_lines(CPRE..extra_includes..header, names, COMPILER)
