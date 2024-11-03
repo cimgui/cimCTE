@@ -45,10 +45,11 @@ print("HAVE_COMPILER",HAVE_COMPILER)
 --------------------------------------------------------------------------
 local cimgui_manuals = {
     TextEditor_SetText = true,
-    TextEditor_GetText = true,
+    --TextEditor_GetText = true,
 	TextEditor_ImGuiDebugPanel = true
 }
 local cimgui_skipped = {
+	TextEditor_GetText = true,
 	TextEditor_SetTextLines = true,
 	TextEditor_GetTextLines = true,
 }

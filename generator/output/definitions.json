@@ -392,16 +392,16 @@
           "type": "TextEditor*"
         }
       ],
-      "argsoriginal": "(TextEditor* self)",
-      "call_args": "(self)",
+      "argsoriginal": "()",
+      "call_args": "()",
       "cimguiname": "TextEditor_GetText",
       "defaults": {},
       "funcname": "GetText",
       "location": "TextEditor:92",
-      "manual": true,
       "ov_cimguiname": "TextEditor_GetText",
-      "ret": "const char*",
-      "signature": "(TextEditor*)const",
+      "ret": "string",
+      "signature": "()const",
+      "skipped": true,
       "stname": "TextEditor"
     }
   ],
