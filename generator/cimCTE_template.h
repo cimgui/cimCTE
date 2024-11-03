@@ -17,6 +17,8 @@ CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self);
 CIMGUI_API void TextEditor_GetText_free(char* ptr);
 //returned value must be used to copy value before calling TextEditor_GetText_static again
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self);
+//does as TextEditor_GetText_static
+CIMGUI_API const char* TextEditor_GetText(TextEditor* self);
 CIMGUI_API void TextEditor_ImGuiDebugPanel(TextEditor* self,const char* panelName);
 #endif //CIMGUICTE_INCLUDED
 
