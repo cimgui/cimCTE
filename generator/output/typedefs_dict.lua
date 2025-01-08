@@ -1,4 +1,3 @@
-local defs = {}
-defs["TextEditor"] = "struct TextEditor"
-
-return defs
+local t={
+  TextEditor="struct TextEditor"}
+ return t
