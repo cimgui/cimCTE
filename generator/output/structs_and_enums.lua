@@ -81,6 +81,8 @@ local t={
     PaletteId="TextEditor:24",
     SetViewAtLineMode="TextEditor:32",
     TextEditor="TextEditor:16"},
+  nonPOD={
+    TextEditor=true},
   structs={
     TextEditor={}}}
  return t
