@@ -2,7 +2,7 @@
 #include "imgui_internal.h"
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "cimCTE.h"
-
+#include <cstring>
 
 
 #include "auto_funcs.cpp"
