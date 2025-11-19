@@ -198,6 +198,9 @@
     "ImVector": "inherited",
     "TextEditor": true
   },
+  "nonPOD_used": {
+    "ImVec2": "inherited"
+  },
   "structs": {
     "TextEditor": []
   }

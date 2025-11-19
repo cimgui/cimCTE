@@ -174,6 +174,8 @@ local t={
     ImVec4="inherited",
     ImVector="inherited",
     TextEditor=true},
+  nonPOD_used={
+    ImVec2="inherited"},
   structs={
     TextEditor={}}}
  return t
