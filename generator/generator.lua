@@ -164,10 +164,11 @@ parser1:do_parse()
 
 --save_data("./output/overloads.txt",parser1.overloadstxt)
 cimgui_generation(parser1,modulename)
-save_data("./output/definitions.lua",serializeTableF(parser1.defsT))
-local structs_and_enums_table = parser1.structs_and_enums_table
-save_data("./output/structs_and_enums.lua",serializeTableF(structs_and_enums_table))
-save_data("./output/typedefs_dict.lua",serializeTableF(parser1.typedefs_dict))
+parser1:save_output()
+-- save_data("./output/definitions.lua",serializeTableF(parser1.defsT))
+-- local structs_and_enums_table = parser1.structs_and_enums_table
+-- save_data("./output/structs_and_enums.lua",serializeTableF(structs_and_enums_table))
+-- save_data("./output/typedefs_dict.lua",serializeTableF(parser1.typedefs_dict))
 
 -------------------------------json saving
 --avoid mixed tables (with string and integer keys)
@@ -182,7 +183,7 @@ local function json_prepare(defs)
     end
     return defs
 end
----[[
+--[[
 local json = require"json"
 local json_opts = {dict_on_empty={defaults=true}}
 save_data("./output/definitions.json",json.encode(json_prepare(parser1.defsT),json_opts))
