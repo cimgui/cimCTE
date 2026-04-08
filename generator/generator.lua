@@ -9,7 +9,7 @@ local COMPILER = script_args[1]
 
 local CPRE,CTEST
 if COMPILER == "gcc" or COMPILER == "clang" or COMPILER == "g++" then
-    CPRE = COMPILER..[[ -E -dD -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
+    CPRE = COMPILER..[[ -E -dD -std=c++17 -DIMGUI_DISABLE_OBSOLETE_FUNCTIONS -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS -DIMGUI_API="" -DIMGUI_IMPL_API="" ]]
     CTEST = COMPILER.." --version"
 elseif COMPILER == "cl" then
     CPRE = COMPILER..[[ /E /d1PP /DIMGUI_DISABLE_OBSOLETE_FUNCTIONS /DCIMGUI_DEFINE_ENUMS_AND_STRUCTS /DIMGUI_API="" /DIMGUI_IMPL_API="" ]]
@@ -46,7 +46,7 @@ print("HAVE_COMPILER",HAVE_COMPILER)
 local cimgui_manuals = {
     TextEditor_SetText = true,
     TextEditor_GetText = true,
-	TextEditor_ImGuiDebugPanel = true
+	--TextEditor_ImGuiDebugPanel = true
 }
 local cimgui_skipped = {
 	--TextEditor_GetText = true,

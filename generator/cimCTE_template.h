@@ -21,7 +21,6 @@ CIMGUI_API void TextEditor_GetText_free(char* ptr);
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self);
 //does as TextEditor_GetText_static
 CIMGUI_API const char* TextEditor_GetText(TextEditor* self);
-CIMGUI_API void TextEditor_ImGuiDebugPanel(TextEditor* self,const char* panelName);
 #endif //CIMGUICTE_INCLUDED
 
 

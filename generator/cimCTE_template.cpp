@@ -32,9 +32,6 @@ CIMGUI_API const char* TextEditor_GetText(TextEditor* self)
     static std::string str = self->GetText();
     return str.c_str();
 }
-CIMGUI_API void TextEditor_ImGuiDebugPanel(TextEditor* self,const char* panelName)
-{
-    return self->ImGuiDebugPanel(std::string(panelName));
-}
+
 
 
