@@ -1,3 +1,15 @@
 {
-  "TextEditor": "struct TextEditor"
+  "AutoCompleteConfig": "struct AutoCompleteConfig",
+  "AutoCompleteState": "struct AutoCompleteState",
+  "Change": "struct Change",
+  "CodePoint": "struct CodePoint",
+  "CursorPosition": "struct CursorPosition",
+  "CursorSelection": "struct CursorSelection",
+  "Decorator": "struct Decorator",
+  "Glyph": "struct Glyph",
+  "Iterator": "struct Iterator",
+  "Language": "struct Language",
+  "Palette": "struct Palette",
+  "TextEditor": "struct TextEditor",
+  "Trie": "struct Trie"
 }
