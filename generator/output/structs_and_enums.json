@@ -256,141 +256,18 @@
   "nonPOD_used": {
     "ImVec2": "inherited"
   },
+  "opaque_structs": {
+    "AutoCompleteConfig": "TextEditor::AutoCompleteConfig",
+    "AutoCompleteState": "TextEditor::AutoCompleteState",
+    "Change": "TextEditor::Change",
+    "Iterator": "TextEditor::Iterator",
+    "Language": "TextEditor::Language",
+    "Palette": "TextEditor::Palette"
+  },
   "structs": {
-    "AutoCompleteConfig": [
-      {
-        "name": "triggerOnTyping",
-        "type": "bool"
-      },
-      {
-        "name": "triggerOnShortcut",
-        "type": "bool"
-      },
-      {
-        "name": "triggerInComments",
-        "type": "bool"
-      },
-      {
-        "name": "triggerInStrings",
-        "type": "bool"
-      },
-      {
-        "name": "triggerShortcut",
-        "type": "ImGuiKeyChord"
-      },
-      {
-        "name": "autoInsertSingleSuggestions",
-        "type": "bool"
-      },
-      {
-        "name": "triggerDelay",
-        "type": "milliseconds"
-      },
-      {
-        "name": "noSuggestionsLabel",
-        "type": "string"
-      },
-      {
-        "name": "callback",
-        "type": "function<void(AutoCompleteState&)>"
-      },
-      {
-        "name": "userData",
-        "type": "void*"
-      }
-    ],
-    "AutoCompleteState": [
-      {
-        "name": "searchTerm",
-        "type": "string"
-      },
-      {
-        "name": "line",
-        "type": "size_t"
-      },
-      {
-        "name": "searchTermStartColumn",
-        "type": "size_t"
-      },
-      {
-        "name": "searchTermStartIndex",
-        "type": "size_t"
-      },
-      {
-        "name": "searchTermEndColumn",
-        "type": "size_t"
-      },
-      {
-        "name": "searchTermEndIndex",
-        "type": "size_t"
-      },
-      {
-        "name": "inIdentifier",
-        "type": "bool"
-      },
-      {
-        "name": "inNumber",
-        "type": "bool"
-      },
-      {
-        "name": "inComment",
-        "type": "bool"
-      },
-      {
-        "name": "inString",
-        "type": "bool"
-      },
-      {
-        "name": "language",
-        "type": "const Language*"
-      },
-      {
-        "name": "userData",
-        "type": "void*"
-      },
-      {
-        "name": "suggestions",
-        "type": "vector<string>"
-      },
-      {
-        "name": "suggestionsPromise",
-        "type": "bool"
-      }
-    ],
-    "Change": [
-      {
-        "name": "insert",
-        "type": "bool"
-      },
-      {
-        "name": "startLine",
-        "type": "int"
-      },
-      {
-        "name": "startColumn",
-        "type": "int"
-      },
-      {
-        "name": "startIndex",
-        "type": "int"
-      },
-      {
-        "name": "endLine",
-        "type": "int"
-      },
-      {
-        "name": "endColumn",
-        "type": "int"
-      },
-      {
-        "name": "endIndex",
-        "type": "int"
-      },
-      {
-        "name": "text",
-        "type": "string"
-      }
-    ],
+    "AutoCompleteConfig": [],
+    "AutoCompleteState": [],
+    "Change": [],
     "CodePoint": [],
     "CursorPosition": [
       {
@@ -444,124 +321,9 @@
         "type": "Color"
       }
     ],
-    "Iterator": [
-      {
-        "name": "iterator_category",
-        "type": "using"
-      },
-      {
-        "name": "difference_type",
-        "type": "using"
-      },
-      {
-        "name": "value_type",
-        "type": "using"
-      },
-      {
-        "name": "pointer",
-        "type": "using"
-      },
-      {
-        "name": "reference",
-        "type": "using"
-      }
-    ],
-    "Language": [
-      {
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "name": "caseSensitive",
-        "type": "bool"
-      },
-      {
-        "name": "preprocess",
-        "type": "ImWchar"
-      },
-      {
-        "name": "singleLineComment",
-        "type": "string"
-      },
-      {
-        "name": "singleLineCommentAlt",
-        "type": "string"
-      },
-      {
-        "name": "commentStart",
-        "type": "string"
-      },
-      {
-        "name": "commentEnd",
-        "type": "string"
-      },
-      {
-        "name": "hasSingleQuotedStrings",
-        "type": "bool"
-      },
-      {
-        "name": "hasDoubleQuotedStrings",
-        "type": "bool"
-      },
-      {
-        "name": "otherStringStart",
-        "type": "string"
-      },
-      {
-        "name": "otherStringEnd",
-        "type": "string"
-      },
-      {
-        "name": "otherStringAltStart",
-        "type": "string"
-      },
-      {
-        "name": "otherStringAltEnd",
-        "type": "string"
-      },
-      {
-        "name": "stringEscape",
-        "type": "ImWchar"
-      },
-      {
-        "name": "keywords",
-        "type": "unordered_set<string>"
-      },
-      {
-        "name": "declarations",
-        "type": "unordered_set<string>"
-      },
-      {
-        "name": "identifiers",
-        "type": "unordered_set<string>"
-      },
-      {
-        "name": "isPunctuation",
-        "type": "function<bool(ImWchar)>"
-      },
-      {
-        "name": "start",
-        "type": "function<Iterator(Iterator"
-      },
-      {
-        "name": "start",
-        "type": "function<Iterator(Iterator"
-      },
-      {
-        "name": "start",
-        "type": "function<Iterator(Iterator"
-      }
-    ],
-    "Palette": [
-      {
-        "name": "_std::array<ImU32",
-        "type": "static_cast<size_t>(Color::count)>"
-      },
-      {
-        "name": "static_cast<size_t>(Color::count)>",
-        "type": "static_cast<size_t>(Color::count)>"
-      }
-    ],
+    "Iterator": [],
+    "Language": [],
+    "Palette": [],
     "TextEditor": [],
     "Trie": []
   }

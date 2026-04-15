@@ -44,8 +44,8 @@ print("HAVE_COMPILER",HAVE_COMPILER)
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
 local cimgui_manuals = {
-    TextEditor_SetText = true,
-    TextEditor_GetText = true,
+    --TextEditor_SetText = true,
+    --TextEditor_GetText = true,
 	--TextEditor_ImGuiDebugPanel = true
 }
 local cimgui_skipped = {

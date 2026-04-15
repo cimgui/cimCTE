@@ -7,10 +7,7 @@
 
 #include "auto_funcs.cpp"
 ////////////////manually generated
-CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* aText)
-{
-    return self->SetText(std::string(aText));
-}
+
 CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self)
 {
     std::string str = self->GetText();
@@ -27,11 +24,7 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     static std::string str = self->GetText();
     return str.c_str();
 }
-CIMGUI_API const char* TextEditor_GetText(TextEditor* self)
-{
-    static std::string str = self->GetText();
-    return str.c_str();
-}
+
 
 
 
