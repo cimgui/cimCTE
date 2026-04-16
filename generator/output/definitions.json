@@ -2763,28 +2763,31 @@
   ],
   "TextEditor_IterateIdentifiers": [
     {
-      "args": "(TextEditor* self,std::function_void_const_std_stringamp_identifier_ callback)",
+      "args": "(TextEditor* self, void(*cb)(const char*))",
       "argsT": [
         {
           "name": "self",
           "type": "TextEditor*"
         },
         {
-          "name": "callback",
-          "type": "std::function_void_const_std_stringamp_identifier_"
+          "name": "cb",
+          "ret": " void",
+          "signature": "(const char*)",
+          "type": " void(*)(const char*)"
         }
       ],
-      "argsoriginal": "(std::function<void(const std::string& identifier)> callback)",
-      "call_args": "(callback)",
+      "argsoriginal": "(TextEditor* self, void(*cb)(const char*))",
+      "call_args": "(self,cb)",
+      "call_args_old": "(self,cb)",
       "cimguiname": "TextEditor_IterateIdentifiers",
       "defaults": {},
       "funcname": "IterateIdentifiers",
       "location": "TextEditor:475",
+      "manual": true,
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_IterateIdentifiers",
       "ret": "void",
-      "signature": "(std::function_void_const_std_stringamp_identifier_)const",
-      "skipped": true,
+      "signature": "(TextEditor*, void(*)(const char*))const",
       "stname": "TextEditor"
     }
   ],

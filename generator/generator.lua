@@ -47,6 +47,7 @@ local cimgui_manuals = {
     --TextEditor_SetText = true,
     --TextEditor_GetText = true,
 	--TextEditor_ImGuiDebugPanel = true
+	TextEditor_IterateIdentifiers = true
 }
 local cimgui_skipped = {
 	--TextEditor_GetText = true,
