@@ -139,23 +139,26 @@
     "Color": "char"
   },
   "locations": {
-    "AutoCompleteConfig": "TextEditor:513",
-    "AutoCompleteState": "TextEditor:478",
-    "Change": "TextEditor:234",
-    "CodePoint": "TextEditor:616",
-    "Color": "TextEditor:315",
+    "AutoCompleteConfig": "TextEditor:525",
+    "AutoCompleteState": "TextEditor:490",
+    "Change": "TextEditor:246",
+    "CodePoint": "TextEditor:628",
+    "Color": "TextEditor:327",
     "CursorPosition": "TextEditor:152",
-    "CursorSelection": "TextEditor:153",
-    "Decorator": "TextEditor:270",
-    "Glyph": "TextEditor:355",
-    "Iterator": "TextEditor:369",
-    "Language": "TextEditor:399",
-    "Palette": "TextEditor:341",
-    "Scroll": "TextEditor:164",
+    "CursorSelection": "TextEditor:159",
+    "Decorator": "TextEditor:282",
+    "Glyph": "TextEditor:367",
+    "Iterator": "TextEditor:381",
+    "Language": "TextEditor:411",
+    "Palette": "TextEditor:353",
+    "Scroll": "TextEditor:176",
+    "TextDiff": "TextDiff:22",
     "TextEditor": "TextEditor:34",
-    "Trie": "TextEditor:566"
+    "Trie": "TextEditor:578"
   },
   "nonPOD": {
+    "CursorPosition": true,
+    "CursorSelection": true,
     "Glyph": true,
     "ImBitArray": "inherited",
     "ImColor": "inherited",
@@ -250,10 +253,13 @@
     "ImVec4": "inherited",
     "ImVector": "inherited",
     "Iterator": true,
+    "TextDiff": true,
     "TextEditor": true,
     "Trie": true
   },
   "nonPOD_used": {
+    "CursorPosition": true,
+    "CursorSelection": true,
     "ImVec2": "inherited"
   },
   "opaque_structs": {
@@ -324,6 +330,12 @@
     "Iterator": [],
     "Language": [],
     "Palette": [],
+    "TextDiff": [
+      {
+        "name": "_TextEditor",
+        "type": "TextEditor"
+      }
+    ],
     "TextEditor": [],
     "Trie": []
   }

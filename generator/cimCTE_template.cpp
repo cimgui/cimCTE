@@ -1,6 +1,7 @@
 #include "imgui.h"
 #include "imgui_internal.h"
 #include "./ImGuiColorTextEdit/TextEditor.h"
+#include "./ImGuiColorTextEdit/TextDiff.h"
 #include "cimCTE.h"
 #include <cstring>
 

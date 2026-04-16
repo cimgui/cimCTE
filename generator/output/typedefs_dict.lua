@@ -4,6 +4,7 @@ local t={
   CursorSelection="struct CursorSelection",
   Decorator="struct Decorator",
   Glyph="struct Glyph",
+  TextDiff="struct TextDiff",
   TextEditor="struct TextEditor",
   Trie="struct Trie"}
  return t

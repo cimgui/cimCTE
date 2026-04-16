@@ -4,7 +4,7 @@
 set(cimCTE_SRCS 
 ./cimCTE/cimCTE.cpp 
 ./cimCTE/ImGuiColorTextEdit/TextEditor.cpp
-#./cimCTE/ImGuiColorTextEdit/LanguageDefinitions.cpp
+./cimCTE/ImGuiColorTextEdit/TextDiff.cpp
 #./cimCTE/ImGuiColorTextEdit/UnitTests.cpp
 #./cimCTE/ImGuiColorTextEdit/ImGuiDebugPanel.cpp
  PARENT_SCOPE)
