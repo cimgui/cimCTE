@@ -325,14 +325,6 @@ CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* rig
 CIMGUI_API void TextDiff_SetLanguage(TextDiff* self,const Language_opq l);
 CIMGUI_API void TextDiff_SetColors(TextDiff* self,ImU32 ac,ImU32 dc);
 CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c size,bool border);
-CIMGUI_API void TextDiff_SetReadOnlyEnabled(TextDiff* self,bool value);
-CIMGUI_API void TextDiff_SetShowLineNumbersEnabled(TextDiff* self,bool value);
-CIMGUI_API void TextDiff_SetShowMatchingBrackets(TextDiff* self,bool value);
-CIMGUI_API void TextDiff_AddMarker(TextDiff* self,int line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip);
-CIMGUI_API void TextDiff_ClearMarkers(TextDiff* self);
-CIMGUI_API void TextDiff_ClearLineDecorator(TextDiff* self);
-CIMGUI_API void TextDiff_ClearLineNumberContextMenuCallback(TextDiff* self);
-CIMGUI_API void TextDiff_ClearTextContextMenuCallback(TextDiff* self);
 
 
 ///////////////manual generated

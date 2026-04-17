@@ -787,38 +787,6 @@ CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c 
 {
     return self->Render(title,ConvertToCPP_ImVec2(size),border);
 }
-CIMGUI_API void TextDiff_SetReadOnlyEnabled(TextDiff* self,bool value)
-{
-    return self->SetReadOnlyEnabled(value);
-}
-CIMGUI_API void TextDiff_SetShowLineNumbersEnabled(TextDiff* self,bool value)
-{
-    return self->SetShowLineNumbersEnabled(value);
-}
-CIMGUI_API void TextDiff_SetShowMatchingBrackets(TextDiff* self,bool value)
-{
-    return self->SetShowMatchingBrackets(value);
-}
-CIMGUI_API void TextDiff_AddMarker(TextDiff* self,int line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip)
-{
-    return self->AddMarker(line,lineNumberColor,textColor,lineNumberTooltip,textTooltip);
-}
-CIMGUI_API void TextDiff_ClearMarkers(TextDiff* self)
-{
-    return self->ClearMarkers();
-}
-CIMGUI_API void TextDiff_ClearLineDecorator(TextDiff* self)
-{
-    return self->ClearLineDecorator();
-}
-CIMGUI_API void TextDiff_ClearLineNumberContextMenuCallback(TextDiff* self)
-{
-    return self->ClearLineNumberContextMenuCallback();
-}
-CIMGUI_API void TextDiff_ClearTextContextMenuCallback(TextDiff* self)
-{
-    return self->ClearTextContextMenuCallback();
-}
 
 ////////////////manually generated
 
