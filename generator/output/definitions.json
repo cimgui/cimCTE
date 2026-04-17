@@ -1662,7 +1662,7 @@
   ],
   "TextEditor_FilterLines": [
     {
-      "args": "(TextEditor* self,std::function_std_string_std_string_view_ filter)",
+      "args": "(TextEditor* self,const char*(*cb)(const char*))",
       "argsT": [
         {
           "name": "self",
@@ -1670,11 +1670,13 @@
         },
         {
           "name": "filter",
+          "template_orig": "std::function<std::string(std::string_view)> filter",
           "type": "std::function_std_string_std_string_view_"
         }
       ],
       "argsoriginal": "(std::function<std::string(std::string_view)> filter)",
-      "call_args": "(filter)",
+      "call_args": "([cb](std::string_view noname1){return std::string(cb(noname1.data()));})",
+      "call_args_old": "(filter)",
       "cimguiname": "TextEditor_FilterLines",
       "defaults": {},
       "funcname": "FilterLines",
@@ -1683,13 +1685,12 @@
       "ov_cimguiname": "TextEditor_FilterLines",
       "ret": "void",
       "signature": "(std::function_std_string_std_string_view_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
   "TextEditor_FilterSelections": [
     {
-      "args": "(TextEditor* self,std::function_std_string_std_string_view_ filter)",
+      "args": "(TextEditor* self,const char*(*cb)(const char*))",
       "argsT": [
         {
           "name": "self",
@@ -1697,11 +1698,13 @@
         },
         {
           "name": "filter",
+          "template_orig": "std::function<std::string(std::string_view)> filter",
           "type": "std::function_std_string_std_string_view_"
         }
       ],
       "argsoriginal": "(std::function<std::string(std::string_view)> filter)",
-      "call_args": "(filter)",
+      "call_args": "([cb](std::string_view noname1){return std::string(cb(noname1.data()));})",
+      "call_args_old": "(filter)",
       "cimguiname": "TextEditor_FilterSelections",
       "defaults": {},
       "funcname": "FilterSelections",
@@ -1710,7 +1713,6 @@
       "ov_cimguiname": "TextEditor_FilterSelections",
       "ret": "void",
       "signature": "(std::function_std_string_std_string_view_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -3114,37 +3116,7 @@
   ],
   "TextEditor_IterateIdentifiers": [
     {
-      "args": "(TextEditor* self, void(*cb)(const char*))",
-      "argsT": [
-        {
-          "name": "self",
-          "type": "TextEditor*"
-        },
-        {
-          "name": "cb",
-          "ret": " void",
-          "signature": "(const char*)",
-          "type": " void(*)(const char*)"
-        }
-      ],
-      "argsoriginal": "(TextEditor* self, void(*cb)(const char*))",
-      "call_args": "(self,cb)",
-      "call_args_old": "(self,cb)",
-      "cimguiname": "TextEditor_IterateIdentifiers",
-      "defaults": {},
-      "funcname": "IterateIdentifiers",
-      "location": "TextEditor:487",
-      "manual": true,
-      "namespace": "TextEditor",
-      "ov_cimguiname": "TextEditor_IterateIdentifiers",
-      "ret": "void",
-      "signature": "(TextEditor*, void(*)(const char*))const",
-      "stname": "TextEditor"
-    }
-  ],
-  "TextEditor_IterateUserData": [
-    {
-      "args": "(TextEditor* self,std::function_void_int_line__voidPtr_data_ callback)",
+      "args": "(TextEditor* self,void(*cb)(const char*))",
       "argsT": [
         {
           "name": "self",
@@ -3152,11 +3124,41 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void(const std::string& identifier)> callback",
+          "type": "std::function_void_const_std_stringamp_identifier_"
+        }
+      ],
+      "argsoriginal": "(std::function<void(const std::string& identifier)> callback)",
+      "call_args": "([cb](const std::string& identifier){cb(identifier.c_str());})",
+      "call_args_old": "(callback)",
+      "cimguiname": "TextEditor_IterateIdentifiers",
+      "defaults": {},
+      "funcname": "IterateIdentifiers",
+      "location": "TextEditor:487",
+      "namespace": "TextEditor",
+      "ov_cimguiname": "TextEditor_IterateIdentifiers",
+      "ret": "void",
+      "signature": "(std::function_void_const_std_stringamp_identifier_)const",
+      "stname": "TextEditor"
+    }
+  ],
+  "TextEditor_IterateUserData": [
+    {
+      "args": "(TextEditor* self,void(*cb)(int,void*))",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TextEditor*"
+        },
+        {
+          "name": "callback",
+          "template_orig": "std::function<void(int line,void* data)> callback",
           "type": "std::function_void_int_line__voidPtr_data_"
         }
       ],
       "argsoriginal": "(std::function<void(int line,void* data)> callback)",
-      "call_args": "(callback)",
+      "call_args": "([cb](int line,void* data){cb(line,data);})",
+      "call_args_old": "(callback)",
       "cimguiname": "TextEditor_IterateUserData",
       "defaults": {},
       "funcname": "IterateUserData",
@@ -3165,7 +3167,6 @@
       "ov_cimguiname": "TextEditor_IterateUserData",
       "ret": "void",
       "signature": "(std::function_void_int_line__voidPtr_data_)const",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -3819,6 +3820,7 @@
         },
         {
           "name": "suggestions",
+          "template_orig": "const std::vector<std::string>& suggestions",
           "type": "const std::vector_std_string"
         }
       ],
@@ -3865,7 +3867,7 @@
   ],
   "TextEditor_SetChangeCallback": [
     {
-      "args": "(TextEditor* self,std::function_void__ callback,int delay)",
+      "args": "(TextEditor* self,void(*cb)(),int delay)",
       "argsT": [
         {
           "name": "self",
@@ -3873,6 +3875,7 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void()> callback",
           "type": "std::function_void__"
         },
         {
@@ -3881,7 +3884,8 @@
         }
       ],
       "argsoriginal": "(std::function<void()> callback,int delay=0)",
-      "call_args": "(callback,delay)",
+      "call_args": "([cb](){cb();},delay)",
+      "call_args_old": "(callback,delay)",
       "cimguiname": "TextEditor_SetChangeCallback",
       "defaults": {
         "delay": "0"
@@ -3892,7 +3896,6 @@
       "ov_cimguiname": "TextEditor_SetChangeCallback",
       "ret": "void",
       "signature": "(std::function_void__,int)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -3981,7 +3984,7 @@
   ],
   "TextEditor_SetDeletor": [
     {
-      "args": "(TextEditor* self,std::function_void_int_line__voidPtr_data_ callback)",
+      "args": "(TextEditor* self,void(*cb)(int,void*))",
       "argsT": [
         {
           "name": "self",
@@ -3989,11 +3992,13 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void(int line,void* data)> callback",
           "type": "std::function_void_int_line__voidPtr_data_"
         }
       ],
       "argsoriginal": "(std::function<void(int line,void* data)> callback)",
-      "call_args": "(callback)",
+      "call_args": "([cb](int line,void* data){cb(line,data);})",
+      "call_args_old": "(callback)",
       "cimguiname": "TextEditor_SetDeletor",
       "defaults": {},
       "funcname": "SetDeletor",
@@ -4002,7 +4007,6 @@
       "ov_cimguiname": "TextEditor_SetDeletor",
       "ret": "void",
       "signature": "(std::function_void_int_line__voidPtr_data_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -4112,7 +4116,7 @@
   ],
   "TextEditor_SetInsertor": [
     {
-      "args": "(TextEditor* self,std::function_voidPtr_int_line_ callback)",
+      "args": "(TextEditor* self,void*(*cb)(int))",
       "argsT": [
         {
           "name": "self",
@@ -4120,11 +4124,13 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void*(int line)> callback",
           "type": "std::function_voidPtr_int_line_"
         }
       ],
       "argsoriginal": "(std::function<void*(int line)> callback)",
-      "call_args": "(callback)",
+      "call_args": "([cb](int line){return cb(line);})",
+      "call_args_old": "(callback)",
       "cimguiname": "TextEditor_SetInsertor",
       "defaults": {},
       "funcname": "SetInsertor",
@@ -4133,7 +4139,6 @@
       "ov_cimguiname": "TextEditor_SetInsertor",
       "ret": "void",
       "signature": "(std::function_voidPtr_int_line_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -4166,7 +4171,7 @@
   ],
   "TextEditor_SetLineDecorator": [
     {
-      "args": "(TextEditor* self,float width,std::function_void_Decoratoramp_decorator_ callback)",
+      "args": "(TextEditor* self,float width,void(*cb)(Decorator&))",
       "argsT": [
         {
           "name": "self",
@@ -4178,11 +4183,13 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void(Decorator& decorator)> callback",
           "type": "std::function_void_Decoratoramp_decorator_"
         }
       ],
       "argsoriginal": "(float width,std::function<void(Decorator& decorator)> callback)",
-      "call_args": "(width,callback)",
+      "call_args": "(width,[cb](Decorator& decorator){cb(decorator);})",
+      "call_args_old": "(width,callback)",
       "cimguiname": "TextEditor_SetLineDecorator",
       "defaults": {},
       "funcname": "SetLineDecorator",
@@ -4191,13 +4198,12 @@
       "ov_cimguiname": "TextEditor_SetLineDecorator",
       "ret": "void",
       "signature": "(float,std::function_void_Decoratoramp_decorator_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
   "TextEditor_SetLineNumberContextMenuCallback": [
     {
-      "args": "(TextEditor* self,std::function_void_int_line_ callback)",
+      "args": "(TextEditor* self,void(*cb)(int))",
       "argsT": [
         {
           "name": "self",
@@ -4205,11 +4211,13 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void(int line)> callback",
           "type": "std::function_void_int_line_"
         }
       ],
       "argsoriginal": "(std::function<void(int line)> callback)",
-      "call_args": "(callback)",
+      "call_args": "([cb](int line){cb(line);})",
+      "call_args_old": "(callback)",
       "cimguiname": "TextEditor_SetLineNumberContextMenuCallback",
       "defaults": {},
       "funcname": "SetLineNumberContextMenuCallback",
@@ -4218,7 +4226,6 @@
       "ov_cimguiname": "TextEditor_SetLineNumberContextMenuCallback",
       "ret": "void",
       "signature": "(std::function_void_int_line_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -4676,7 +4683,7 @@
   ],
   "TextEditor_SetTextContextMenuCallback": [
     {
-      "args": "(TextEditor* self,std::function_void_int_line__int_column_ callback)",
+      "args": "(TextEditor* self,void(*cb)(int,int))",
       "argsT": [
         {
           "name": "self",
@@ -4684,11 +4691,13 @@
         },
         {
           "name": "callback",
+          "template_orig": "std::function<void(int line,int column)> callback",
           "type": "std::function_void_int_line__int_column_"
         }
       ],
       "argsoriginal": "(std::function<void(int line,int column)> callback)",
-      "call_args": "(callback)",
+      "call_args": "([cb](int line,int column){cb(line,column);})",
+      "call_args_old": "(callback)",
       "cimguiname": "TextEditor_SetTextContextMenuCallback",
       "defaults": {},
       "funcname": "SetTextContextMenuCallback",
@@ -4697,7 +4706,6 @@
       "ov_cimguiname": "TextEditor_SetTextContextMenuCallback",
       "ret": "void",
       "signature": "(std::function_void_int_line__int_column_)",
-      "skipped": true,
       "stname": "TextEditor"
     }
   ],
@@ -4712,6 +4720,7 @@
         {
           "name": "callback",
           "reftoptr": true,
+          "template_orig": "std::function<void(std::vector<Change>&)> callback",
           "type": "std::function<void(std::vector_void_std_vector_Change* )>"
         }
       ],
@@ -5008,6 +5017,7 @@
         {
           "name": "suggestions",
           "reftoptr": true,
+          "template_orig": "std::vector<std::string>& suggestions",
           "type": "std::vector_std_string*"
         },
         {

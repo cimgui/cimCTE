@@ -25,12 +25,12 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     static std::string str = self->GetText();
     return str.c_str();
 }
-CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
-{
-	self->IterateIdentifiers([cb](const std::string& identifier) {
-		cb(identifier.c_str());
-	});
-}
+// CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
+// {
+	// self->IterateIdentifiers([cb](const std::string& identifier) {
+		// cb(identifier.c_str());
+	// });
+// }
 
 
 

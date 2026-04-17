@@ -486,6 +486,18 @@ CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self)
 {
     return self->HasMarkers();
 }
+CIMGUI_API void TextEditor_SetChangeCallback(TextEditor* self,void(*cb)(),int delay)
+{
+    return self->SetChangeCallback([cb](){cb();},delay);
+}
+CIMGUI_API void TextEditor_SetInsertor(TextEditor* self,void*(*cb)(int))
+{
+    return self->SetInsertor([cb](int line){return cb(line);});
+}
+CIMGUI_API void TextEditor_SetDeletor(TextEditor* self,void(*cb)(int,void*))
+{
+    return self->SetDeletor([cb](int line,void* data){cb(line,data);});
+}
 CIMGUI_API void TextEditor_SetUserData(TextEditor* self,int line,void* data)
 {
     return self->SetUserData(line,data);
@@ -493,6 +505,14 @@ CIMGUI_API void TextEditor_SetUserData(TextEditor* self,int line,void* data)
 CIMGUI_API void* TextEditor_GetUserData(TextEditor* self,int line)
 {
     return self->GetUserData(line);
+}
+CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(int,void*))
+{
+    return self->IterateUserData([cb](int line,void* data){cb(line,data);});
+}
+CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,float width,void(*cb)(Decorator&))
+{
+    return self->SetLineDecorator(width,[cb](Decorator& decorator){cb(decorator);});
 }
 CIMGUI_API void TextEditor_ClearLineDecorator(TextEditor* self)
 {
@@ -502,6 +522,10 @@ CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self)
 {
     return self->HasLineDecorator();
 }
+CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(int))
+{
+    return self->SetLineNumberContextMenuCallback([cb](int line){cb(line);});
+}
 CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self)
 {
     return self->ClearLineNumberContextMenuCallback();
@@ -509,6 +533,10 @@ CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self)
 CIMGUI_API bool TextEditor_HasLineNumberContextMenuCallback(TextEditor* self)
 {
     return self->HasLineNumberContextMenuCallback();
+}
+CIMGUI_API void TextEditor_SetTextContextMenuCallback(TextEditor* self,void(*cb)(int,int))
+{
+    return self->SetTextContextMenuCallback([cb](int line,int column){cb(line,column);});
 }
 CIMGUI_API void TextEditor_ClearTextContextMenuCallback(TextEditor* self)
 {
@@ -538,6 +566,10 @@ CIMGUI_API void TextEditor_ToggleComments(TextEditor* self)
 {
     return self->ToggleComments();
 }
+CIMGUI_API void TextEditor_FilterSelections(TextEditor* self,const char*(*cb)(const char*))
+{
+    return self->FilterSelections([cb](std::string_view noname1){return std::string(cb(noname1.data()));});
+}
 CIMGUI_API void TextEditor_SelectionToLowerCase(TextEditor* self)
 {
     return self->SelectionToLowerCase();
@@ -549,6 +581,10 @@ CIMGUI_API void TextEditor_SelectionToUpperCase(TextEditor* self)
 CIMGUI_API void TextEditor_StripTrailingWhitespaces(TextEditor* self)
 {
     return self->StripTrailingWhitespaces();
+}
+CIMGUI_API void TextEditor_FilterLines(TextEditor* self,const char*(*cb)(const char*))
+{
+    return self->FilterLines([cb](std::string_view noname1){return std::string(cb(noname1.data()));});
 }
 CIMGUI_API void TextEditor_TabsToSpaces(TextEditor* self)
 {
@@ -658,6 +694,10 @@ CIMGUI_API const char* TextEditor_GetLanguageName(TextEditor* self)
 {
     static std::string str = self->GetLanguageName();
     return str.c_str();
+}
+CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self,void(*cb)(const char*))
+{
+    return self->IterateIdentifiers([cb](const std::string& identifier){cb(identifier.c_str());});
 }
 CIMGUI_API void TextEditor_SetAutoCompleteConfig(TextEditor* self,const AutoCompleteConfig_opq config)
 {
@@ -806,12 +846,12 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     static std::string str = self->GetText();
     return str.c_str();
 }
-CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
-{
-	self->IterateIdentifiers([cb](const std::string& identifier) {
-		cb(identifier.c_str());
-	});
-}
+// CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
+// {
+	// self->IterateIdentifiers([cb](const std::string& identifier) {
+		// cb(identifier.c_str());
+	// });
+// }
 
 
 

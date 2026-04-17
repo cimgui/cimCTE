@@ -250,12 +250,19 @@ CIMGUI_API void TextEditor_FindAll(TextEditor* self);
 CIMGUI_API void TextEditor_AddMarker(TextEditor* self,int line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip);
 CIMGUI_API void TextEditor_ClearMarkers(TextEditor* self);
 CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self);
+CIMGUI_API void TextEditor_SetChangeCallback(TextEditor* self,void(*cb)(),int delay);
+CIMGUI_API void TextEditor_SetInsertor(TextEditor* self,void*(*cb)(int));
+CIMGUI_API void TextEditor_SetDeletor(TextEditor* self,void(*cb)(int,void*));
 CIMGUI_API void TextEditor_SetUserData(TextEditor* self,int line,void* data);
 CIMGUI_API void* TextEditor_GetUserData(TextEditor* self,int line);
+CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(int,void*));
+CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,float width,void(*cb)(Decorator&));
 CIMGUI_API void TextEditor_ClearLineDecorator(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self);
+CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(int));
 CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineNumberContextMenuCallback(TextEditor* self);
+CIMGUI_API void TextEditor_SetTextContextMenuCallback(TextEditor* self,void(*cb)(int,int));
 CIMGUI_API void TextEditor_ClearTextContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasTextContextMenuCallback(TextEditor* self);
 CIMGUI_API void TextEditor_IndentLines(TextEditor* self);
@@ -263,9 +270,11 @@ CIMGUI_API void TextEditor_DeindentLines(TextEditor* self);
 CIMGUI_API void TextEditor_MoveUpLines(TextEditor* self);
 CIMGUI_API void TextEditor_MoveDownLines(TextEditor* self);
 CIMGUI_API void TextEditor_ToggleComments(TextEditor* self);
+CIMGUI_API void TextEditor_FilterSelections(TextEditor* self,const char*(*cb)(const char*));
 CIMGUI_API void TextEditor_SelectionToLowerCase(TextEditor* self);
 CIMGUI_API void TextEditor_SelectionToUpperCase(TextEditor* self);
 CIMGUI_API void TextEditor_StripTrailingWhitespaces(TextEditor* self);
+CIMGUI_API void TextEditor_FilterLines(TextEditor* self,const char*(*cb)(const char*));
 CIMGUI_API void TextEditor_TabsToSpaces(TextEditor* self);
 CIMGUI_API void TextEditor_SpacesToTabs(TextEditor* self);
 CIMGUI_API void TextEditor_SetPalette(TextEditor* self,const Palette_opq newPalette);
@@ -293,6 +302,7 @@ CIMGUI_API void TextEditor_SetLanguage(TextEditor* self,const Language_opq l);
 CIMGUI_API const Language_opq TextEditor_GetLanguage(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLanguage(TextEditor* self);
 CIMGUI_API const char* TextEditor_GetLanguageName(TextEditor* self);
+CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self,void(*cb)(const char*));
 CIMGUI_API void TextEditor_SetAutoCompleteConfig(TextEditor* self,const AutoCompleteConfig_opq config);
 CIMGUI_API Trie* Trie_Trie(void);
 CIMGUI_API void Trie_destroy(Trie* self);
@@ -333,7 +343,7 @@ CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self);
 CIMGUI_API void TextEditor_GetText_free(char* ptr);
 //returned value must be used to copy value before calling TextEditor_GetText_static again
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self);
-CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *));
+//CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *));
 #endif //CIMGUICTE_INCLUDED
 
 
