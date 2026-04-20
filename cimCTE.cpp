@@ -8,6 +8,11 @@
 #include <cstring>
 
 
+CIMGUI_API void CimCTE_SetImGuiContext(ImGuiContext* ctx)
+{
+    return ImGui::SetCurrentContext(ctx);
+}
+
 static inline CursorPosition ConvertToCPP_CursorPosition(const CursorPosition_c& src)
 {
     CursorPosition dest;
@@ -852,7 +857,6 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
 		// cb(identifier.c_str());
 	// });
 // }
-
 
 
 
