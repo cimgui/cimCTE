@@ -795,6 +795,10 @@ CIMGUI_API bool CodePoint_isMatchingBrackets(ImWchar open,ImWchar close)
 {
     return TextEditor::CodePoint::isMatchingBrackets(open,close);
 }
+CIMGUI_API void TextEditor_SetImGuiContext(ImGuiContext* ctx)
+{
+    return TextEditor::SetImGuiContext(ctx);
+}
 CIMGUI_API TextDiff* TextDiff_TextDiff(void)
 {
     return IM_NEW(TextDiff)();

@@ -4087,6 +4087,30 @@
       "stname": "TextEditor"
     }
   ],
+  "TextEditor_SetImGuiContext": [
+    {
+      "args": "(ImGuiContext* ctx)",
+      "argsT": [
+        {
+          "name": "ctx",
+          "type": "ImGuiContext*"
+        }
+      ],
+      "argsoriginal": "(ImGuiContext* ctx)",
+      "call_args": "(ctx)",
+      "call_args_old": "(ctx)",
+      "cimguiname": "TextEditor_SetImGuiContext",
+      "defaults": {},
+      "funcname": "SetImGuiContext",
+      "is_static_function": true,
+      "location": "TextEditor:715",
+      "namespace": "TextEditor",
+      "ov_cimguiname": "TextEditor_SetImGuiContext",
+      "ret": "void",
+      "signature": "(ImGuiContext*)",
+      "stname": "TextEditor"
+    }
+  ],
   "TextEditor_SetInsertSpacesOnTabs": [
     {
       "args": "(TextEditor* self,bool value)",

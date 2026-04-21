@@ -327,6 +327,7 @@ CIMGUI_API bool CodePoint_isMatchingPair(ImWchar open,ImWchar close);
 CIMGUI_API bool CodePoint_isBracketOpener(ImWchar ch);
 CIMGUI_API bool CodePoint_isBracketCloser(ImWchar ch);
 CIMGUI_API bool CodePoint_isMatchingBrackets(ImWchar open,ImWchar close);
+CIMGUI_API void TextEditor_SetImGuiContext(ImGuiContext* ctx);
 CIMGUI_API TextDiff* TextDiff_TextDiff(void);
 CIMGUI_API void TextDiff_destroy(TextDiff* self);
 CIMGUI_API void TextDiff_SetSideBySideMode(TextDiff* self,bool flag);
