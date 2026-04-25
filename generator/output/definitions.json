@@ -812,7 +812,7 @@
       "location": "TextEditor:471",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_AngelScript",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -831,7 +831,7 @@
       "location": "TextEditor:468",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_C",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -850,7 +850,7 @@
       "location": "TextEditor:469",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Cpp",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -869,7 +869,7 @@
       "location": "TextEditor:470",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Cs",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -888,7 +888,7 @@
       "location": "TextEditor:474",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Glsl",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -907,7 +907,7 @@
       "location": "TextEditor:475",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Hlsl",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -926,7 +926,7 @@
       "location": "TextEditor:476",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Json",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -945,7 +945,7 @@
       "location": "TextEditor:472",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Lua",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -964,7 +964,7 @@
       "location": "TextEditor:477",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Markdown",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -983,7 +983,7 @@
       "location": "TextEditor:473",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Python",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -1002,7 +1002,7 @@
       "location": "TextEditor:478",
       "namespace": "TextEditor::Language",
       "ov_cimguiname": "Language_Sql",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()",
       "stname": "Language"
     }
@@ -1128,7 +1128,7 @@
   ],
   "TextDiff_SetLanguage": [
     {
-      "args": "(TextDiff* self,const Language_opq l)",
+      "args": "(TextDiff* self,const Language* l)",
       "argsT": [
         {
           "name": "self",
@@ -2003,7 +2003,7 @@
       "location": "TextEditor:363",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_GetDarkPalette",
-      "ret": "const Palette_opq",
+      "ret": "const Palette*",
       "retref": "&",
       "signature": "()",
       "stname": "TextEditor"
@@ -2023,7 +2023,7 @@
       "location": "TextEditor:361",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_GetDefaultPalette",
-      "ret": "Palette_opq",
+      "ret": "Palette*",
       "retref": "&",
       "signature": "()",
       "stname": "TextEditor"
@@ -2116,7 +2116,7 @@
       "location": "TextEditor:482",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_GetLanguage",
-      "ret": "const Language_opq",
+      "ret": "const Language*",
       "signature": "()const",
       "stname": "TextEditor"
     }
@@ -2206,7 +2206,7 @@
       "location": "TextEditor:364",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_GetLightPalette",
-      "ret": "const Palette_opq",
+      "ret": "const Palette*",
       "retref": "&",
       "signature": "()",
       "stname": "TextEditor"
@@ -2434,7 +2434,7 @@
       "location": "TextEditor:359",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_GetPalette",
-      "ret": "const Palette_opq",
+      "ret": "const Palette*",
       "retref": "&",
       "signature": "()const",
       "stname": "TextEditor"
@@ -3785,7 +3785,7 @@
   ],
   "TextEditor_SetAutoCompleteConfig": [
     {
-      "args": "(TextEditor* self,const AutoCompleteConfig_opq config)",
+      "args": "(TextEditor* self,const AutoCompleteConfig* config)",
       "argsT": [
         {
           "name": "self",
@@ -3959,7 +3959,7 @@
   ],
   "TextEditor_SetDefaultPalette": [
     {
-      "args": "(const Palette_opq aValue)",
+      "args": "(const Palette* aValue)",
       "argsT": [
         {
           "name": "aValue",
@@ -4168,7 +4168,7 @@
   ],
   "TextEditor_SetLanguage": [
     {
-      "args": "(TextEditor* self,const Language_opq l)",
+      "args": "(TextEditor* self,const Language* l)",
       "argsT": [
         {
           "name": "self",
@@ -4355,7 +4355,7 @@
   ],
   "TextEditor_SetPalette": [
     {
-      "args": "(TextEditor* self,const Palette_opq newPalette)",
+      "args": "(TextEditor* self,const Palette* newPalette)",
       "argsT": [
         {
           "name": "self",

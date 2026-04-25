@@ -594,27 +594,27 @@ CIMGUI_API void TextEditor_SpacesToTabs(TextEditor* self)
 {
     return self->SpacesToTabs();
 }
-CIMGUI_API void TextEditor_SetPalette(TextEditor* self,const Palette_opq newPalette)
+CIMGUI_API void TextEditor_SetPalette(TextEditor* self,const Palette* newPalette)
 {
     return self->SetPalette(*newPalette);
 }
-CIMGUI_API const Palette_opq TextEditor_GetPalette(TextEditor* self)
+CIMGUI_API const Palette* TextEditor_GetPalette(TextEditor* self)
 {
     return &self->GetPalette();
 }
-CIMGUI_API void TextEditor_SetDefaultPalette(const Palette_opq aValue)
+CIMGUI_API void TextEditor_SetDefaultPalette(const Palette* aValue)
 {
     return TextEditor::SetDefaultPalette(*aValue);
 }
-CIMGUI_API Palette_opq TextEditor_GetDefaultPalette()
+CIMGUI_API Palette* TextEditor_GetDefaultPalette()
 {
     return &TextEditor::GetDefaultPalette();
 }
-CIMGUI_API const Palette_opq TextEditor_GetDarkPalette()
+CIMGUI_API const Palette* TextEditor_GetDarkPalette()
 {
     return &TextEditor::GetDarkPalette();
 }
-CIMGUI_API const Palette_opq TextEditor_GetLightPalette()
+CIMGUI_API const Palette* TextEditor_GetLightPalette()
 {
     return &TextEditor::GetLightPalette();
 }
@@ -634,55 +634,55 @@ CIMGUI_API Glyph* Glyph_Glyph_WcharColor(ImWchar cp,Color col)
 {
     return IM_NEW(Glyph)(cp,col);
 }
-CIMGUI_API const Language_opq Language_C()
+CIMGUI_API const Language* Language_C()
 {
     return TextEditor::Language::C();
 }
-CIMGUI_API const Language_opq Language_Cpp()
+CIMGUI_API const Language* Language_Cpp()
 {
     return TextEditor::Language::Cpp();
 }
-CIMGUI_API const Language_opq Language_Cs()
+CIMGUI_API const Language* Language_Cs()
 {
     return TextEditor::Language::Cs();
 }
-CIMGUI_API const Language_opq Language_AngelScript()
+CIMGUI_API const Language* Language_AngelScript()
 {
     return TextEditor::Language::AngelScript();
 }
-CIMGUI_API const Language_opq Language_Lua()
+CIMGUI_API const Language* Language_Lua()
 {
     return TextEditor::Language::Lua();
 }
-CIMGUI_API const Language_opq Language_Python()
+CIMGUI_API const Language* Language_Python()
 {
     return TextEditor::Language::Python();
 }
-CIMGUI_API const Language_opq Language_Glsl()
+CIMGUI_API const Language* Language_Glsl()
 {
     return TextEditor::Language::Glsl();
 }
-CIMGUI_API const Language_opq Language_Hlsl()
+CIMGUI_API const Language* Language_Hlsl()
 {
     return TextEditor::Language::Hlsl();
 }
-CIMGUI_API const Language_opq Language_Json()
+CIMGUI_API const Language* Language_Json()
 {
     return TextEditor::Language::Json();
 }
-CIMGUI_API const Language_opq Language_Markdown()
+CIMGUI_API const Language* Language_Markdown()
 {
     return TextEditor::Language::Markdown();
 }
-CIMGUI_API const Language_opq Language_Sql()
+CIMGUI_API const Language* Language_Sql()
 {
     return TextEditor::Language::Sql();
 }
-CIMGUI_API void TextEditor_SetLanguage(TextEditor* self,const Language_opq l)
+CIMGUI_API void TextEditor_SetLanguage(TextEditor* self,const Language* l)
 {
     return self->SetLanguage(l);
 }
-CIMGUI_API const Language_opq TextEditor_GetLanguage(TextEditor* self)
+CIMGUI_API const Language* TextEditor_GetLanguage(TextEditor* self)
 {
     return self->GetLanguage();
 }
@@ -699,7 +699,7 @@ CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self,void(*cb)(const c
 {
     return self->IterateIdentifiers([cb](const std::string& identifier){cb(identifier.c_str());});
 }
-CIMGUI_API void TextEditor_SetAutoCompleteConfig(TextEditor* self,const AutoCompleteConfig_opq config)
+CIMGUI_API void TextEditor_SetAutoCompleteConfig(TextEditor* self,const AutoCompleteConfig* config)
 {
     return self->SetAutoCompleteConfig(config);
 }
@@ -819,7 +819,7 @@ CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* rig
 {
     return self->SetText(left,right);
 }
-CIMGUI_API void TextDiff_SetLanguage(TextDiff* self,const Language_opq l)
+CIMGUI_API void TextDiff_SetLanguage(TextDiff* self,const Language* l)
 {
     return self->SetLanguage(l);
 }
