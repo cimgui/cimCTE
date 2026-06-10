@@ -8,9 +8,15 @@ local cpp2ffi = require"cpp2ffi"
 local copyfile = cpp2ffi.copyfile
 --take script args---------------------------
 local COMPILER, CPRE = cpp2ffi.GetScriptArgs({},...)
+--str_subst
+local pat = [[ \t{%[%(]]
+local str_subst = {
+	[pat] = [[ \t\x7B[(]]
+}
 --------------------------------------------------------------------------
 --this table has the functions to be skipped in generation
 --------------------------------------------------------------------------
+
 local cimgui_manuals = {
     --TextEditor_SetText = true,
     --TextEditor_GetText = true,
@@ -63,7 +69,7 @@ local function parseImGuiHeader(header, names, modulename)
 
 	parser:set_manuals(cimgui_manuals, modulename)
 	parser.skipped = cimgui_skipped
-	--parser.UDTs = {"ImVec2","ImVec4","ImColor","ImRect"}
+	parser.str_subst = str_subst
 	parser.cimgui_inherited =  dofile([[../../cimgui/generator/output/structs_and_enums.lua]])
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
