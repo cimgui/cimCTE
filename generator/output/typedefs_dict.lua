@@ -7,5 +7,6 @@ local t={
   PopupData="struct PopupData",
   TextDiff="struct TextDiff",
   TextEditor="struct TextEditor",
+  TrieAutoComplete="struct TrieAutoComplete",
   VisPos="struct VisPos"}
  return t

@@ -6104,6 +6104,117 @@
       "stname": "TextEditor"
     }
   ],
+  "TrieAutoComplete_Connect": [
+    {
+      "args": "(TrieAutoComplete* self,TextEditor* editor)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TrieAutoComplete*"
+        },
+        {
+          "name": "editor",
+          "type": "TextEditor*"
+        }
+      ],
+      "argsoriginal": "(TextEditor* editor)",
+      "call_args": "(editor)",
+      "call_args_old": "(editor)",
+      "cimguiname": "TrieAutoComplete_Connect",
+      "defaults": {},
+      "funcname": "Connect",
+      "location": "TrieAutoComplete:40",
+      "namespace": "TrieAutoComplete",
+      "ov_cimguiname": "TrieAutoComplete_Connect",
+      "ret": "void",
+      "signature": "(TextEditor*)",
+      "stname": "TrieAutoComplete"
+    }
+  ],
+  "TrieAutoComplete_Disconnect": [
+    {
+      "args": "(TrieAutoComplete* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TrieAutoComplete*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "TrieAutoComplete_Disconnect",
+      "defaults": {},
+      "funcname": "Disconnect",
+      "location": "TrieAutoComplete:41",
+      "namespace": "TrieAutoComplete",
+      "ov_cimguiname": "TrieAutoComplete_Disconnect",
+      "ret": "void",
+      "signature": "()",
+      "stname": "TrieAutoComplete"
+    }
+  ],
+  "TrieAutoComplete_IsConnected": [
+    {
+      "args": "(TrieAutoComplete* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TrieAutoComplete*"
+        }
+      ],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "TrieAutoComplete_IsConnected",
+      "defaults": {},
+      "funcname": "IsConnected",
+      "location": "TrieAutoComplete:42",
+      "namespace": "TrieAutoComplete",
+      "ov_cimguiname": "TrieAutoComplete_IsConnected",
+      "ret": "bool",
+      "signature": "()const",
+      "stname": "TrieAutoComplete"
+    }
+  ],
+  "TrieAutoComplete_TrieAutoComplete": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "TrieAutoComplete_TrieAutoComplete",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "TrieAutoComplete",
+      "location": "TrieAutoComplete:38",
+      "namespace": "TrieAutoComplete",
+      "ov_cimguiname": "TrieAutoComplete_TrieAutoComplete",
+      "signature": "()",
+      "stname": "TrieAutoComplete"
+    }
+  ],
+  "TrieAutoComplete_destroy": [
+    {
+      "args": "(TrieAutoComplete* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TrieAutoComplete*"
+        }
+      ],
+      "call_args": "(self)",
+      "cimguiname": "TrieAutoComplete_destroy",
+      "defaults": {},
+      "destructor": true,
+      "location": "TrieAutoComplete:38",
+      "ov_cimguiname": "TrieAutoComplete_destroy",
+      "ret": "void",
+      "signature": "(TrieAutoComplete*)",
+      "stname": "TrieAutoComplete"
+    }
+  ],
   "VisPos_VisPos": [
     {
       "args": "()",

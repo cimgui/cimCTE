@@ -83,7 +83,14 @@ end
 --generation
 print("------------------generation with "..COMPILER.."------------------------")
 local modulename = "cimCTE"
-local parser1 = parseImGuiHeader([[../ImGuiColorTextEdit/TextDiff.h]], {[[TextEditor]],[[TextDiff]]}, modulename)
+local headerst = [[
+#include "../ImGuiColorTextEdit/TextDiff.h"
+#include "../ImGuiColorTextEdit/extras/TrieAutoComplete.h"
+]]
+
+cpp2ffi.save_data("headers.h",headerst)
+local parser1 = parseImGuiHeader("headers.h", {[[TextEditor]],[[TextDiff]],[[TrieAutoComplete]]}, modulename)
+os.remove"headers.h"
 parser1:do_parse()
 parser1:cimgui_generation(cimgui_header)
 parser1:save_output()

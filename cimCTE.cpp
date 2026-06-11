@@ -4,6 +4,7 @@
 #include "imgui_internal.h"
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "./ImGuiColorTextEdit/TextDiff.h"
+#include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
 #include "cimCTE.h"
 #include <cstring>
 
@@ -1029,6 +1030,26 @@ CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* rig
 CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c size,bool border)
 {
     return self->Render(title,ConvertToCPP_ImVec2(size),border);
+}
+CIMGUI_API TrieAutoComplete* TrieAutoComplete_TrieAutoComplete(void)
+{
+    return IM_NEW(TrieAutoComplete)();
+}
+CIMGUI_API void TrieAutoComplete_destroy(TrieAutoComplete* self)
+{
+    IM_DELETE(self);
+}
+CIMGUI_API void TrieAutoComplete_Connect(TrieAutoComplete* self,TextEditor* editor)
+{
+    return self->Connect(editor);
+}
+CIMGUI_API void TrieAutoComplete_Disconnect(TrieAutoComplete* self)
+{
+    return self->Disconnect();
+}
+CIMGUI_API bool TrieAutoComplete_IsConnected(TrieAutoComplete* self)
+{
+    return self->IsConnected();
 }
 
 ////////////////manually generated

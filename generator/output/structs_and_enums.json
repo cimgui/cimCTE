@@ -180,6 +180,7 @@
     "Scroll": "TextEditor:206",
     "TextDiff": "TextDiff:22",
     "TextEditor": "TextEditor:35",
+    "TrieAutoComplete": "TrieAutoComplete:36",
     "VisPos": "TextEditor:72"
   },
   "nonPOD": {
@@ -281,6 +282,7 @@
     "Iterator": true,
     "TextDiff": true,
     "TextEditor": true,
+    "TrieAutoComplete": true,
     "VisPos": true
   },
   "nonPOD_used": {
@@ -375,6 +377,7 @@
     ],
     "TextDiff": [],
     "TextEditor": [],
+    "TrieAutoComplete": [],
     "VisPos": [
       {
         "name": "row",

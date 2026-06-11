@@ -123,6 +123,10 @@ typedef struct TextDiff TextDiff;
 struct TextDiff
 {
 };
+typedef struct TrieAutoComplete TrieAutoComplete;
+struct TrieAutoComplete
+{
+};
 #else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
@@ -409,6 +413,11 @@ CIMGUI_API const Palette* TextDiff_GetPalette(TextDiff* self);
 CIMGUI_API void TextDiff_SetFocus(TextDiff* self);
 CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* right);
 CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c size,bool border);
+CIMGUI_API TrieAutoComplete* TrieAutoComplete_TrieAutoComplete(void);
+CIMGUI_API void TrieAutoComplete_destroy(TrieAutoComplete* self);
+CIMGUI_API void TrieAutoComplete_Connect(TrieAutoComplete* self,TextEditor* editor);
+CIMGUI_API void TrieAutoComplete_Disconnect(TrieAutoComplete* self);
+CIMGUI_API bool TrieAutoComplete_IsConnected(TrieAutoComplete* self);
 
 
 ///////////////manual generated

@@ -13,6 +13,7 @@ file(GLOB IMGUI_SOURCES
     cimCTE.cpp
     ImGuiColorTextEdit/TextEditor.cpp
     ImGuiColorTextEdit/TextDiff.cpp
+    ImGuiColorTextEdit/extras/TrieAutoComplete.cpp
 )
 
 if(IMGUI_FREETYPE)

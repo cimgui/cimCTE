@@ -2,6 +2,7 @@
 #include "imgui_internal.h"
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "./ImGuiColorTextEdit/TextDiff.h"
+#include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
 #include "cimCTE.h"
 #include <cstring>
 
