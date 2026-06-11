@@ -1,5 +1,27 @@
 {
   "enums": {
+    "BreakOption": [
+      {
+        "calc_value": 0,
+        "name": "mustBreak",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "allowBreak",
+        "value": "1"
+      },
+      {
+        "calc_value": 2,
+        "name": "noBreak",
+        "value": "2"
+      },
+      {
+        "calc_value": 3,
+        "name": "undefined",
+        "value": "3"
+      }
+    ],
     "Color": [
       {
         "calc_value": 0,
@@ -136,29 +158,33 @@
     ]
   },
   "enumtypes": {
+    "BreakOption": "char",
     "Color": "char"
   },
   "locations": {
-    "AutoCompleteConfig": "TextEditor:525",
-    "AutoCompleteState": "TextEditor:490",
-    "Change": "TextEditor:246",
-    "CodePoint": "TextEditor:628",
-    "Color": "TextEditor:327",
-    "CursorPosition": "TextEditor:152",
-    "CursorSelection": "TextEditor:159",
-    "Decorator": "TextEditor:282",
-    "Glyph": "TextEditor:367",
-    "Iterator": "TextEditor:381",
-    "Language": "TextEditor:411",
-    "Palette": "TextEditor:353",
-    "Scroll": "TextEditor:176",
+    "AutoCompleteConfig": "TextEditor:599",
+    "AutoCompleteState": "TextEditor:569",
+    "BreakOption": "TextEditor:430",
+    "Change": "TextEditor:291",
+    "CodePoint": "TextEditor:653",
+    "Color": "TextEditor:391",
+    "Decorator": "TextEditor:323",
+    "DocPos": "TextEditor:45",
+    "DocSelection": "TextEditor:64",
+    "Glyph": "TextEditor:438",
+    "Iterator": "TextEditor:457",
+    "Language": "TextEditor:487",
+    "LineBreakConfig": "TextEditor:736",
+    "Palette": "TextEditor:417",
+    "PopupData": "TextEditor:345",
+    "Scroll": "TextEditor:206",
     "TextDiff": "TextDiff:22",
-    "TextEditor": "TextEditor:34",
-    "Trie": "TextEditor:578"
+    "TextEditor": "TextEditor:35",
+    "VisPos": "TextEditor:72"
   },
   "nonPOD": {
-    "CursorPosition": true,
-    "CursorSelection": true,
+    "DocPos": true,
+    "DocSelection": true,
     "Glyph": true,
     "ImBitArray": "inherited",
     "ImColor": "inherited",
@@ -255,12 +281,13 @@
     "Iterator": true,
     "TextDiff": true,
     "TextEditor": true,
-    "Trie": true
+    "VisPos": true
   },
   "nonPOD_used": {
-    "CursorPosition": true,
-    "CursorSelection": true,
-    "ImVec2": "inherited"
+    "DocPos": true,
+    "DocSelection": true,
+    "ImVec2": "inherited",
+    "VisPos": true
   },
   "opaque_structs": {
     "AutoCompleteConfig": "TextEditor::AutoCompleteConfig",
@@ -268,6 +295,7 @@
     "Change": "TextEditor::Change",
     "Iterator": "TextEditor::Iterator",
     "Language": "TextEditor::Language",
+    "LineBreakConfig": "TextEditor::LineBreakConfig",
     "Palette": "TextEditor::Palette"
   },
   "structs": {
@@ -275,30 +303,10 @@
     "AutoCompleteState": [],
     "Change": [],
     "CodePoint": [],
-    "CursorPosition": [
-      {
-        "name": "line",
-        "type": "int"
-      },
-      {
-        "name": "column",
-        "type": "int"
-      }
-    ],
-    "CursorSelection": [
-      {
-        "name": "start",
-        "type": "CursorPosition"
-      },
-      {
-        "name": "end",
-        "type": "CursorPosition"
-      }
-    ],
     "Decorator": [
       {
         "name": "line",
-        "type": "int"
+        "type": "size_t"
       },
       {
         "name": "width",
@@ -317,6 +325,26 @@
         "type": "void*"
       }
     ],
+    "DocPos": [
+      {
+        "name": "line",
+        "type": "size_t"
+      },
+      {
+        "name": "index",
+        "type": "size_t"
+      }
+    ],
+    "DocSelection": [
+      {
+        "name": "start",
+        "type": "DocPos"
+      },
+      {
+        "name": "end",
+        "type": "DocPos"
+      }
+    ],
     "Glyph": [
       {
         "name": "codepoint",
@@ -325,18 +353,37 @@
       {
         "name": "color",
         "type": "Color"
+      },
+      {
+        "name": "breakOption",
+        "type": "BreakOption"
       }
     ],
     "Iterator": [],
     "Language": [],
+    "LineBreakConfig": [],
     "Palette": [],
-    "TextDiff": [
+    "PopupData": [
       {
-        "name": "_TextEditor",
-        "type": "TextEditor"
+        "name": "pos",
+        "type": "DocPos"
+      },
+      {
+        "name": "userData",
+        "type": "void*"
       }
     ],
+    "TextDiff": [],
     "TextEditor": [],
-    "Trie": []
+    "VisPos": [
+      {
+        "name": "row",
+        "type": "size_t"
+      },
+      {
+        "name": "column",
+        "type": "size_t"
+      }
+    ]
   }
 }

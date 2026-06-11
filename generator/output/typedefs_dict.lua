@@ -1,10 +1,11 @@
 local t={
   CodePoint="struct CodePoint",
-  CursorPosition="struct CursorPosition",
-  CursorSelection="struct CursorSelection",
   Decorator="struct Decorator",
+  DocPos="struct DocPos",
+  DocSelection="struct DocSelection",
   Glyph="struct Glyph",
+  PopupData="struct PopupData",
   TextDiff="struct TextDiff",
   TextEditor="struct TextEditor",
-  Trie="struct Trie"}
+  VisPos="struct VisPos"}
  return t
