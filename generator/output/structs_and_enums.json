@@ -155,6 +155,28 @@
         "name": "alignBottom",
         "value": "2"
       }
+    ],
+    "Type": [
+      {
+        "calc_value": 0,
+        "name": "success",
+        "value": "0"
+      },
+      {
+        "calc_value": 1,
+        "name": "warning",
+        "value": "1"
+      },
+      {
+        "calc_value": 2,
+        "name": "error",
+        "value": "2"
+      },
+      {
+        "calc_value": 3,
+        "name": "info",
+        "value": "3"
+      }
     ]
   },
   "enumtypes": {
@@ -175,12 +197,14 @@
     "Iterator": "TextEditor:457",
     "Language": "TextEditor:487",
     "LineBreakConfig": "TextEditor:736",
+    "Notifications": "Notifications:37",
     "Palette": "TextEditor:417",
     "PopupData": "TextEditor:345",
     "Scroll": "TextEditor:206",
     "TextDiff": "TextDiff:22",
     "TextEditor": "TextEditor:35",
     "TrieAutoComplete": "TrieAutoComplete:36",
+    "Type": "Notifications:40",
     "VisPos": "TextEditor:72"
   },
   "nonPOD": {
@@ -280,6 +304,7 @@
     "ImVec4": "inherited",
     "ImVector": "inherited",
     "Iterator": true,
+    "Notifications": true,
     "TextDiff": true,
     "TextEditor": true,
     "TrieAutoComplete": true,
@@ -364,6 +389,7 @@
     "Iterator": [],
     "Language": [],
     "LineBreakConfig": [],
+    "Notifications": [],
     "Palette": [],
     "PopupData": [
       {

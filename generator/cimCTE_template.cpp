@@ -3,13 +3,29 @@
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "./ImGuiColorTextEdit/TextDiff.h"
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
+#include "./ImGuiColorTextEdit/extras/Notifications.h"
 #include "cimCTE.h"
 #include <cstring>
 
 
 #include "auto_funcs.cpp"
 ////////////////manually generated
-
+CIMGUI_API Palette* Palette_Palette()
+{
+    return IM_NEW(Palette)();
+}
+CIMGUI_API void Palette_destroy(Palette* self)
+{
+    IM_DELETE(self);
+}
+CIMGUI_API void Palette_set(Palette* self,ImU32 col,int pos)
+{
+	(*self)[pos] = col;
+}
+CIMGUI_API ImU32 Palette_const_get(const Palette* self,Color color)
+{
+	return self->get(color);
+}
 CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self)
 {
     std::string str = self->GetText();

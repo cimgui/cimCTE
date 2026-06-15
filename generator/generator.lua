@@ -18,10 +18,9 @@ local str_subst = {
 --------------------------------------------------------------------------
 
 local cimgui_manuals = {
-    --TextEditor_SetText = true,
-    --TextEditor_GetText = true,
-	--TextEditor_ImGuiDebugPanel = true
-	--TextEditor_IterateIdentifiers = true
+    Palette_Palette = true,
+	Palette_destroy = true,
+	Palette_set = true,
 }
 local cimgui_skipped = {
 	--TextEditor_GetText = true,
@@ -86,10 +85,11 @@ local modulename = "cimCTE"
 local headerst = [[
 #include "../ImGuiColorTextEdit/TextDiff.h"
 #include "../ImGuiColorTextEdit/extras/TrieAutoComplete.h"
+#include "../ImGuiColorTextEdit/extras/Notifications.h"
 ]]
 
 cpp2ffi.save_data("headers.h",headerst)
-local parser1 = parseImGuiHeader("headers.h", {[[TextEditor]],[[TextDiff]],[[TrieAutoComplete]]}, modulename)
+local parser1 = parseImGuiHeader("headers.h", {[[TextEditor]],[[TextDiff]],[[TrieAutoComplete]],[[Notifications]]}, modulename)
 os.remove"headers.h"
 parser1:do_parse()
 parser1:cimgui_generation(cimgui_header)

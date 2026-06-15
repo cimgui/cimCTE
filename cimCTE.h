@@ -127,6 +127,16 @@ typedef struct TrieAutoComplete TrieAutoComplete;
 struct TrieAutoComplete
 {
 };
+typedef struct Notifications Notifications;
+typedef enum {
+  success,
+  warning,
+  error,
+  info
+ }Type;
+struct Notifications
+{
+};
 #else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
@@ -165,6 +175,7 @@ typedef TextEditor::VisPos VisPos;
 typedef TextEditor::BreakOption BreakOption;
 typedef TextEditor::Color Color;
 typedef TextEditor::Scroll Scroll;
+typedef Notifications::Type Type;
 typedef std::vector<std::string> std_vector_std_string;
 typedef TextEditor::AutoCompleteConfig AutoCompleteConfig;
 typedef TextEditor::AutoCompleteState AutoCompleteState;
@@ -305,16 +316,16 @@ CIMGUI_API void TextEditor_SetDeletor(TextEditor* self,void(*cb)(size_t,void*));
 CIMGUI_API void TextEditor_SetUserData(TextEditor* self,size_t line,void* data);
 CIMGUI_API void* TextEditor_GetUserData(TextEditor* self,size_t line);
 CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(size_t,void*));
-CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,float width,void(*cb)(Decorator&));
+CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,float width,void(*cb)(Decorator*));
 CIMGUI_API void TextEditor_ClearLineDecorator(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self);
-CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData&));
+CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData*));
 CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineNumberContextMenuCallback(TextEditor* self);
-CIMGUI_API void TextEditor_SetTextContextMenuCallback(TextEditor* self,void(*cb)(PopupData&));
+CIMGUI_API void TextEditor_SetTextContextMenuCallback(TextEditor* self,void(*cb)(PopupData*));
 CIMGUI_API void TextEditor_ClearTextContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasTextContextMenuCallback(TextEditor* self);
-CIMGUI_API void TextEditor_SetTextHoverCallback(TextEditor* self,void(*cb)(PopupData&));
+CIMGUI_API void TextEditor_SetTextHoverCallback(TextEditor* self,void(*cb)(PopupData*));
 CIMGUI_API void TextEditor_ClearTextHoverCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasTextHoverCallback(TextEditor* self);
 CIMGUI_API void TextEditor_FoldAroundLine(TextEditor* self,size_t line);
@@ -337,6 +348,7 @@ CIMGUI_API void TextEditor_StripTrailingWhitespaces(TextEditor* self);
 CIMGUI_API void TextEditor_FilterLines(TextEditor* self,const char*(*cb)(const char*));
 CIMGUI_API void TextEditor_TabsToSpaces(TextEditor* self);
 CIMGUI_API void TextEditor_SpacesToTabs(TextEditor* self);
+CIMGUI_API ImU32 Palette_get(Palette* self,Color color);
 CIMGUI_API void TextEditor_SetPalette(TextEditor* self,const Palette* newPalette);
 CIMGUI_API const Palette* TextEditor_GetPalette(TextEditor* self);
 CIMGUI_API void TextEditor_SetDefaultPalette(const Palette* aValue);
@@ -347,6 +359,9 @@ CIMGUI_API Glyph* Glyph_Glyph_Nil(void);
 CIMGUI_API void Glyph_destroy(Glyph* self);
 CIMGUI_API Glyph* Glyph_Glyph_Wchar(ImWchar cp);
 CIMGUI_API Glyph* Glyph_Glyph_WcharColor(ImWchar cp,Color col);
+CIMGUI_API Iterator* Iterator_Iterator_Nil(void);
+CIMGUI_API void Iterator_destroy(Iterator* self);
+CIMGUI_API Iterator* Iterator_Iterator_GlyphPtr(Glyph* g);
 CIMGUI_API const Language* Language_C(void);
 CIMGUI_API const Language* Language_Cpp(void);
 CIMGUI_API const Language* Language_Cs(void);
@@ -405,10 +420,10 @@ CIMGUI_API void TextDiff_SetShowTabsEnabled(TextDiff* self,bool value);
 CIMGUI_API bool TextDiff_IsShowTabsEnabled(TextDiff* self);
 CIMGUI_API void TextDiff_SetShowScrollbarMiniMapEnabled(TextDiff* self,bool value);
 CIMGUI_API bool TextDiff_IsShowScrollbarMiniMapEnabled(TextDiff* self);
-CIMGUI_API void TextDiff_SetLanguage(TextDiff* self,const TextEditor::Language* language);
+CIMGUI_API void TextDiff_SetLanguage(TextDiff* self,const Language* language);
 CIMGUI_API const Language* TextDiff_GetLanguage(TextDiff* self);
 CIMGUI_API void TextDiff_SetColors(TextDiff* self,ImU32 ac,ImU32 dc);
-CIMGUI_API void TextDiff_SetPalette(TextDiff* self,const TextEditor::Palette newPalette);
+CIMGUI_API void TextDiff_SetPalette(TextDiff* self,const Palette* newPalette);
 CIMGUI_API const Palette* TextDiff_GetPalette(TextDiff* self);
 CIMGUI_API void TextDiff_SetFocus(TextDiff* self);
 CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* right);
@@ -418,9 +433,17 @@ CIMGUI_API void TrieAutoComplete_destroy(TrieAutoComplete* self);
 CIMGUI_API void TrieAutoComplete_Connect(TrieAutoComplete* self,TextEditor* editor);
 CIMGUI_API void TrieAutoComplete_Disconnect(TrieAutoComplete* self);
 CIMGUI_API bool TrieAutoComplete_IsConnected(TrieAutoComplete* self);
+CIMGUI_API Notifications* Notifications_Notifications(void);
+CIMGUI_API void Notifications_destroy(Notifications* self);
+CIMGUI_API void Notifications_Add(Notifications* self,Type type,const char* message,int dismissTime);
+CIMGUI_API void Notifications_Render(Notifications* self,ImVec2_c pos);
 
 
 ///////////////manual generated
+CIMGUI_API Palette* Palette_Palette();
+CIMGUI_API void Palette_destroy(Palette*);
+CIMGUI_API void Palette_set(Palette*,ImU32,int);
+CIMGUI_API ImU32 Palette_const_get(const Palette*,Color);
 //allocates new memory that must be freed with TextEditor_GetText_free
 CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self);
 CIMGUI_API void TextEditor_GetText_free(char* ptr);

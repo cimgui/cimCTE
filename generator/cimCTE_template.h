@@ -13,6 +13,10 @@ PLACE_STRUCTS_C
 #include "auto_funcs.h"
 
 ///////////////manual generated
+CIMGUI_API Palette* Palette_Palette();
+CIMGUI_API void Palette_destroy(Palette*);
+CIMGUI_API void Palette_set(Palette*,ImU32,int);
+CIMGUI_API ImU32 Palette_const_get(const Palette*,Color);
 //allocates new memory that must be freed with TextEditor_GetText_free
 CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self);
 CIMGUI_API void TextEditor_GetText_free(char* ptr);

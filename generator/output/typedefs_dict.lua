@@ -4,6 +4,7 @@ local t={
   DocPos="struct DocPos",
   DocSelection="struct DocSelection",
   Glyph="struct Glyph",
+  Notifications="struct Notifications",
   PopupData="struct PopupData",
   TextDiff="struct TextDiff",
   TextEditor="struct TextEditor",

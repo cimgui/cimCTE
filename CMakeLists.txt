@@ -14,6 +14,7 @@ file(GLOB IMGUI_SOURCES
     ImGuiColorTextEdit/TextEditor.cpp
     ImGuiColorTextEdit/TextDiff.cpp
     ImGuiColorTextEdit/extras/TrieAutoComplete.cpp
+    ImGuiColorTextEdit/extras/Notifications.h
 )
 
 if(IMGUI_FREETYPE)
@@ -62,3 +63,10 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION  .
     ARCHIVE DESTINATION  .
 )
+
+#test
+set(CIMGUI_TEST "no" CACHE STRING "Enable compilation of a test unit based on imgui null")
+
+if (CIMGUI_TEST)
+  add_subdirectory(test)
+endif ()
