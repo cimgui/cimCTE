@@ -39,7 +39,8 @@ CIMGUI_API void TextEditor_GetText_free(char* ptr)
 }
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
 {
-    static std::string str = self->GetText();
+    static std::string str;
+    str.assign(self->GetText());
     return str.c_str();
 }
 // CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))

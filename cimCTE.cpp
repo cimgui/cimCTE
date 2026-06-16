@@ -283,27 +283,32 @@ CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* text)
 }
 CIMGUI_API const char* TextEditor_GetText(TextEditor* self)
 {
-    static std::string str = self->GetText();
+    static std::string str;
+    str.assign(self->GetText());
     return str.c_str();
 }
 CIMGUI_API const char* TextEditor_GetCursorText(TextEditor* self,size_t cursor)
 {
-    static std::string str = self->GetCursorText(cursor);
+    static std::string str;
+    str.assign(self->GetCursorText(cursor));
     return str.c_str();
 }
 CIMGUI_API const char* TextEditor_GetLineText(TextEditor* self,size_t line)
 {
-    static std::string str = self->GetLineText(line);
+    static std::string str;
+    str.assign(self->GetLineText(line));
     return str.c_str();
 }
 CIMGUI_API const char* TextEditor_GetSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end)
 {
-    static std::string str = self->GetSectionText(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end));
+    static std::string str;
+    str.assign(self->GetSectionText(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end)));
     return str.c_str();
 }
 CIMGUI_API const char* TextEditor_GetSectionText_DocSelection(TextEditor* self,DocSelection_c selection)
 {
-    static std::string str = self->GetSectionText(ConvertToCPP_DocSelection(selection));
+    static std::string str;
+    str.assign(self->GetSectionText(ConvertToCPP_DocSelection(selection)));
     return str.c_str();
 }
 CIMGUI_API void TextEditor_ReplaceSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end,const char* text)
@@ -456,7 +461,8 @@ CIMGUI_API DocPos_c TextEditor_GetDocPosAtMousePos(TextEditor* self,const ImVec2
 }
 CIMGUI_API const char* TextEditor_GetWordAtMousePos(TextEditor* self,const ImVec2_c mousePos)
 {
-    static std::string str = self->GetWordAtMousePos(ConvertToCPP_ImVec2(mousePos));
+    static std::string str;
+    str.assign(self->GetWordAtMousePos(ConvertToCPP_ImVec2(mousePos)));
     return str.c_str();
 }
 CIMGUI_API void TextEditor_ScrollToLine(TextEditor* self,size_t line,Scroll alignment)
@@ -841,7 +847,8 @@ CIMGUI_API bool TextEditor_HasLanguage(TextEditor* self)
 }
 CIMGUI_API const char* TextEditor_GetLanguageName(TextEditor* self)
 {
-    static std::string str = self->GetLanguageName();
+    static std::string str;
+    str.assign(self->GetLanguageName());
     return str.c_str();
 }
 CIMGUI_API void TextEditor_SetLanguageChangeCallback(TextEditor* self,void(*cb)())
@@ -1115,7 +1122,8 @@ CIMGUI_API void TextEditor_GetText_free(char* ptr)
 }
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
 {
-    static std::string str = self->GetText();
+    static std::string str;
+    str.assign(self->GetText());
     return str.c_str();
 }
 // CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
