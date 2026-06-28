@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.5)
 set(PROJECT_NAME cimCTE)
 project(${PROJECT_NAME})
 
+#set (CMAKE_CXX_STANDARD 17) #needed by goossens/ImGuiColorTextEdit
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 set(IMGUI_LIBRARIES )
 file(GLOB IMGUI_SOURCES
     ../cimgui/cimgui.cpp
@@ -13,6 +18,7 @@ file(GLOB IMGUI_SOURCES
     cimCTE.cpp
     ImGuiColorTextEdit/TextEditor.cpp
     ImGuiColorTextEdit/TextDiff.cpp
+    ImGuiColorTextEdit/example/dejavu.cpp
     ImGuiColorTextEdit/extras/TrieAutoComplete.cpp
     ImGuiColorTextEdit/extras/Notifications.h
 )
@@ -28,7 +34,6 @@ if(IMGUI_FREETYPE)
 endif(IMGUI_FREETYPE)
 
 set(IMGUI_STATIC "no" CACHE STRING "Build as a static library")
-set (CMAKE_CXX_STANDARD 17) #needed by goossens/ImGuiColorTextEdit
 
 if (IMGUI_STATIC)
     add_library(${PROJECT_NAME} STATIC ${IMGUI_SOURCES})

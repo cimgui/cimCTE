@@ -4,6 +4,7 @@
 #include "./ImGuiColorTextEdit/TextDiff.h"
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
 #include "./ImGuiColorTextEdit/extras/Notifications.h"
+#include "./ImGuiColorTextEdit/example/dejavu.h"
 #include "cimCTE.h"
 #include <cstring>
 
@@ -20,11 +21,11 @@ CIMGUI_API void Palette_destroy(Palette* self)
 }
 CIMGUI_API void Palette_set(Palette* self,ImU32 col,int pos)
 {
-	(*self)[pos] = col;
+    (*self)[pos] = col;
 }
 CIMGUI_API ImU32 Palette_const_get(const Palette* self,Color color)
 {
-	return self->get(color);
+    return self->get(color);
 }
 CIMGUI_API char* TextEditor_GetText_alloc(TextEditor* self)
 {
@@ -43,12 +44,26 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     str.assign(self->GetText());
     return str.c_str();
 }
-// CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self, void(*cb)(const char *))
-// {
-	// self->IterateIdentifiers([cb](const std::string& identifier) {
-		// cb(identifier.c_str());
-	// });
-// }
+
+CIMGUI_API void SetDejavu()
+{
+    auto& io = ImGui::GetIO();
+    ImFontConfig config;
+    std::memcpy(config.Name, "DejaVu", 7);
+    config.FontDataOwnedByAtlas = false;
+    config.OversampleH = 1;
+    config.OversampleV = 1;
+#ifdef IMGUI_ENABLE_FREETYPE
+    config.FontLoaderFlags = ImGuiFreeTypeLoaderFlags_MonoHinting | ImGuiFreeTypeLoaderFlags_Monochrome | ImGuiFreeTypeLoaderFlags_Bold;
+#endif
+    io.Fonts->Clear();
+    io.Fonts->AddFontFromMemoryCompressedTTF((void*) &dejavu, dejavuSize, 15.0f, &config);
+#ifdef IMGUI_ENABLE_FREETYPE
+    io.Fonts->SetFontLoader(ImGuiFreeType::GetFontLoader());
+#else
+    io.Fonts->SetFontLoader(ImFontAtlasGetFontLoaderForStbTruetype());
+#endif
+}
 
 
 
