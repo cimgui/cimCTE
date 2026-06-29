@@ -248,7 +248,7 @@ CIMGUI_API void TextEditor_ReplaceSectionText_DocSelection(TextEditor* self,cons
 CIMGUI_API void TextEditor_ClearText(TextEditor* self);
 CIMGUI_API bool TextEditor_IsEmpty(TextEditor* self);
 CIMGUI_API size_t TextEditor_GetLineCount(TextEditor* self);
-CIMGUI_API void TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,bool border);
+CIMGUI_API void TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags);
 CIMGUI_API void TextEditor_SetFocus(TextEditor* self);
 CIMGUI_API void TextEditor_Cut(TextEditor* self);
 CIMGUI_API void TextEditor_Copy(TextEditor* self);
@@ -427,7 +427,7 @@ CIMGUI_API void TextDiff_SetPalette(TextDiff* self,const Palette* newPalette);
 CIMGUI_API const Palette* TextDiff_GetPalette(TextDiff* self);
 CIMGUI_API void TextDiff_SetFocus(TextDiff* self);
 CIMGUI_API void TextDiff_SetText(TextDiff* self,const char* left,const char* right);
-CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c size,bool border);
+CIMGUI_API void TextDiff_Render(TextDiff* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags);
 CIMGUI_API TrieAutoComplete* TrieAutoComplete_TrieAutoComplete(void);
 CIMGUI_API void TrieAutoComplete_destroy(TrieAutoComplete* self);
 CIMGUI_API void TrieAutoComplete_Connect(TrieAutoComplete* self,TextEditor* editor);
