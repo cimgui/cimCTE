@@ -54,7 +54,7 @@ CIMGUI_API void SetDejavu()
     config.OversampleH = 1;
     config.OversampleV = 1;
 #ifdef IMGUI_ENABLE_FREETYPE
-    config.FontLoaderFlags = ImGuiFreeTypeLoaderFlags_MonoHinting | ImGuiFreeTypeLoaderFlags_Monochrome | ImGuiFreeTypeLoaderFlags_Bold;
+    config.FontLoaderFlags = ImGuiFreeTypeLoaderFlags_MonoHinting;
 #endif
     io.Fonts->Clear();
     io.Fonts->AddFontFromMemoryCompressedTTF((void*) &dejavu, dejavuSize, 15.0f, &config);

@@ -306,7 +306,7 @@ CIMGUI_API const char* TextEditor_GetSectionText_DocPos(TextEditor* self,DocPos_
     str.assign(self->GetSectionText(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end)));
     return str.c_str();
 }
-CIMGUI_API const char* TextEditor_GetSectionText_DocSelection(TextEditor* self,DocSelection_c selection)
+CIMGUI_API const char* TextEditor_GetSectionText_DocSelection(TextEditor* self,const DocSelection_c selection)
 {
     static std::string str;
     str.assign(self->GetSectionText(ConvertToCPP_DocSelection(selection)));
@@ -316,7 +316,7 @@ CIMGUI_API void TextEditor_ReplaceSectionText_DocPos(TextEditor* self,DocPos_c s
 {
     return self->ReplaceSectionText(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end),text);
 }
-CIMGUI_API void TextEditor_ReplaceSectionText_DocSelection(TextEditor* self,DocSelection_c selection,const char* text)
+CIMGUI_API void TextEditor_ReplaceSectionText_DocSelection(TextEditor* self,const DocSelection_c selection,const char* text)
 {
     return self->ReplaceSectionText(ConvertToCPP_DocSelection(selection),text);
 }
@@ -1137,7 +1137,7 @@ CIMGUI_API void SetDejavu()
     config.OversampleH = 1;
     config.OversampleV = 1;
 #ifdef IMGUI_ENABLE_FREETYPE
-    config.FontLoaderFlags = ImGuiFreeTypeLoaderFlags_MonoHinting | ImGuiFreeTypeLoaderFlags_Monochrome | ImGuiFreeTypeLoaderFlags_Bold;
+    config.FontLoaderFlags = ImGuiFreeTypeLoaderFlags_MonoHinting;
 #endif
     io.Fonts->Clear();
     io.Fonts->AddFontFromMemoryCompressedTTF((void*) &dejavu, dejavuSize, 15.0f, &config);

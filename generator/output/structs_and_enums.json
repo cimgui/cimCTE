@@ -184,11 +184,11 @@
     "Color": "char"
   },
   "locations": {
-    "AutoCompleteConfig": "TextEditor:613",
-    "AutoCompleteState": "TextEditor:583",
+    "AutoCompleteConfig": "TextEditor:619",
+    "AutoCompleteState": "TextEditor:589",
     "BreakOption": "TextEditor:430",
     "Change": "TextEditor:291",
-    "CodePoint": "TextEditor:667",
+    "CodePoint": "TextEditor:673",
     "Color": "TextEditor:391",
     "Decorator": "TextEditor:323",
     "DocPos": "TextEditor:45",
@@ -196,7 +196,7 @@
     "Glyph": "TextEditor:438",
     "Iterator": "TextEditor:457",
     "Language": "TextEditor:487",
-    "LineBreakConfig": "TextEditor:750",
+    "LineBreakConfig": "TextEditor:756",
     "Notifications": "Notifications:37",
     "Palette": "TextEditor:417",
     "PopupData": "TextEditor:345",
