@@ -278,6 +278,30 @@ CIMGUI_API bool TextEditor_IsMiddleMousePanMode(TextEditor* self)
 {
     return self->IsMiddleMousePanMode();
 }
+CIMGUI_API void TextEditor_SetLineNumberLeftMargin(TextEditor* self,size_t value)
+{
+    return self->SetLineNumberLeftMargin(value);
+}
+CIMGUI_API size_t TextEditor_GetLineNumberLeftMargin(TextEditor* self)
+{
+    return self->GetLineNumberLeftMargin();
+}
+CIMGUI_API void TextEditor_SetDecorationLeftMargin(TextEditor* self,size_t value)
+{
+    return self->SetDecorationLeftMargin(value);
+}
+CIMGUI_API size_t TextEditor_GetDecorationLeftMargin(TextEditor* self)
+{
+    return self->GetDecorationLeftMargin();
+}
+CIMGUI_API void TextEditor_SetTextLeftMargin(TextEditor* self,size_t value)
+{
+    return self->SetTextLeftMargin(value);
+}
+CIMGUI_API size_t TextEditor_GetTextLeftMargin(TextEditor* self)
+{
+    return self->GetTextLeftMargin();
+}
 CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* text)
 {
     return self->SetText(text);
@@ -606,7 +630,7 @@ CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(size_t,voi
 {
     return self->IterateUserData([cb](size_t line,void* data){cb(line,data);});
 }
-CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,float width,void(*cb)(Decorator*))
+CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,size_t width,void(*cb)(Decorator*))
 {
     return self->SetLineDecorator(width,[cb](Decorator& decorator){cb(&decorator);});
 }
