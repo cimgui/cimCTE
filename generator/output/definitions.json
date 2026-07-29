@@ -638,11 +638,11 @@
       "argsT": [
         {
           "name": "start",
-          "type": "DocPos_c"
+          "type": "DocPos"
         },
         {
           "name": "end",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -1096,7 +1096,7 @@
         },
         {
           "name": "pos",
-          "type": "ImVec2_c"
+          "type": "ImVec2"
         }
       ],
       "argsoriginal": "(ImVec2 pos)",
@@ -1405,7 +1405,7 @@
         },
         {
           "name": "size",
-          "type": "const ImVec2_c"
+          "type": "const ImVec2"
         },
         {
           "name": "childFlags",
@@ -2271,7 +2271,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -2629,7 +2629,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2_c"
+          "type": "const ImVec2"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -3082,11 +3082,11 @@
         },
         {
           "name": "start",
-          "type": "DocPos_c"
+          "type": "DocPos"
         },
         {
           "name": "end",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -3113,7 +3113,7 @@
         },
         {
           "name": "selection",
-          "type": "const DocSelection_c"
+          "type": "const DocSelection"
         }
       ],
       "argsoriginal": "(const DocSelection& selection)",
@@ -3263,7 +3263,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2_c"
+          "type": "const ImVec2"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -3568,7 +3568,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -3795,7 +3795,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2_c"
+          "type": "const ImVec2"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -4052,7 +4052,7 @@
         },
         {
           "name": "pos",
-          "type": "VisPos_c"
+          "type": "VisPos"
         }
       ],
       "argsoriginal": "(VisPos pos)",
@@ -4277,7 +4277,7 @@
         },
         {
           "name": "size",
-          "type": "const ImVec2_c"
+          "type": "const ImVec2"
         },
         {
           "name": "childFlags",
@@ -4316,11 +4316,11 @@
         },
         {
           "name": "start",
-          "type": "DocPos_c"
+          "type": "DocPos"
         },
         {
           "name": "end",
-          "type": "DocPos_c"
+          "type": "DocPos"
         },
         {
           "name": "text",
@@ -4349,7 +4349,7 @@
         },
         {
           "name": "selection",
-          "type": "const DocSelection_c"
+          "type": "const DocSelection"
         },
         {
           "name": "text",
@@ -4683,11 +4683,11 @@
         },
         {
           "name": "start",
-          "type": "DocPos_c"
+          "type": "DocPos"
         },
         {
           "name": "end",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -4959,7 +4959,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos_c"
+          "type": "DocPos"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -6327,7 +6327,7 @@
         },
         {
           "name": "pos",
-          "type": "VisPos_c"
+          "type": "VisPos"
         }
       ],
       "argsoriginal": "(VisPos pos)",
