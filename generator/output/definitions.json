@@ -638,11 +638,11 @@
       "argsT": [
         {
           "name": "start",
-          "type": "DocPos"
+          "type": "DocPos_c"
         },
         {
           "name": "end",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -1045,7 +1045,7 @@
         },
         {
           "name": "message",
-          "type": "const std::string"
+          "type": "const char*"
         },
         {
           "name": "dismissTime",
@@ -1096,7 +1096,7 @@
         },
         {
           "name": "pos",
-          "type": "ImVec2"
+          "type": "ImVec2_c"
         }
       ],
       "argsoriginal": "(ImVec2 pos)",
@@ -1405,7 +1405,7 @@
         },
         {
           "name": "size",
-          "type": "const ImVec2"
+          "type": "const ImVec2_c"
         },
         {
           "name": "childFlags",
@@ -1552,7 +1552,7 @@
         },
         {
           "name": "newPalette",
-          "type": "const Palette"
+          "type": "const Palette*"
         }
       ],
       "argsoriginal": "(const TextEditor::Palette& newPalette)",
@@ -1741,11 +1741,11 @@
         },
         {
           "name": "left",
-          "type": "const std::string_view"
+          "type": "const char*"
         },
         {
           "name": "right",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& left,const std::string_view& right)",
@@ -1849,11 +1849,11 @@
         },
         {
           "name": "lineNumberTooltip",
-          "type": "const std::string_view"
+          "type": "const char*"
         },
         {
           "name": "textTooltip",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(size_t line,ImU32 lineNumberColor,ImU32 textColor,const std::string_view& lineNumberTooltip,const std::string_view& textTooltip)",
@@ -2271,7 +2271,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -2301,7 +2301,7 @@
         {
           "name": "filter",
           "template_orig": "std::function<std::string(std::string_view)> filter",
-          "type": "std::function_std_string_std_string_view_"
+          "type": "const char*(*cb)(const char*)"
         }
       ],
       "argsoriginal": "(std::function<std::string(std::string_view)> filter)",
@@ -2329,7 +2329,7 @@
         {
           "name": "filter",
           "template_orig": "std::function<std::string(std::string_view)> filter",
-          "type": "std::function_std_string_std_string_view_"
+          "type": "const char*(*cb)(const char*)"
         }
       ],
       "argsoriginal": "(std::function<std::string(std::string_view)> filter)",
@@ -2629,7 +2629,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2"
+          "type": "const ImVec2_c"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -3082,11 +3082,11 @@
         },
         {
           "name": "start",
-          "type": "DocPos"
+          "type": "DocPos_c"
         },
         {
           "name": "end",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -3113,7 +3113,7 @@
         },
         {
           "name": "selection",
-          "type": "const DocSelection"
+          "type": "const DocSelection_c"
         }
       ],
       "argsoriginal": "(const DocSelection& selection)",
@@ -3263,7 +3263,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2"
+          "type": "const ImVec2_c"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -3568,7 +3568,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -3795,7 +3795,7 @@
         },
         {
           "name": "mousePos",
-          "type": "const ImVec2"
+          "type": "const ImVec2_c"
         }
       ],
       "argsoriginal": "(const ImVec2& mousePos)",
@@ -4052,7 +4052,7 @@
         },
         {
           "name": "pos",
-          "type": "VisPos"
+          "type": "VisPos_c"
         }
       ],
       "argsoriginal": "(VisPos pos)",
@@ -4103,7 +4103,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(const std::string& identifier)> callback",
-          "type": "std::function_void_const_std_stringamp_identifier_"
+          "type": "void(*cb)(const char*)"
         }
       ],
       "argsoriginal": "(std::function<void(const std::string& identifier)> callback)",
@@ -4131,7 +4131,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(size_t line,void* data)> callback",
-          "type": "std::function_void_size_t_line__voidPtr_data_"
+          "type": "void(*cb)(size_t,void*)"
         }
       ],
       "argsoriginal": "(std::function<void(size_t line,void* data)> callback)",
@@ -4277,7 +4277,7 @@
         },
         {
           "name": "size",
-          "type": "const ImVec2"
+          "type": "const ImVec2_c"
         },
         {
           "name": "childFlags",
@@ -4316,15 +4316,15 @@
         },
         {
           "name": "start",
-          "type": "DocPos"
+          "type": "DocPos_c"
         },
         {
           "name": "end",
-          "type": "DocPos"
+          "type": "DocPos_c"
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end,const std::string_view& text)",
@@ -4349,11 +4349,11 @@
         },
         {
           "name": "selection",
-          "type": "const DocSelection"
+          "type": "const DocSelection_c"
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const DocSelection& selection,const std::string_view& text)",
@@ -4380,7 +4380,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& text)",
@@ -4407,7 +4407,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& text)",
@@ -4511,7 +4511,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         },
         {
           "name": "caseSensitive",
@@ -4549,7 +4549,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         },
         {
           "name": "caseSensitive",
@@ -4645,7 +4645,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         },
         {
           "name": "caseSensitive",
@@ -4683,11 +4683,11 @@
         },
         {
           "name": "start",
-          "type": "DocPos"
+          "type": "DocPos_c"
         },
         {
           "name": "end",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos start,DocPos end)",
@@ -4899,7 +4899,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void()> callback",
-          "type": "std::function_void__"
+          "type": "void(*cb)()"
         },
         {
           "name": "delay",
@@ -4959,7 +4959,7 @@
         },
         {
           "name": "pos",
-          "type": "DocPos"
+          "type": "DocPos_c"
         }
       ],
       "argsoriginal": "(DocPos pos)",
@@ -5039,7 +5039,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(size_t line,void* data)> callback",
-          "type": "std::function_void_size_t_line__voidPtr_data_"
+          "type": "void(*cb)(size_t,void*)"
         }
       ],
       "argsoriginal": "(std::function<void(size_t line,void* data)> callback)",
@@ -5066,7 +5066,7 @@
         },
         {
           "name": "label",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& label)",
@@ -5093,7 +5093,7 @@
         },
         {
           "name": "label",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& label)",
@@ -5195,7 +5195,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void*(size_t line)> callback",
-          "type": "std::function_voidPtr_size_t_line_"
+          "type": "void*(*cb)(size_t)"
         }
       ],
       "argsoriginal": "(std::function<void*(size_t line)> callback)",
@@ -5250,7 +5250,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void()> callback",
-          "type": "std::function_void__"
+          "type": "void(*cb)()"
         }
       ],
       "argsoriginal": "(std::function<void()> callback)",
@@ -5310,7 +5310,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(Decorator& decorator)> callback",
-          "type": "std::function_void_Decoratoramp_decorator_"
+          "type": "void(*cb)(Decorator*)"
         }
       ],
       "argsoriginal": "(size_t width,std::function<void(Decorator& decorator)> callback)",
@@ -5365,7 +5365,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(PopupData& data)> callback",
-          "type": "std::function_void_PopupDataamp_data_"
+          "type": "void(*cb)(PopupData*)"
         }
       ],
       "argsoriginal": "(std::function<void(PopupData& data)> callback)",
@@ -5601,7 +5601,7 @@
         },
         {
           "name": "label",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& label)",
@@ -5628,7 +5628,7 @@
         },
         {
           "name": "label",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& label)",
@@ -5898,7 +5898,7 @@
         },
         {
           "name": "text",
-          "type": "const std::string_view"
+          "type": "const char*"
         }
       ],
       "argsoriginal": "(const std::string_view& text)",
@@ -5926,7 +5926,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(PopupData& data)> callback",
-          "type": "std::function_void_PopupDataamp_data_"
+          "type": "void(*cb)(PopupData*)"
         }
       ],
       "argsoriginal": "(std::function<void(PopupData& data)> callback)",
@@ -5954,7 +5954,7 @@
         {
           "name": "callback",
           "template_orig": "std::function<void(PopupData& data)> callback",
-          "type": "std::function_void_PopupDataamp_data_"
+          "type": "void(*cb)(PopupData*)"
         }
       ],
       "argsoriginal": "(std::function<void(PopupData& data)> callback)",
@@ -6327,7 +6327,7 @@
         },
         {
           "name": "pos",
-          "type": "VisPos"
+          "type": "VisPos_c"
         }
       ],
       "argsoriginal": "(VisPos pos)",
