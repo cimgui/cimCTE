@@ -606,6 +606,26 @@ CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self)
 {
     return self->HasMarkers();
 }
+CIMGUI_API void TextEditor_AddSquiggle(TextEditor* self,DocPos_c start,DocPos_c end,size_t type,ImU32 color,const char* tooltip)
+{
+    return self->AddSquiggle(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end),type,color,tooltip);
+}
+CIMGUI_API void TextEditor_ClearSquiggles_DocPos(TextEditor* self,DocPos_c start,DocPos_c end)
+{
+    return self->ClearSquiggles(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end));
+}
+CIMGUI_API void TextEditor_ClearSquiggles_size_t(TextEditor* self,size_t type)
+{
+    return self->ClearSquiggles(type);
+}
+CIMGUI_API void TextEditor_ClearSquiggles_Nil(TextEditor* self)
+{
+    return self->ClearSquiggles();
+}
+CIMGUI_API bool TextEditor_HasSquiggles(TextEditor* self)
+{
+    return self->HasSquiggles();
+}
 CIMGUI_API void TextEditor_SetChangeCallback(TextEditor* self,void(*cb)(),int delay)
 {
     return self->SetChangeCallback([cb](){cb();},delay);
