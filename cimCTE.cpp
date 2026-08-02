@@ -1171,7 +1171,12 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     str.assign(self->GetText());
     return str.c_str();
 }
-
+////////////Dejavu
+CIMGUI_API int GetDejavu(void** deja)
+{
+	*deja = (void*) &dejavu;
+	return dejavuSize;
+}
 CIMGUI_API void SetDejavu()
 {
     auto& io = ImGui::GetIO();
