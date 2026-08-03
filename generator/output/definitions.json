@@ -679,6 +679,28 @@
       "stname": "DocSelection"
     }
   ],
+  "GetDejavu": [
+    {
+      "args": "(void** deja)",
+      "argsT": [
+        {
+          "name": "deja",
+          "type": "void**"
+        }
+      ],
+      "argsoriginal": "(void** deja)",
+      "call_args": "(deja)",
+      "call_args_old": "(deja)",
+      "cimguiname": "GetDejavu",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "GetDejavu",
+      "ov_cimguiname": "GetDejavu",
+      "ret": "int",
+      "signature": "(void**)",
+      "stname": ""
+    }
+  ],
   "Glyph_Glyph": [
     {
       "args": "()",
@@ -1133,6 +1155,69 @@
       "stname": "Notifications"
     }
   ],
+  "Palette_Palette": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "Palette_Palette",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "Palette_Palette",
+      "ov_cimguiname": "Palette_Palette",
+      "ret": "Palette*",
+      "signature": "()",
+      "stname": "Palette"
+    }
+  ],
+  "Palette_const_get": [
+    {
+      "args": "(const Palette* noname1,Color noname2)",
+      "argsT": [
+        {
+          "name": "noname1",
+          "type": "const Palette*"
+        },
+        {
+          "name": "noname2",
+          "type": "Color"
+        }
+      ],
+      "argsoriginal": "(const Palette*,Color)",
+      "call_args": "(noname1,noname2)",
+      "call_args_old": "(noname1,noname2)",
+      "cimguiname": "Palette_const_get",
+      "defaults": {},
+      "funcname": "Palette_const_get",
+      "ov_cimguiname": "Palette_const_get",
+      "ret": "ImU32",
+      "signature": "(const Palette*,Color)",
+      "stname": "Palette"
+    }
+  ],
+  "Palette_destroy": [
+    {
+      "args": "(Palette* noname1)",
+      "argsT": [
+        {
+          "name": "noname1",
+          "type": "Palette*"
+        }
+      ],
+      "argsoriginal": "(Palette*)",
+      "call_args": "(noname1)",
+      "call_args_old": "(noname1)",
+      "cimguiname": "Palette_destroy",
+      "defaults": {},
+      "funcname": "Palette_destroy",
+      "ov_cimguiname": "Palette_destroy",
+      "ret": "void",
+      "signature": "(Palette*)",
+      "stname": "Palette"
+    }
+  ],
   "Palette_get": [
     {
       "args": "(Palette* self,Color color)",
@@ -1158,6 +1243,52 @@
       "ret": "ImU32",
       "signature": "(Color)const",
       "stname": "Palette"
+    }
+  ],
+  "Palette_set": [
+    {
+      "args": "(Palette* noname1,ImU32 noname2,int noname3)",
+      "argsT": [
+        {
+          "name": "noname1",
+          "type": "Palette*"
+        },
+        {
+          "name": "noname2",
+          "type": "ImU32"
+        },
+        {
+          "name": "noname3",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(Palette*,ImU32,int)",
+      "call_args": "(noname1,noname2,noname3)",
+      "call_args_old": "(noname1,noname2,noname3)",
+      "cimguiname": "Palette_set",
+      "defaults": {},
+      "funcname": "Palette_set",
+      "ov_cimguiname": "Palette_set",
+      "ret": "void",
+      "signature": "(Palette*,ImU32,int)",
+      "stname": "Palette"
+    }
+  ],
+  "SetDejavu": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "SetDejavu",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "SetDejavu",
+      "ov_cimguiname": "SetDejavu",
+      "ret": "void",
+      "signature": "()",
+      "stname": ""
     }
   ],
   "TextDiff_GetLanguage": [
@@ -3322,6 +3453,69 @@
       "ov_cimguiname": "TextEditor_GetTextLeftMargin",
       "ret": "size_t",
       "signature": "()const",
+      "stname": "TextEditor"
+    }
+  ],
+  "TextEditor_GetText_alloc": [
+    {
+      "args": "(TextEditor* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TextEditor*"
+        }
+      ],
+      "argsoriginal": "(TextEditor* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "TextEditor_GetText_alloc",
+      "defaults": {},
+      "funcname": "TextEditor_GetText_alloc",
+      "ov_cimguiname": "TextEditor_GetText_alloc",
+      "ret": "char*",
+      "signature": "(TextEditor*)",
+      "stname": "TextEditor"
+    }
+  ],
+  "TextEditor_GetText_free": [
+    {
+      "args": "(char* ptr)",
+      "argsT": [
+        {
+          "name": "ptr",
+          "type": "char*"
+        }
+      ],
+      "argsoriginal": "(char* ptr)",
+      "call_args": "(ptr)",
+      "call_args_old": "(ptr)",
+      "cimguiname": "TextEditor_GetText_free",
+      "defaults": {},
+      "funcname": "TextEditor_GetText_free",
+      "ov_cimguiname": "TextEditor_GetText_free",
+      "ret": "void",
+      "signature": "(char*)",
+      "stname": "TextEditor"
+    }
+  ],
+  "TextEditor_GetText_static": [
+    {
+      "args": "(TextEditor* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TextEditor*"
+        }
+      ],
+      "argsoriginal": "(TextEditor* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "TextEditor_GetText_static",
+      "defaults": {},
+      "funcname": "TextEditor_GetText_static",
+      "ov_cimguiname": "TextEditor_GetText_static",
+      "ret": "const char*",
+      "signature": "(TextEditor*)",
       "stname": "TextEditor"
     }
   ],

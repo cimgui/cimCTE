@@ -18,9 +18,15 @@ local str_subst = {
 --------------------------------------------------------------------------
 
 local cimgui_manuals = {
-    Palette_Palette = true,
-	Palette_destroy = true,
-	Palette_set = true,
+    Palette_Palette = "Palette",
+	Palette_destroy = "Palette",
+	Palette_set = "Palette",
+	Palette_const_get="Palette",
+	TextEditor_GetText_alloc="TextEditor",
+	TextEditor_GetText_free="TextEditor",
+	TextEditor_GetText_static="TextEditor",
+	GetDejavu = true,
+	SetDejavu = true
 }
 local cimgui_skipped = {
 	--TextEditor_GetText = true,
