@@ -44,6 +44,17 @@ struct Decorator
 };
 typedef struct Decorator Decorator;
 
+struct CustomCaret
+{
+  ImDrawList* drawList;
+  ImVec2_c glyphPos;
+  ImVec2_c glyphSize;
+  bool caretVisible;
+  ImU32 caretColor;
+  size_t cursorIndex;
+};
+typedef struct CustomCaret CustomCaret;
+
 struct PopupData
 {
   DocPos_c pos;
@@ -105,6 +116,7 @@ typedef struct VisPos_c VisPos_c;
 typedef struct Change Change;
 
 typedef struct Decorator Decorator;
+typedef struct CustomCaret CustomCaret;
 typedef struct PopupData PopupData;
 typedef struct Palette Palette;
 
@@ -167,6 +179,7 @@ struct DocSelection_c {
 
 #ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 typedef TextEditor::CodePoint CodePoint;
+typedef TextEditor::CustomCaret CustomCaret;
 typedef TextEditor::Decorator Decorator;
 typedef TextEditor::DocPos DocPos;
 typedef TextEditor::DocSelection DocSelection;
@@ -255,7 +268,7 @@ CIMGUI_API void TextEditor_ReplaceSectionText_DocSelection(TextEditor* self,cons
 CIMGUI_API void TextEditor_ClearText(TextEditor* self);
 CIMGUI_API bool TextEditor_IsEmpty(TextEditor* self);
 CIMGUI_API size_t TextEditor_GetLineCount(TextEditor* self);
-CIMGUI_API void TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags);
+CIMGUI_API bool TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags);
 CIMGUI_API void TextEditor_SetFocus(TextEditor* self);
 CIMGUI_API void TextEditor_Cut(TextEditor* self);
 CIMGUI_API void TextEditor_Copy(TextEditor* self);
@@ -276,6 +289,8 @@ CIMGUI_API void TextEditor_AddNextOccurrence(TextEditor* self);
 CIMGUI_API void TextEditor_SelectAllOccurrences(TextEditor* self);
 CIMGUI_API bool TextEditor_AnyCursorHasSelection(TextEditor* self);
 CIMGUI_API bool TextEditor_AllCursorsHaveSelection(TextEditor* self);
+CIMGUI_API bool TextEditor_CursorHasSelection(TextEditor* self,size_t cursor);
+CIMGUI_API bool TextEditor_MainCursorHasSelection(TextEditor* self);
 CIMGUI_API bool TextEditor_CurrentCursorHasSelection(TextEditor* self);
 CIMGUI_API void TextEditor_ClearCursors(TextEditor* self);
 CIMGUI_API size_t TextEditor_GetNumberOfCursors(TextEditor* self);
@@ -331,6 +346,9 @@ CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(size_t,voi
 CIMGUI_API void TextEditor_SetLineDecorator(TextEditor* self,size_t width,void(*cb)(Decorator*));
 CIMGUI_API void TextEditor_ClearLineDecorator(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self);
+CIMGUI_API void TextEditor_SetCustomCaretRenderer(TextEditor* self,void(*cb)(const CustomCaret*));
+CIMGUI_API void TextEditor_ClearCustomCaretRenderer(TextEditor* self);
+CIMGUI_API bool TextEditor_HasCustomCaretRenderer(TextEditor* self);
 CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData*));
 CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineNumberContextMenuCallback(TextEditor* self);

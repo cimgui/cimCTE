@@ -1,5 +1,6 @@
 local t={
   CodePoint="struct CodePoint",
+  CustomCaret="struct CustomCaret",
   Decorator="struct Decorator",
   DocPos="struct DocPos",
   DocSelection="struct DocSelection",

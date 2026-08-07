@@ -356,7 +356,7 @@ CIMGUI_API size_t TextEditor_GetLineCount(TextEditor* self)
 {
     return self->GetLineCount();
 }
-CIMGUI_API void TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags)
+CIMGUI_API bool TextEditor_Render(TextEditor* self,const char* title,const ImVec2_c size,ImGuiChildFlags childFlags,ImGuiWindowFlags windowFlags)
 {
     return self->Render(title,ConvertToCPP_ImVec2(size),childFlags,windowFlags);
 }
@@ -439,6 +439,14 @@ CIMGUI_API bool TextEditor_AnyCursorHasSelection(TextEditor* self)
 CIMGUI_API bool TextEditor_AllCursorsHaveSelection(TextEditor* self)
 {
     return self->AllCursorsHaveSelection();
+}
+CIMGUI_API bool TextEditor_CursorHasSelection(TextEditor* self,size_t cursor)
+{
+    return self->CursorHasSelection(cursor);
+}
+CIMGUI_API bool TextEditor_MainCursorHasSelection(TextEditor* self)
+{
+    return self->MainCursorHasSelection();
 }
 CIMGUI_API bool TextEditor_CurrentCursorHasSelection(TextEditor* self)
 {
@@ -661,6 +669,18 @@ CIMGUI_API void TextEditor_ClearLineDecorator(TextEditor* self)
 CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self)
 {
     return self->HasLineDecorator();
+}
+CIMGUI_API void TextEditor_SetCustomCaretRenderer(TextEditor* self,void(*cb)(const CustomCaret*))
+{
+    return self->SetCustomCaretRenderer([cb](const CustomCaret& caret){cb(&caret);});
+}
+CIMGUI_API void TextEditor_ClearCustomCaretRenderer(TextEditor* self)
+{
+    return self->ClearCustomCaretRenderer();
+}
+CIMGUI_API bool TextEditor_HasCustomCaretRenderer(TextEditor* self)
+{
+    return self->HasCustomCaretRenderer();
 }
 CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData*))
 {
