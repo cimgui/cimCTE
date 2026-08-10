@@ -6,6 +6,9 @@
 #include "cimgui.h"
 
 #ifdef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
+typedef struct DocPos_c DocPos;
+typedef struct DocSelection_c DocSelection;
+typedef struct VisPos_c VisPos;
 
 typedef struct TextEditor TextEditor;
 struct DocPos_c
