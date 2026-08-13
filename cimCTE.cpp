@@ -488,6 +488,10 @@ CIMGUI_API bool TextEditor_IsMousePosOverGlyph(TextEditor* self,const ImVec2_c m
 {
     return self->IsMousePosOverGlyph(ConvertToCPP_ImVec2(mousePos));
 }
+CIMGUI_API bool TextEditor_IsMousePosOverTextArea(TextEditor* self,const ImVec2_c mousePos)
+{
+    return self->IsMousePosOverTextArea(ConvertToCPP_ImVec2(mousePos));
+}
 CIMGUI_API DocPos_c TextEditor_GetDocPosAtMousePos(TextEditor* self,const ImVec2_c mousePos)
 {
     return ConvertFromCPP_DocPos(self->GetDocPosAtMousePos(ConvertToCPP_ImVec2(mousePos)));
@@ -545,6 +549,14 @@ CIMGUI_API bool TextEditor_IsDocPosVisible(TextEditor* self,DocPos_c pos)
 CIMGUI_API bool TextEditor_IsVisPosOverGlyph(TextEditor* self,VisPos_c pos)
 {
     return self->IsVisPosOverGlyph(ConvertToCPP_VisPos(pos));
+}
+CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos)
+{
+    return ConvertFromCPP_DocPos(self->FindWordStart(ConvertToCPP_DocPos(pos)));
+}
+CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos)
+{
+    return ConvertFromCPP_DocPos(self->FindWordEnd(ConvertToCPP_DocPos(pos)));
 }
 CIMGUI_API void TextEditor_SelectFirstOccurrenceOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord)
 {

@@ -304,6 +304,7 @@ CIMGUI_API DocSelection_c TextEditor_GetCursorSelection(TextEditor* self,size_t 
 CIMGUI_API DocSelection_c TextEditor_GetMainCursorSelection(TextEditor* self);
 CIMGUI_API DocSelection_c TextEditor_GetCurrentCursorSelection(TextEditor* self);
 CIMGUI_API bool TextEditor_IsMousePosOverGlyph(TextEditor* self,const ImVec2_c mousePos);
+CIMGUI_API bool TextEditor_IsMousePosOverTextArea(TextEditor* self,const ImVec2_c mousePos);
 CIMGUI_API DocPos_c TextEditor_GetDocPosAtMousePos(TextEditor* self,const ImVec2_c mousePos);
 CIMGUI_API const char* TextEditor_GetWordAtMousePos(TextEditor* self,const ImVec2_c mousePos);
 CIMGUI_API void TextEditor_ScrollToLine(TextEditor* self,size_t line,Scroll alignment);
@@ -318,6 +319,8 @@ CIMGUI_API VisPos_c TextEditor_DocPos2VisPos(TextEditor* self,DocPos_c pos);
 CIMGUI_API DocPos_c TextEditor_VisPos2DocPos(TextEditor* self,VisPos_c pos);
 CIMGUI_API bool TextEditor_IsDocPosVisible(TextEditor* self,DocPos_c pos);
 CIMGUI_API bool TextEditor_IsVisPosOverGlyph(TextEditor* self,VisPos_c pos);
+CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos);
+CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos);
 CIMGUI_API void TextEditor_SelectFirstOccurrenceOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord);
 CIMGUI_API void TextEditor_SelectNextOccurrenceOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord);
 CIMGUI_API void TextEditor_SelectAllOccurrencesOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord);
