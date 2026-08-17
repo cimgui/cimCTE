@@ -424,13 +424,13 @@ CIMGUI_API void TextEditor_ShrinkSelections(TextEditor* self)
 {
     return self->ShrinkSelections();
 }
-CIMGUI_API void TextEditor_AddNextOccurrence(TextEditor* self)
+CIMGUI_API void TextEditor_AddNextOccurrence(TextEditor* self,bool wholeWord)
 {
-    return self->AddNextOccurrence();
+    return self->AddNextOccurrence(wholeWord);
 }
-CIMGUI_API void TextEditor_SelectAllOccurrences(TextEditor* self)
+CIMGUI_API void TextEditor_SelectAllOccurrences(TextEditor* self,bool wholeWord)
 {
-    return self->SelectAllOccurrences();
+    return self->SelectAllOccurrences(wholeWord);
 }
 CIMGUI_API bool TextEditor_AnyCursorHasSelection(TextEditor* self)
 {
@@ -550,13 +550,13 @@ CIMGUI_API bool TextEditor_IsVisPosOverGlyph(TextEditor* self,VisPos_c pos)
 {
     return self->IsVisPosOverGlyph(ConvertToCPP_VisPos(pos));
 }
-CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos)
+CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos,bool wholeWord)
 {
-    return ConvertFromCPP_DocPos(self->FindWordStart(ConvertToCPP_DocPos(pos)));
+    return ConvertFromCPP_DocPos(self->FindWordStart(ConvertToCPP_DocPos(pos),wholeWord));
 }
-CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos)
+CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos,bool wholeWord)
 {
-    return ConvertFromCPP_DocPos(self->FindWordEnd(ConvertToCPP_DocPos(pos)));
+    return ConvertFromCPP_DocPos(self->FindWordEnd(ConvertToCPP_DocPos(pos),wholeWord));
 }
 CIMGUI_API void TextEditor_SelectFirstOccurrenceOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord)
 {

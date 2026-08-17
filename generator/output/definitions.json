@@ -1938,23 +1938,29 @@
   ],
   "TextEditor_AddNextOccurrence": [
     {
-      "args": "(TextEditor* self)",
+      "args": "(TextEditor* self,bool wholeWord)",
       "argsT": [
         {
           "name": "self",
           "type": "TextEditor*"
+        },
+        {
+          "name": "wholeWord",
+          "type": "bool"
         }
       ],
-      "argsoriginal": "()",
-      "call_args": "()",
+      "argsoriginal": "(bool wholeWord=false)",
+      "call_args": "(wholeWord)",
       "cimguiname": "TextEditor_AddNextOccurrence",
-      "defaults": {},
+      "defaults": {
+        "wholeWord": "false"
+      },
       "funcname": "AddNextOccurrence",
       "location": "TextEditor:187",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_AddNextOccurrence",
       "ret": "void",
-      "signature": "()",
+      "signature": "(bool)",
       "stname": "TextEditor"
     }
   ],
@@ -2609,7 +2615,7 @@
   ],
   "TextEditor_FindWordEnd": [
     {
-      "args": "(TextEditor* self,DocPos_c pos)",
+      "args": "(TextEditor* self,DocPos_c pos,bool wholeWord)",
       "argsT": [
         {
           "name": "self",
@@ -2618,27 +2624,33 @@
         {
           "name": "pos",
           "type": "DocPos"
+        },
+        {
+          "name": "wholeWord",
+          "type": "bool"
         }
       ],
-      "argsoriginal": "(DocPos pos)",
-      "call_args": "(pos)",
-      "call_args_conv": "(ConvertToCPP_DocPos(pos))",
+      "argsoriginal": "(DocPos pos,bool wholeWord=false)",
+      "call_args": "(pos,wholeWord)",
+      "call_args_conv": "(ConvertToCPP_DocPos(pos),wholeWord)",
       "cimguiname": "TextEditor_FindWordEnd",
       "conv": "DocPos",
-      "defaults": {},
+      "defaults": {
+        "wholeWord": "false"
+      },
       "funcname": "FindWordEnd",
       "location": "TextEditor:260",
       "namespace": "TextEditor",
       "nonUDT": 1,
       "ov_cimguiname": "TextEditor_FindWordEnd",
       "ret": "DocPos_c",
-      "signature": "(DocPos)const",
+      "signature": "(DocPos,bool)const",
       "stname": "TextEditor"
     }
   ],
   "TextEditor_FindWordStart": [
     {
-      "args": "(TextEditor* self,DocPos_c pos)",
+      "args": "(TextEditor* self,DocPos_c pos,bool wholeWord)",
       "argsT": [
         {
           "name": "self",
@@ -2647,21 +2659,27 @@
         {
           "name": "pos",
           "type": "DocPos"
+        },
+        {
+          "name": "wholeWord",
+          "type": "bool"
         }
       ],
-      "argsoriginal": "(DocPos pos)",
-      "call_args": "(pos)",
-      "call_args_conv": "(ConvertToCPP_DocPos(pos))",
+      "argsoriginal": "(DocPos pos,bool wholeWord=false)",
+      "call_args": "(pos,wholeWord)",
+      "call_args_conv": "(ConvertToCPP_DocPos(pos),wholeWord)",
       "cimguiname": "TextEditor_FindWordStart",
       "conv": "DocPos",
-      "defaults": {},
+      "defaults": {
+        "wholeWord": "false"
+      },
       "funcname": "FindWordStart",
       "location": "TextEditor:259",
       "namespace": "TextEditor",
       "nonUDT": 1,
       "ov_cimguiname": "TextEditor_FindWordStart",
       "ret": "DocPos_c",
-      "signature": "(DocPos)const",
+      "signature": "(DocPos,bool)const",
       "stname": "TextEditor"
     }
   ],
@@ -4837,23 +4855,29 @@
   ],
   "TextEditor_SelectAllOccurrences": [
     {
-      "args": "(TextEditor* self)",
+      "args": "(TextEditor* self,bool wholeWord)",
       "argsT": [
         {
           "name": "self",
           "type": "TextEditor*"
+        },
+        {
+          "name": "wholeWord",
+          "type": "bool"
         }
       ],
-      "argsoriginal": "()",
-      "call_args": "()",
+      "argsoriginal": "(bool wholeWord=false)",
+      "call_args": "(wholeWord)",
       "cimguiname": "TextEditor_SelectAllOccurrences",
-      "defaults": {},
+      "defaults": {
+        "wholeWord": "false"
+      },
       "funcname": "SelectAllOccurrences",
       "location": "TextEditor:188",
       "namespace": "TextEditor",
       "ov_cimguiname": "TextEditor_SelectAllOccurrences",
       "ret": "void",
-      "signature": "()",
+      "signature": "(bool)",
       "stname": "TextEditor"
     }
   ],
