@@ -26,6 +26,7 @@ local cimgui_manuals = {
 	TextEditor_GetText_free="TextEditor",
 	TextEditor_GetText_static="TextEditor",
 	GetDejavu = true,
+	Getnotosans = true,
 	SetDejavu = true
 }
 local cimgui_skipped = {

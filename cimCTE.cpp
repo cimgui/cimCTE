@@ -7,6 +7,7 @@
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
 #include "./ImGuiColorTextEdit/extras/Notifications.h"
 #include "./ImGuiColorTextEdit/example/dejavu.h"
+#include "./ImGuiColorTextEdit/example/notosans.h"
 #include "cimCTE.h"
 #include <cstring>
 
@@ -302,7 +303,7 @@ CIMGUI_API size_t TextEditor_GetTextLeftMargin(TextEditor* self)
 {
     return self->GetTextLeftMargin();
 }
-CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* text)
+CIMGUI_API void TextEditor_SetText_std_string_view(TextEditor* self,const char* text)
 {
     return self->SetText(text);
 }
@@ -310,18 +311,6 @@ CIMGUI_API const char* TextEditor_GetText(TextEditor* self)
 {
     static std::string str;
     str.assign(self->GetText());
-    return str.c_str();
-}
-CIMGUI_API const char* TextEditor_GetCursorText(TextEditor* self,size_t cursor)
-{
-    static std::string str;
-    str.assign(self->GetCursorText(cursor));
-    return str.c_str();
-}
-CIMGUI_API const char* TextEditor_GetLineText(TextEditor* self,size_t line)
-{
-    static std::string str;
-    str.assign(self->GetLineText(line));
     return str.c_str();
 }
 CIMGUI_API const char* TextEditor_GetSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end)
@@ -334,6 +323,18 @@ CIMGUI_API const char* TextEditor_GetSectionText_DocSelection(TextEditor* self,c
 {
     static std::string str;
     str.assign(self->GetSectionText(ConvertToCPP_DocSelection(selection)));
+    return str.c_str();
+}
+CIMGUI_API const char* TextEditor_GetCursorText(TextEditor* self,size_t cursor)
+{
+    static std::string str;
+    str.assign(self->GetCursorText(cursor));
+    return str.c_str();
+}
+CIMGUI_API const char* TextEditor_GetLineText(TextEditor* self,size_t line)
+{
+    static std::string str;
+    str.assign(self->GetLineText(line));
     return str.c_str();
 }
 CIMGUI_API void TextEditor_ReplaceSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end,const char* text)
@@ -586,6 +587,18 @@ CIMGUI_API void TextEditor_CloseFindReplaceWindow(TextEditor* self)
 {
     return self->CloseFindReplaceWindow();
 }
+CIMGUI_API bool TextEditor_HasFindString(TextEditor* self)
+{
+    return self->HasFindString();
+}
+CIMGUI_API void TextEditor_FindNext(TextEditor* self)
+{
+    return self->FindNext();
+}
+CIMGUI_API void TextEditor_FindAll(TextEditor* self)
+{
+    return self->FindAll();
+}
 CIMGUI_API void TextEditor_SetFindButtonLabel(TextEditor* self,const char* label)
 {
     return self->SetFindButtonLabel(label);
@@ -601,18 +614,6 @@ CIMGUI_API void TextEditor_SetReplaceButtonLabel(TextEditor* self,const char* la
 CIMGUI_API void TextEditor_SetReplaceAllButtonLabel(TextEditor* self,const char* label)
 {
     return self->SetReplaceAllButtonLabel(label);
-}
-CIMGUI_API bool TextEditor_HasFindString(TextEditor* self)
-{
-    return self->HasFindString();
-}
-CIMGUI_API void TextEditor_FindNext(TextEditor* self)
-{
-    return self->FindNext();
-}
-CIMGUI_API void TextEditor_FindAll(TextEditor* self)
-{
-    return self->FindAll();
 }
 CIMGUI_API void TextEditor_AddMarker(TextEditor* self,size_t line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip)
 {
@@ -650,13 +651,45 @@ CIMGUI_API void TextEditor_SetChangeCallback(TextEditor* self,void(*cb)(),int de
 {
     return self->SetChangeCallback([cb](){cb();},delay);
 }
+CIMGUI_API void TextEditor_ClearChangeCallback(TextEditor* self)
+{
+    return self->ClearChangeCallback();
+}
+CIMGUI_API bool TextEditor_HasChangeCallback(TextEditor* self)
+{
+    return self->HasChangeCallback();
+}
+CIMGUI_API void TextEditor_ClearTransactionCallback(TextEditor* self)
+{
+    return self->ClearTransactionCallback();
+}
+CIMGUI_API bool TextEditor_HasTransactionCallback(TextEditor* self)
+{
+    return self->HasTransactionCallback();
+}
 CIMGUI_API void TextEditor_SetInsertor(TextEditor* self,void*(*cb)(size_t))
 {
     return self->SetInsertor([cb](size_t line){return cb(line);});
 }
+CIMGUI_API void TextEditor_ClearInsertor(TextEditor* self)
+{
+    return self->ClearInsertor();
+}
+CIMGUI_API bool TextEditor_HasInsertor(TextEditor* self)
+{
+    return self->HasInsertor();
+}
 CIMGUI_API void TextEditor_SetDeletor(TextEditor* self,void(*cb)(size_t,void*))
 {
     return self->SetDeletor([cb](size_t line,void* data){cb(line,data);});
+}
+CIMGUI_API void TextEditor_ClearDeletor(TextEditor* self)
+{
+    return self->ClearDeletor();
+}
+CIMGUI_API bool TextEditor_HasDeletor(TextEditor* self)
+{
+    return self->HasDeletor();
 }
 CIMGUI_API void TextEditor_SetUserData(TextEditor* self,size_t line,void* data)
 {
@@ -684,7 +717,7 @@ CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self)
 }
 CIMGUI_API void TextEditor_SetCustomCaretRenderer(TextEditor* self,void(*cb)(const CustomCaret*))
 {
-    return self->SetCustomCaretRenderer([cb](const CustomCaret& caret){cb(&caret);});
+    return self->SetCustomCaretRenderer([cb](const CustomCaret& data){cb(&data);});
 }
 CIMGUI_API void TextEditor_ClearCustomCaretRenderer(TextEditor* self)
 {
@@ -693,6 +726,18 @@ CIMGUI_API void TextEditor_ClearCustomCaretRenderer(TextEditor* self)
 CIMGUI_API bool TextEditor_HasCustomCaretRenderer(TextEditor* self)
 {
     return self->HasCustomCaretRenderer();
+}
+CIMGUI_API void TextEditor_SetCustomLineNumberRenderer(TextEditor* self,void(*cb)(const CustomLineNumber*))
+{
+    return self->SetCustomLineNumberRenderer([cb](const CustomLineNumber& data){cb(&data);});
+}
+CIMGUI_API void TextEditor_ClearCustomLineNumberRenderer(TextEditor* self)
+{
+    return self->ClearCustomLineNumberRenderer();
+}
+CIMGUI_API bool TextEditor_HasCustomLineNumberRenderer(TextEditor* self)
+{
+    return self->HasCustomLineNumberRenderer();
 }
 CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData*))
 {
@@ -980,6 +1025,10 @@ CIMGUI_API bool CodePoint_isEastAsian(ImWchar codepoint)
 {
     return TextEditor::CodePoint::isEastAsian(codepoint);
 }
+CIMGUI_API size_t CodePoint_getGlyphWidth(ImWchar codepoint)
+{
+    return TextEditor::CodePoint::getGlyphWidth(codepoint);
+}
 CIMGUI_API ImWchar CodePoint_toUpper(ImWchar codepoint)
 {
     return TextEditor::CodePoint::toUpper(codepoint);
@@ -1204,6 +1253,11 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     return str.c_str();
 }
 ////////////Dejavu
+CIMGUI_API int Getnotosans(void** noto)
+{
+	*noto = (void*) &notosans;
+	return notosansSize;
+}
 CIMGUI_API int GetDejavu(void** deja)
 {
 	*deja = (void*) &dejavu;

@@ -5,6 +5,7 @@
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
 #include "./ImGuiColorTextEdit/extras/Notifications.h"
 #include "./ImGuiColorTextEdit/example/dejavu.h"
+#include "./ImGuiColorTextEdit/example/notosans.h"
 #include "cimCTE.h"
 #include <cstring>
 
@@ -45,6 +46,11 @@ CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self)
     return str.c_str();
 }
 ////////////Dejavu
+CIMGUI_API int Getnotosans(void** noto)
+{
+	*noto = (void*) &notosans;
+	return notosansSize;
+}
 CIMGUI_API int GetDejavu(void** deja)
 {
 	*deja = (void*) &dejavu;

@@ -184,27 +184,28 @@
     "Color": "char"
   },
   "locations": {
-    "AutoCompleteConfig": "TextEditor:671",
-    "AutoCompleteState": "TextEditor:641",
-    "BreakOption": "TextEditor:479",
-    "Change": "TextEditor:312",
-    "CodePoint": "TextEditor:725",
-    "Color": "TextEditor:440",
-    "CustomCaret": "TextEditor:362",
-    "Decorator": "TextEditor:344",
+    "AutoCompleteConfig": "TextEditor:756",
+    "AutoCompleteState": "TextEditor:726",
+    "BreakOption": "TextEditor:563",
+    "Change": "TextEditor:360",
+    "CodePoint": "TextEditor:810",
+    "Color": "TextEditor:524",
+    "CustomCaret": "TextEditor:415",
+    "CustomLineNumber": "TextEditor:443",
+    "Decorator": "TextEditor:397",
     "DocPos": "TextEditor:44",
     "DocSelection": "TextEditor:63",
-    "Glyph": "TextEditor:487",
-    "Iterator": "TextEditor:509",
-    "Language": "TextEditor:539",
-    "LineBreakConfig": "TextEditor:808",
+    "Glyph": "TextEditor:571",
+    "Iterator": "TextEditor:594",
+    "Language": "TextEditor:624",
+    "LineBreakConfig": "TextEditor:894",
     "Notifications": "Notifications:37",
-    "Palette": "TextEditor:466",
-    "PopupData": "TextEditor:394",
-    "Scroll": "TextEditor:212",
+    "Palette": "TextEditor:550",
+    "PopupData": "TextEditor:478",
+    "Scroll": "TextEditor:254",
     "TextDiff": "TextDiff:22",
     "TextEditor": "TextEditor:34",
-    "TrieAutoComplete": "TrieAutoComplete:36",
+    "TrieAutoComplete": "TrieAutoComplete:39",
     "Type": "Notifications:40",
     "VisPos": "TextEditor:71"
   },
@@ -358,6 +359,36 @@
         "type": "size_t"
       }
     ],
+    "CustomLineNumber": [
+      {
+        "name": "drawList",
+        "type": "ImDrawList*"
+      },
+      {
+        "name": "pos",
+        "type": "ImVec2"
+      },
+      {
+        "name": "size",
+        "type": "ImVec2"
+      },
+      {
+        "name": "digits",
+        "type": "size_t"
+      },
+      {
+        "name": "lineNumber",
+        "type": "size_t"
+      },
+      {
+        "name": "cursorLineNumber",
+        "type": "size_t"
+      },
+      {
+        "name": "color",
+        "type": "ImU32"
+      }
+    ],
     "Decorator": [
       {
         "name": "line",
@@ -414,8 +445,12 @@
         "type": "BreakOption"
       },
       {
+        "name": "columns",
+        "type": "uint8_t"
+      },
+      {
         "name": "squiggle",
-        "type": "size_t"
+        "type": "uint32_t"
       }
     ],
     "Iterator": [],

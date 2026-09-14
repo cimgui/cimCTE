@@ -24,6 +24,7 @@ CIMGUI_API void TextEditor_GetText_free(char* ptr);
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self);
 ////////////Dejavu
 CIMGUI_API int GetDejavu(void** deja);
+CIMGUI_API int Getnotosans(void** noto);
 CIMGUI_API void SetDejavu();
 #endif //CIMGUICTE_INCLUDED
 

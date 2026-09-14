@@ -58,6 +58,18 @@ struct CustomCaret
 };
 typedef struct CustomCaret CustomCaret;
 
+struct CustomLineNumber
+{
+  ImDrawList* drawList;
+  ImVec2_c pos;
+  ImVec2_c size;
+  size_t digits;
+  size_t lineNumber;
+  size_t cursorLineNumber;
+  ImU32 color;
+};
+typedef struct CustomLineNumber CustomLineNumber;
+
 struct PopupData
 {
   DocPos_c pos;
@@ -101,7 +113,8 @@ struct Glyph
   ImWchar codepoint;
   Color color;
   BreakOption breakOption;
-  size_t squiggle;
+  uint8_t columns;
+  uint32_t squiggle;
 };
 typedef struct Glyph Glyph;
 
@@ -120,6 +133,7 @@ typedef struct Change Change;
 
 typedef struct Decorator Decorator;
 typedef struct CustomCaret CustomCaret;
+typedef struct CustomLineNumber CustomLineNumber;
 typedef struct PopupData PopupData;
 typedef struct Palette Palette;
 
@@ -183,6 +197,7 @@ struct DocSelection_c {
 #ifndef CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 typedef TextEditor::CodePoint CodePoint;
 typedef TextEditor::CustomCaret CustomCaret;
+typedef TextEditor::CustomLineNumber CustomLineNumber;
 typedef TextEditor::Decorator Decorator;
 typedef TextEditor::DocPos DocPos;
 typedef TextEditor::DocSelection DocSelection;
@@ -194,6 +209,9 @@ typedef TextEditor::Color Color;
 typedef TextEditor::Scroll Scroll;
 typedef Notifications::Type Type;
 typedef std::vector<std::string> std_vector_std_string;
+typedef std::vector<std::string_view> std_vector_std_string_view;
+typedef std::vector<std::u16string_view> std_vector_std_u16string_view;
+typedef std::vector<std::wstring_view> std_vector_std_wstring_view;
 typedef TextEditor::AutoCompleteConfig AutoCompleteConfig;
 typedef TextEditor::AutoCompleteState AutoCompleteState;
 typedef TextEditor::Change Change;
@@ -260,12 +278,12 @@ CIMGUI_API void TextEditor_SetDecorationLeftMargin(TextEditor* self,size_t value
 CIMGUI_API size_t TextEditor_GetDecorationLeftMargin(TextEditor* self);
 CIMGUI_API void TextEditor_SetTextLeftMargin(TextEditor* self,size_t value);
 CIMGUI_API size_t TextEditor_GetTextLeftMargin(TextEditor* self);
-CIMGUI_API void TextEditor_SetText(TextEditor* self,const char* text);
+CIMGUI_API void TextEditor_SetText_std_string_view(TextEditor* self,const char* text);
 CIMGUI_API const char* TextEditor_GetText(TextEditor* self);
-CIMGUI_API const char* TextEditor_GetCursorText(TextEditor* self,size_t cursor);
-CIMGUI_API const char* TextEditor_GetLineText(TextEditor* self,size_t line);
 CIMGUI_API const char* TextEditor_GetSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end);
 CIMGUI_API const char* TextEditor_GetSectionText_DocSelection(TextEditor* self,const DocSelection_c selection);
+CIMGUI_API const char* TextEditor_GetCursorText(TextEditor* self,size_t cursor);
+CIMGUI_API const char* TextEditor_GetLineText(TextEditor* self,size_t line);
 CIMGUI_API void TextEditor_ReplaceSectionText_DocPos(TextEditor* self,DocPos_c start,DocPos_c end,const char* text);
 CIMGUI_API void TextEditor_ReplaceSectionText_DocSelection(TextEditor* self,const DocSelection_c selection,const char* text);
 CIMGUI_API void TextEditor_ClearText(TextEditor* self);
@@ -328,13 +346,13 @@ CIMGUI_API void TextEditor_ReplaceTextInCurrentCursor(TextEditor* self,const cha
 CIMGUI_API void TextEditor_ReplaceTextInAllCursors(TextEditor* self,const char* text);
 CIMGUI_API void TextEditor_OpenFindReplaceWindow(TextEditor* self);
 CIMGUI_API void TextEditor_CloseFindReplaceWindow(TextEditor* self);
+CIMGUI_API bool TextEditor_HasFindString(TextEditor* self);
+CIMGUI_API void TextEditor_FindNext(TextEditor* self);
+CIMGUI_API void TextEditor_FindAll(TextEditor* self);
 CIMGUI_API void TextEditor_SetFindButtonLabel(TextEditor* self,const char* label);
 CIMGUI_API void TextEditor_SetFindAllButtonLabel(TextEditor* self,const char* label);
 CIMGUI_API void TextEditor_SetReplaceButtonLabel(TextEditor* self,const char* label);
 CIMGUI_API void TextEditor_SetReplaceAllButtonLabel(TextEditor* self,const char* label);
-CIMGUI_API bool TextEditor_HasFindString(TextEditor* self);
-CIMGUI_API void TextEditor_FindNext(TextEditor* self);
-CIMGUI_API void TextEditor_FindAll(TextEditor* self);
 CIMGUI_API void TextEditor_AddMarker(TextEditor* self,size_t line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip);
 CIMGUI_API void TextEditor_ClearMarkers(TextEditor* self);
 CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self);
@@ -344,8 +362,16 @@ CIMGUI_API void TextEditor_ClearSquiggles_size_t(TextEditor* self,size_t type);
 CIMGUI_API void TextEditor_ClearSquiggles_Nil(TextEditor* self);
 CIMGUI_API bool TextEditor_HasSquiggles(TextEditor* self);
 CIMGUI_API void TextEditor_SetChangeCallback(TextEditor* self,void(*cb)(),int delay);
+CIMGUI_API void TextEditor_ClearChangeCallback(TextEditor* self);
+CIMGUI_API bool TextEditor_HasChangeCallback(TextEditor* self);
+CIMGUI_API void TextEditor_ClearTransactionCallback(TextEditor* self);
+CIMGUI_API bool TextEditor_HasTransactionCallback(TextEditor* self);
 CIMGUI_API void TextEditor_SetInsertor(TextEditor* self,void*(*cb)(size_t));
+CIMGUI_API void TextEditor_ClearInsertor(TextEditor* self);
+CIMGUI_API bool TextEditor_HasInsertor(TextEditor* self);
 CIMGUI_API void TextEditor_SetDeletor(TextEditor* self,void(*cb)(size_t,void*));
+CIMGUI_API void TextEditor_ClearDeletor(TextEditor* self);
+CIMGUI_API bool TextEditor_HasDeletor(TextEditor* self);
 CIMGUI_API void TextEditor_SetUserData(TextEditor* self,size_t line,void* data);
 CIMGUI_API void* TextEditor_GetUserData(TextEditor* self,size_t line);
 CIMGUI_API void TextEditor_IterateUserData(TextEditor* self,void(*cb)(size_t,void*));
@@ -355,6 +381,9 @@ CIMGUI_API bool TextEditor_HasLineDecorator(TextEditor* self);
 CIMGUI_API void TextEditor_SetCustomCaretRenderer(TextEditor* self,void(*cb)(const CustomCaret*));
 CIMGUI_API void TextEditor_ClearCustomCaretRenderer(TextEditor* self);
 CIMGUI_API bool TextEditor_HasCustomCaretRenderer(TextEditor* self);
+CIMGUI_API void TextEditor_SetCustomLineNumberRenderer(TextEditor* self,void(*cb)(const CustomLineNumber*));
+CIMGUI_API void TextEditor_ClearCustomLineNumberRenderer(TextEditor* self);
+CIMGUI_API bool TextEditor_HasCustomLineNumberRenderer(TextEditor* self);
 CIMGUI_API void TextEditor_SetLineNumberContextMenuCallback(TextEditor* self,void(*cb)(PopupData*));
 CIMGUI_API void TextEditor_ClearLineNumberContextMenuCallback(TextEditor* self);
 CIMGUI_API bool TextEditor_HasLineNumberContextMenuCallback(TextEditor* self);
@@ -426,6 +455,7 @@ CIMGUI_API bool CodePoint_isXidContinue(ImWchar codepoint);
 CIMGUI_API bool CodePoint_isLower(ImWchar codepoint);
 CIMGUI_API bool CodePoint_isUpper(ImWchar codepoint);
 CIMGUI_API bool CodePoint_isEastAsian(ImWchar codepoint);
+CIMGUI_API size_t CodePoint_getGlyphWidth(ImWchar codepoint);
 CIMGUI_API ImWchar CodePoint_toUpper(ImWchar codepoint);
 CIMGUI_API ImWchar CodePoint_toLower(ImWchar codepoint);
 CIMGUI_API bool CodePoint_isPairOpener(ImWchar ch);
@@ -487,6 +517,7 @@ CIMGUI_API void TextEditor_GetText_free(char* ptr);
 CIMGUI_API const char* TextEditor_GetText_static(TextEditor* self);
 ////////////Dejavu
 CIMGUI_API int GetDejavu(void** deja);
+CIMGUI_API int Getnotosans(void** noto);
 CIMGUI_API void SetDejavu();
 #endif //CIMGUICTE_INCLUDED
 
