@@ -1,4 +1,796 @@
 {
+  "AutoCompleteConfig_AutoCompleteConfig": [
+    {
+      "args": "()",
+      "argsT": [],
+      "argsoriginal": "()",
+      "call_args": "()",
+      "call_args_old": "()",
+      "cimguiname": "AutoCompleteConfig_AutoCompleteConfig",
+      "constructor": true,
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_AutoCompleteConfig",
+      "ov_cimguiname": "AutoCompleteConfig_AutoCompleteConfig",
+      "ret": "AutoCompleteConfig*",
+      "signature": "()",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetAutoInsertSingleSuggestions": [
+    {
+      "args": "(AutoCompleteConfig* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteConfig_SetAutoInsertSingleSuggestions",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetAutoInsertSingleSuggestions",
+      "ov_cimguiname": "AutoCompleteConfig_SetAutoInsertSingleSuggestions",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,bool)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetCallback": [
+    {
+      "args": "(AutoCompleteConfig* self,void(*cb)(AutoCompleteState*))",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "cb",
+          "ret": "void",
+          "signature": "(AutoCompleteState*)",
+          "type": "void(*)(AutoCompleteState*)"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,void(*cb)(AutoCompleteState*))",
+      "call_args": "(self,cb)",
+      "call_args_old": "(self,cb)",
+      "cimguiname": "AutoCompleteConfig_SetCallback",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetCallback",
+      "ov_cimguiname": "AutoCompleteConfig_SetCallback",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,void(*)(AutoCompleteState*))",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetNoSuggestionsLabel": [
+    {
+      "args": "(AutoCompleteConfig* self,const char* label)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "label",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,const char* label)",
+      "call_args": "(self,label)",
+      "call_args_old": "(self,label)",
+      "cimguiname": "AutoCompleteConfig_SetNoSuggestionsLabel",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetNoSuggestionsLabel",
+      "ov_cimguiname": "AutoCompleteConfig_SetNoSuggestionsLabel",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,const char*)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetSuggestionWidth": [
+    {
+      "args": "(AutoCompleteConfig* self,size_t width)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "width",
+          "type": "size_t"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,size_t width)",
+      "call_args": "(self,width)",
+      "call_args_old": "(self,width)",
+      "cimguiname": "AutoCompleteConfig_SetSuggestionWidth",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetSuggestionWidth",
+      "ov_cimguiname": "AutoCompleteConfig_SetSuggestionWidth",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,size_t)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerCharacters": [
+    {
+      "args": "(AutoCompleteConfig* self,const char* characters)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "characters",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,const char* characters)",
+      "call_args": "(self,characters)",
+      "call_args_old": "(self,characters)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerCharacters",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerCharacters",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerCharacters",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,const char*)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerDelay": [
+    {
+      "args": "(AutoCompleteConfig* self,int milliseconds)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "milliseconds",
+          "type": "int"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,int milliseconds)",
+      "call_args": "(self,milliseconds)",
+      "call_args_old": "(self,milliseconds)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerDelay",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerDelay",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerDelay",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,int)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerInComments": [
+    {
+      "args": "(AutoCompleteConfig* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerInComments",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerInComments",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerInComments",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,bool)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerInStrings": [
+    {
+      "args": "(AutoCompleteConfig* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerInStrings",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerInStrings",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerInStrings",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,bool)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerOnShortcut": [
+    {
+      "args": "(AutoCompleteConfig* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerOnShortcut",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerOnShortcut",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerOnShortcut",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,bool)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerOnTyping": [
+    {
+      "args": "(AutoCompleteConfig* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerOnTyping",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerOnTyping",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerOnTyping",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,bool)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetTriggerShortcut": [
+    {
+      "args": "(AutoCompleteConfig* self,ImGuiKeyChord shortcut)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "shortcut",
+          "type": "ImGuiKeyChord"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,ImGuiKeyChord shortcut)",
+      "call_args": "(self,shortcut)",
+      "call_args_old": "(self,shortcut)",
+      "cimguiname": "AutoCompleteConfig_SetTriggerShortcut",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetTriggerShortcut",
+      "ov_cimguiname": "AutoCompleteConfig_SetTriggerShortcut",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,ImGuiKeyChord)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetUserData": [
+    {
+      "args": "(AutoCompleteConfig* self,void* userData)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "userData",
+          "type": "void*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,void* userData)",
+      "call_args": "(self,userData)",
+      "call_args_old": "(self,userData)",
+      "cimguiname": "AutoCompleteConfig_SetUserData",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetUserData",
+      "ov_cimguiname": "AutoCompleteConfig_SetUserData",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,void*)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_SetWordCharacters": [
+    {
+      "args": "(AutoCompleteConfig* self,const char* characters)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        },
+        {
+          "name": "characters",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self,const char* characters)",
+      "call_args": "(self,characters)",
+      "call_args_old": "(self,characters)",
+      "cimguiname": "AutoCompleteConfig_SetWordCharacters",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_SetWordCharacters",
+      "ov_cimguiname": "AutoCompleteConfig_SetWordCharacters",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*,const char*)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteConfig_destroy": [
+    {
+      "args": "(AutoCompleteConfig* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteConfig*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteConfig* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteConfig_destroy",
+      "defaults": {},
+      "funcname": "AutoCompleteConfig_destroy",
+      "ov_cimguiname": "AutoCompleteConfig_destroy",
+      "ret": "void",
+      "signature": "(AutoCompleteConfig*)",
+      "stname": "AutoCompleteConfig"
+    }
+  ],
+  "AutoCompleteState_AddSuggestion": [
+    {
+      "args": "(AutoCompleteState* self,const char* suggestion,const char* label)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "suggestion",
+          "type": "const char*"
+        },
+        {
+          "name": "label",
+          "type": "const char*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,const char* suggestion,const char* label)",
+      "call_args": "(self,suggestion,label)",
+      "call_args_old": "(self,suggestion,label)",
+      "cimguiname": "AutoCompleteState_AddSuggestion",
+      "defaults": {},
+      "funcname": "AutoCompleteState_AddSuggestion",
+      "ov_cimguiname": "AutoCompleteState_AddSuggestion",
+      "ret": "void",
+      "signature": "(AutoCompleteState*,const char*,const char*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_ClearSuggestions": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_ClearSuggestions",
+      "defaults": {},
+      "funcname": "AutoCompleteState_ClearSuggestions",
+      "ov_cimguiname": "AutoCompleteState_ClearSuggestions",
+      "ret": "void",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetLabel": [
+    {
+      "args": "(AutoCompleteState* self,size_t index)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "index",
+          "type": "size_t"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,size_t index)",
+      "call_args": "(self,index)",
+      "call_args_old": "(self,index)",
+      "cimguiname": "AutoCompleteState_GetLabel",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetLabel",
+      "ov_cimguiname": "AutoCompleteState_GetLabel",
+      "ret": "const char*",
+      "signature": "(AutoCompleteState*,size_t)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetLanguage": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetLanguage",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetLanguage",
+      "ov_cimguiname": "AutoCompleteState_GetLanguage",
+      "ret": "const Language*",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetReplacementEnd": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetReplacementEnd",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetReplacementEnd",
+      "ov_cimguiname": "AutoCompleteState_GetReplacementEnd",
+      "ret": "DocPos_c",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetReplacementStart": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetReplacementStart",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetReplacementStart",
+      "ov_cimguiname": "AutoCompleteState_GetReplacementStart",
+      "ret": "DocPos_c",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetSearchTerm": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetSearchTerm",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetSearchTerm",
+      "ov_cimguiname": "AutoCompleteState_GetSearchTerm",
+      "ret": "const char*",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetSearchTermEnd": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetSearchTermEnd",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetSearchTermEnd",
+      "ov_cimguiname": "AutoCompleteState_GetSearchTermEnd",
+      "ret": "DocPos_c",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetSearchTermStart": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetSearchTermStart",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetSearchTermStart",
+      "ov_cimguiname": "AutoCompleteState_GetSearchTermStart",
+      "ret": "DocPos_c",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetSuggestion": [
+    {
+      "args": "(AutoCompleteState* self,size_t index)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "index",
+          "type": "size_t"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,size_t index)",
+      "call_args": "(self,index)",
+      "call_args_old": "(self,index)",
+      "cimguiname": "AutoCompleteState_GetSuggestion",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetSuggestion",
+      "ov_cimguiname": "AutoCompleteState_GetSuggestion",
+      "ret": "const char*",
+      "signature": "(AutoCompleteState*,size_t)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetSuggestionCount": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetSuggestionCount",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetSuggestionCount",
+      "ov_cimguiname": "AutoCompleteState_GetSuggestionCount",
+      "ret": "size_t",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_GetUserData": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_GetUserData",
+      "defaults": {},
+      "funcname": "AutoCompleteState_GetUserData",
+      "ov_cimguiname": "AutoCompleteState_GetUserData",
+      "ret": "void*",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_InComment": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_InComment",
+      "defaults": {},
+      "funcname": "AutoCompleteState_InComment",
+      "ov_cimguiname": "AutoCompleteState_InComment",
+      "ret": "bool",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_InIdentifier": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_InIdentifier",
+      "defaults": {},
+      "funcname": "AutoCompleteState_InIdentifier",
+      "ov_cimguiname": "AutoCompleteState_InIdentifier",
+      "ret": "bool",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_InNumber": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_InNumber",
+      "defaults": {},
+      "funcname": "AutoCompleteState_InNumber",
+      "ov_cimguiname": "AutoCompleteState_InNumber",
+      "ret": "bool",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_InString": [
+    {
+      "args": "(AutoCompleteState* self)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self)",
+      "call_args": "(self)",
+      "call_args_old": "(self)",
+      "cimguiname": "AutoCompleteState_InString",
+      "defaults": {},
+      "funcname": "AutoCompleteState_InString",
+      "ov_cimguiname": "AutoCompleteState_InString",
+      "ret": "bool",
+      "signature": "(AutoCompleteState*)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_SetReplacementEnd": [
+    {
+      "args": "(AutoCompleteState* self,DocPos_c pos)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "pos",
+          "type": "DocPos_c"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,DocPos_c pos)",
+      "call_args": "(self,pos)",
+      "call_args_old": "(self,pos)",
+      "cimguiname": "AutoCompleteState_SetReplacementEnd",
+      "defaults": {},
+      "funcname": "AutoCompleteState_SetReplacementEnd",
+      "ov_cimguiname": "AutoCompleteState_SetReplacementEnd",
+      "ret": "void",
+      "signature": "(AutoCompleteState*,DocPos_c)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_SetReplacementStart": [
+    {
+      "args": "(AutoCompleteState* self,DocPos_c pos)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "pos",
+          "type": "DocPos_c"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,DocPos_c pos)",
+      "call_args": "(self,pos)",
+      "call_args_old": "(self,pos)",
+      "cimguiname": "AutoCompleteState_SetReplacementStart",
+      "defaults": {},
+      "funcname": "AutoCompleteState_SetReplacementStart",
+      "ov_cimguiname": "AutoCompleteState_SetReplacementStart",
+      "ret": "void",
+      "signature": "(AutoCompleteState*,DocPos_c)",
+      "stname": "AutoCompleteState"
+    }
+  ],
+  "AutoCompleteState_SetSuggestionsPromise": [
+    {
+      "args": "(AutoCompleteState* self,bool value)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "AutoCompleteState*"
+        },
+        {
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "argsoriginal": "(AutoCompleteState* self,bool value)",
+      "call_args": "(self,value)",
+      "call_args_old": "(self,value)",
+      "cimguiname": "AutoCompleteState_SetSuggestionsPromise",
+      "defaults": {},
+      "funcname": "AutoCompleteState_SetSuggestionsPromise",
+      "ov_cimguiname": "AutoCompleteState_SetSuggestionsPromise",
+      "ret": "void",
+      "signature": "(AutoCompleteState*,bool)",
+      "stname": "AutoCompleteState"
+    }
+  ],
   "CodePoint_getGlyphWidth": [
     {
       "args": "(ImWchar codepoint)",
@@ -5492,6 +6284,39 @@
       "ret": "void",
       "signature": "(const std::vector_std_string,const std::vector_std_string)",
       "skipped": true,
+      "stname": "TextEditor"
+    }
+  ],
+  "TextEditor_SetAutoCompleteSuggestions_array": [
+    {
+      "args": "(TextEditor* self,const char** suggestions,const char** labels,size_t count)",
+      "argsT": [
+        {
+          "name": "self",
+          "type": "TextEditor*"
+        },
+        {
+          "name": "suggestions",
+          "type": "const char**"
+        },
+        {
+          "name": "labels",
+          "type": "const char**"
+        },
+        {
+          "name": "count",
+          "type": "size_t"
+        }
+      ],
+      "argsoriginal": "(TextEditor* self,const char** suggestions,const char** labels,size_t count)",
+      "call_args": "(self,suggestions,labels,count)",
+      "call_args_old": "(self,suggestions,labels,count)",
+      "cimguiname": "TextEditor_SetAutoCompleteSuggestions_array",
+      "defaults": {},
+      "funcname": "TextEditor_SetAutoCompleteSuggestions_array",
+      "ov_cimguiname": "TextEditor_SetAutoCompleteSuggestions_array",
+      "ret": "void",
+      "signature": "(TextEditor*,const char**,const char**,size_t)",
       "stname": "TextEditor"
     }
   ],
