@@ -77,6 +77,8 @@ local function parseImGuiHeader(header, names, modulename)
 	parser.skipped = cimgui_skipped
 	parser.str_subst = str_subst
 	parser.cimgui_inherited =  dofile([[../../cimgui/generator/output/structs_and_enums.lua]])
+	parser.enum_prepend = {SquiggleStyle=true}
+	--parser.name_conversion = {Style="cimnodes_editor_Style"}
 	
 	local include_cmd = COMPILER=="cl" and [[ /I ]] or [[ -I ]]
 	local extra_includes = include_cmd.." ../../cimgui "
@@ -92,7 +94,7 @@ local modulename = "cimCTE"
 local headerst = [[
 #include "../ImGuiColorTextEdit/TextDiff.h"
 #include "../ImGuiColorTextEdit/extras/TrieAutoComplete.h"
-#include "../ImGuiColorTextEdit/extras/Notifications.h"
+//#include "../ImGuiColorTextEdit/extras/Notifications.h"
 ]]
 
 cpp2ffi.save_data("headers.h",headerst)

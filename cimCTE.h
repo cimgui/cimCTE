@@ -37,6 +37,10 @@ typedef enum {
   alignMiddle,
   alignBottom
  }Scroll;
+typedef enum {
+SquiggleStyle_wave=0,
+SquiggleStyle_background=1,
+}SquiggleStyle;
 struct Decorator
 {
   size_t line;
@@ -100,7 +104,9 @@ matchingBracketLevel3=18,
 matchingBracketError=19,
 lineNumber=20,
 currentLineNumber=21,
-count=22,
+currentLineHighlight=22,
+currentLineHighlightBorder=23,
+count=24,
 }Color;
 typedef enum {
 mustBreak=0,
@@ -157,16 +163,6 @@ typedef struct TrieAutoComplete TrieAutoComplete;
 struct TrieAutoComplete
 {
 };
-typedef struct Notifications Notifications;
-typedef enum {
-  success,
-  warning,
-  error,
-  info
- }Type;
-struct Notifications
-{
-};
 #else
 #endif // CIMGUI_DEFINE_ENUMS_AND_STRUCTS
 
@@ -207,7 +203,7 @@ typedef TextEditor::VisPos VisPos;
 typedef TextEditor::BreakOption BreakOption;
 typedef TextEditor::Color Color;
 typedef TextEditor::Scroll Scroll;
-typedef Notifications::Type Type;
+typedef TextEditor::SquiggleStyle SquiggleStyle;
 typedef std::vector<std::string> std_vector_std_string;
 typedef std::vector<std::string_view> std_vector_std_string_view;
 typedef std::vector<std::u16string_view> std_vector_std_u16string_view;
@@ -241,6 +237,8 @@ CIMGUI_API void TextEditor_SetWordWrapEnabled(TextEditor* self,bool value);
 CIMGUI_API bool TextEditor_IsWordWrapEnabled(TextEditor* self);
 CIMGUI_API void TextEditor_SetReadOnlyEnabled(TextEditor* self,bool value);
 CIMGUI_API bool TextEditor_IsReadOnlyEnabled(TextEditor* self);
+CIMGUI_API void TextEditor_SetFindReplaceEnabled(TextEditor* self,bool value);
+CIMGUI_API bool TextEditor_IsFindReplaceEnabled(TextEditor* self);
 CIMGUI_API void TextEditor_SetCaretsVisible(TextEditor* self,bool value);
 CIMGUI_API bool TextEditor_IsCaretsVisible(TextEditor* self);
 CIMGUI_API void TextEditor_SetAutoIndentEnabled(TextEditor* self,bool value);
@@ -261,6 +259,8 @@ CIMGUI_API void TextEditor_SetShowScrollbarMiniMapEnabled(TextEditor* self,bool 
 CIMGUI_API bool TextEditor_IsShowScrollbarMiniMapEnabled(TextEditor* self);
 CIMGUI_API void TextEditor_SetShowPanScrollIndicatorEnabled(TextEditor* self,bool value);
 CIMGUI_API bool TextEditor_IsShowPanScrollIndicatorEnabled(TextEditor* self);
+CIMGUI_API void TextEditor_SetShowCurrentLineHighlightEnabled(TextEditor* self,bool value);
+CIMGUI_API bool TextEditor_IsShowCurrentLineHighlightEnabled(TextEditor* self);
 CIMGUI_API void TextEditor_SetShowMatchingBrackets(TextEditor* self,bool value);
 CIMGUI_API bool TextEditor_IsShowingMatchingBrackets(TextEditor* self);
 CIMGUI_API void TextEditor_SetCompletePairedGlyphs(TextEditor* self,bool value);
@@ -335,6 +335,7 @@ CIMGUI_API float TextEditor_GetLineHeight(TextEditor* self);
 CIMGUI_API float TextEditor_GetGlyphWidth(TextEditor* self);
 CIMGUI_API VisPos_c TextEditor_DocPos2VisPos(TextEditor* self,DocPos_c pos);
 CIMGUI_API DocPos_c TextEditor_VisPos2DocPos(TextEditor* self,VisPos_c pos);
+CIMGUI_API ImVec2_c TextEditor_DocPos2ScreenPos(TextEditor* self,DocPos_c pos);
 CIMGUI_API bool TextEditor_IsDocPosVisible(TextEditor* self,DocPos_c pos);
 CIMGUI_API bool TextEditor_IsVisPosOverGlyph(TextEditor* self,VisPos_c pos);
 CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos,bool wholeWord);
@@ -356,7 +357,7 @@ CIMGUI_API void TextEditor_SetReplaceAllButtonLabel(TextEditor* self,const char*
 CIMGUI_API void TextEditor_AddMarker(TextEditor* self,size_t line,ImU32 lineNumberColor,ImU32 textColor,const char* lineNumberTooltip,const char* textTooltip);
 CIMGUI_API void TextEditor_ClearMarkers(TextEditor* self);
 CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self);
-CIMGUI_API void TextEditor_AddSquiggle(TextEditor* self,DocPos_c start,DocPos_c end,size_t type,ImU32 color,const char* tooltip);
+CIMGUI_API void TextEditor_AddSquiggle(TextEditor* self,DocPos_c start,DocPos_c end,size_t type,ImU32 color,const char* tooltip,SquiggleStyle style);
 CIMGUI_API void TextEditor_ClearSquiggles_DocPos(TextEditor* self,DocPos_c start,DocPos_c end);
 CIMGUI_API void TextEditor_ClearSquiggles_size_t(TextEditor* self,size_t type);
 CIMGUI_API void TextEditor_ClearSquiggles_Nil(TextEditor* self);
@@ -499,10 +500,6 @@ CIMGUI_API void TrieAutoComplete_destroy(TrieAutoComplete* self);
 CIMGUI_API void TrieAutoComplete_Connect(TrieAutoComplete* self,TextEditor* editor);
 CIMGUI_API void TrieAutoComplete_Disconnect(TrieAutoComplete* self);
 CIMGUI_API bool TrieAutoComplete_IsConnected(TrieAutoComplete* self);
-CIMGUI_API Notifications* Notifications_Notifications(void);
-CIMGUI_API void Notifications_destroy(Notifications* self);
-CIMGUI_API void Notifications_Add(Notifications* self,Type type,const char* message,int dismissTime);
-CIMGUI_API void Notifications_Render(Notifications* self,ImVec2_c pos);
 
 
 ///////////////manual generated

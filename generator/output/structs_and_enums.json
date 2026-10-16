@@ -135,8 +135,18 @@
       },
       {
         "calc_value": 22,
-        "name": "count",
+        "name": "currentLineHighlight",
         "value": "22"
+      },
+      {
+        "calc_value": 23,
+        "name": "currentLineHighlightBorder",
+        "value": "23"
+      },
+      {
+        "calc_value": 24,
+        "name": "count",
+        "value": "24"
       }
     ],
     "Scroll": [
@@ -156,26 +166,16 @@
         "value": "2"
       }
     ],
-    "Type": [
+    "SquiggleStyle": [
       {
         "calc_value": 0,
-        "name": "success",
+        "name": "SquiggleStyle_wave",
         "value": "0"
       },
       {
         "calc_value": 1,
-        "name": "warning",
+        "name": "SquiggleStyle_background",
         "value": "1"
-      },
-      {
-        "calc_value": 2,
-        "name": "error",
-        "value": "2"
-      },
-      {
-        "calc_value": 3,
-        "name": "info",
-        "value": "3"
       }
     ]
   },
@@ -184,29 +184,28 @@
     "Color": "char"
   },
   "locations": {
-    "AutoCompleteConfig": "TextEditor:756",
-    "AutoCompleteState": "TextEditor:726",
-    "BreakOption": "TextEditor:563",
-    "Change": "TextEditor:360",
-    "CodePoint": "TextEditor:810",
-    "Color": "TextEditor:524",
-    "CustomCaret": "TextEditor:415",
-    "CustomLineNumber": "TextEditor:443",
-    "Decorator": "TextEditor:397",
+    "AutoCompleteConfig": "TextEditor:774",
+    "AutoCompleteState": "TextEditor:744",
+    "BreakOption": "TextEditor:581",
+    "Change": "TextEditor:376",
+    "CodePoint": "TextEditor:828",
+    "Color": "TextEditor:540",
+    "CustomCaret": "TextEditor:431",
+    "CustomLineNumber": "TextEditor:459",
+    "Decorator": "TextEditor:413",
     "DocPos": "TextEditor:44",
     "DocSelection": "TextEditor:63",
-    "Glyph": "TextEditor:571",
-    "Iterator": "TextEditor:594",
-    "Language": "TextEditor:624",
-    "LineBreakConfig": "TextEditor:894",
-    "Notifications": "Notifications:37",
-    "Palette": "TextEditor:550",
-    "PopupData": "TextEditor:478",
-    "Scroll": "TextEditor:254",
+    "Glyph": "TextEditor:589",
+    "Iterator": "TextEditor:612",
+    "Language": "TextEditor:642",
+    "LineBreakConfig": "TextEditor:912",
+    "Palette": "TextEditor:568",
+    "PopupData": "TextEditor:494",
+    "Scroll": "TextEditor:258",
+    "SquiggleStyle": "TextEditor:346",
     "TextDiff": "TextDiff:22",
     "TextEditor": "TextEditor:34",
     "TrieAutoComplete": "TrieAutoComplete:39",
-    "Type": "Notifications:40",
     "VisPos": "TextEditor:71"
   },
   "nonPOD": {
@@ -236,8 +235,6 @@
     "ImGuiContextHook": "inherited",
     "ImGuiDebugAllocInfo": "inherited",
     "ImGuiDebugItemPathQuery": "inherited",
-    "ImGuiDockContext": "inherited",
-    "ImGuiDockNode": "inherited",
     "ImGuiErrorRecoveryState": "inherited",
     "ImGuiIDStackTool": "inherited",
     "ImGuiIO": "inherited",
@@ -264,7 +261,6 @@
     "ImGuiPayload": "inherited",
     "ImGuiPlatformIO": "inherited",
     "ImGuiPlatformImeData": "inherited",
-    "ImGuiPlatformMonitor": "inherited",
     "ImGuiPopupData": "inherited",
     "ImGuiPtrOrIndex": "inherited",
     "ImGuiSelectionBasicStorage": "inherited",
@@ -291,7 +287,6 @@
     "ImGuiViewport": "inherited",
     "ImGuiViewportP": "inherited",
     "ImGuiWindow": "inherited",
-    "ImGuiWindowClass": "inherited",
     "ImGuiWindowSettings": "inherited",
     "ImPool": "inherited",
     "ImRect": "inherited",
@@ -307,7 +302,6 @@
     "ImVec4": "inherited",
     "ImVector": "inherited",
     "Iterator": true,
-    "Notifications": true,
     "TextDiff": true,
     "TextEditor": true,
     "TrieAutoComplete": true,
@@ -456,7 +450,6 @@
     "Iterator": [],
     "Language": [],
     "LineBreakConfig": [],
-    "Notifications": [],
     "Palette": [],
     "PopupData": [
       {

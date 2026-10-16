@@ -3,7 +3,6 @@
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "./ImGuiColorTextEdit/TextDiff.h"
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
-#include "./ImGuiColorTextEdit/extras/Notifications.h"
 #include "./ImGuiColorTextEdit/example/dejavu.h"
 #include "./ImGuiColorTextEdit/example/notosans.h"
 #include "cimCTE.h"

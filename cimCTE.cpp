@@ -5,7 +5,6 @@
 #include "./ImGuiColorTextEdit/TextEditor.h"
 #include "./ImGuiColorTextEdit/TextDiff.h"
 #include "./ImGuiColorTextEdit/extras/TrieAutoComplete.h"
-#include "./ImGuiColorTextEdit/extras/Notifications.h"
 #include "./ImGuiColorTextEdit/example/dejavu.h"
 #include "./ImGuiColorTextEdit/example/notosans.h"
 #include "cimCTE.h"
@@ -155,6 +154,14 @@ CIMGUI_API bool TextEditor_IsReadOnlyEnabled(TextEditor* self)
 {
     return self->IsReadOnlyEnabled();
 }
+CIMGUI_API void TextEditor_SetFindReplaceEnabled(TextEditor* self,bool value)
+{
+    return self->SetFindReplaceEnabled(value);
+}
+CIMGUI_API bool TextEditor_IsFindReplaceEnabled(TextEditor* self)
+{
+    return self->IsFindReplaceEnabled();
+}
 CIMGUI_API void TextEditor_SetCaretsVisible(TextEditor* self,bool value)
 {
     return self->SetCaretsVisible(value);
@@ -234,6 +241,14 @@ CIMGUI_API void TextEditor_SetShowPanScrollIndicatorEnabled(TextEditor* self,boo
 CIMGUI_API bool TextEditor_IsShowPanScrollIndicatorEnabled(TextEditor* self)
 {
     return self->IsShowPanScrollIndicatorEnabled();
+}
+CIMGUI_API void TextEditor_SetShowCurrentLineHighlightEnabled(TextEditor* self,bool value)
+{
+    return self->SetShowCurrentLineHighlightEnabled(value);
+}
+CIMGUI_API bool TextEditor_IsShowCurrentLineHighlightEnabled(TextEditor* self)
+{
+    return self->IsShowCurrentLineHighlightEnabled();
 }
 CIMGUI_API void TextEditor_SetShowMatchingBrackets(TextEditor* self,bool value)
 {
@@ -543,6 +558,10 @@ CIMGUI_API DocPos_c TextEditor_VisPos2DocPos(TextEditor* self,VisPos_c pos)
 {
     return ConvertFromCPP_DocPos(self->VisPos2DocPos(ConvertToCPP_VisPos(pos)));
 }
+CIMGUI_API ImVec2_c TextEditor_DocPos2ScreenPos(TextEditor* self,DocPos_c pos)
+{
+    return ConvertFromCPP_ImVec2(self->DocPos2ScreenPos(ConvertToCPP_DocPos(pos)));
+}
 CIMGUI_API bool TextEditor_IsDocPosVisible(TextEditor* self,DocPos_c pos)
 {
     return self->IsDocPosVisible(ConvertToCPP_DocPos(pos));
@@ -627,9 +646,9 @@ CIMGUI_API bool TextEditor_HasMarkers(TextEditor* self)
 {
     return self->HasMarkers();
 }
-CIMGUI_API void TextEditor_AddSquiggle(TextEditor* self,DocPos_c start,DocPos_c end,size_t type,ImU32 color,const char* tooltip)
+CIMGUI_API void TextEditor_AddSquiggle(TextEditor* self,DocPos_c start,DocPos_c end,size_t type,ImU32 color,const char* tooltip,SquiggleStyle style)
 {
-    return self->AddSquiggle(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end),type,color,tooltip);
+    return self->AddSquiggle(ConvertToCPP_DocPos(start),ConvertToCPP_DocPos(end),type,color,tooltip,style);
 }
 CIMGUI_API void TextEditor_ClearSquiggles_DocPos(TextEditor* self,DocPos_c start,DocPos_c end)
 {
@@ -1200,22 +1219,6 @@ CIMGUI_API void TrieAutoComplete_Disconnect(TrieAutoComplete* self)
 CIMGUI_API bool TrieAutoComplete_IsConnected(TrieAutoComplete* self)
 {
     return self->IsConnected();
-}
-CIMGUI_API Notifications* Notifications_Notifications(void)
-{
-    return IM_NEW(Notifications)();
-}
-CIMGUI_API void Notifications_destroy(Notifications* self)
-{
-    IM_DELETE(self);
-}
-CIMGUI_API void Notifications_Add(Notifications* self,Type type,const char* message,int dismissTime)
-{
-    return self->Add(type,std::string(message),dismissTime);
-}
-CIMGUI_API void Notifications_Render(Notifications* self,ImVec2_c pos)
-{
-    return self->Render(ConvertToCPP_ImVec2(pos));
 }
 
 ////////////////manually generated
