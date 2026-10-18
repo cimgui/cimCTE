@@ -570,13 +570,13 @@ CIMGUI_API bool TextEditor_IsVisPosOverGlyph(TextEditor* self,VisPos_c pos)
 {
     return self->IsVisPosOverGlyph(ConvertToCPP_VisPos(pos));
 }
-CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos,bool wholeWord)
+CIMGUI_API DocPos_c TextEditor_FindWordStart(TextEditor* self,DocPos_c pos,bool wordOnly)
 {
-    return ConvertFromCPP_DocPos(self->FindWordStart(ConvertToCPP_DocPos(pos),wholeWord));
+    return ConvertFromCPP_DocPos(self->FindWordStart(ConvertToCPP_DocPos(pos),wordOnly));
 }
-CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos,bool wholeWord)
+CIMGUI_API DocPos_c TextEditor_FindWordEnd(TextEditor* self,DocPos_c pos,bool wordOnly)
 {
-    return ConvertFromCPP_DocPos(self->FindWordEnd(ConvertToCPP_DocPos(pos),wholeWord));
+    return ConvertFromCPP_DocPos(self->FindWordEnd(ConvertToCPP_DocPos(pos),wordOnly));
 }
 CIMGUI_API void TextEditor_SelectFirstOccurrenceOf(TextEditor* self,const char* text,bool caseSensitive,bool wholeWord)
 {
