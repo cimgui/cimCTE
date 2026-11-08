@@ -33,6 +33,7 @@ local cimgui_skipped = {
 	--TextEditor_GetText = true,
 	--TextEditor_SetTextLines = true,
 	--TextEditor_GetTextLines = true,
+	TextEditor_GetRegisteredLanguages = true
 }
 --------------------------------------------------------------------------
 --this table is a dictionary to force a naming of function overloading (instead of algorythmic generated)

@@ -242,6 +242,26 @@ CIMGUI_API bool TextEditor_IsShowPanScrollIndicatorEnabled(TextEditor* self)
 {
     return self->IsShowPanScrollIndicatorEnabled();
 }
+CIMGUI_API void TextEditor_SetMiddleMousePanMode(TextEditor* self)
+{
+    return self->SetMiddleMousePanMode();
+}
+CIMGUI_API void TextEditor_SetMiddleMouseScrollMode(TextEditor* self)
+{
+    return self->SetMiddleMouseScrollMode();
+}
+CIMGUI_API bool TextEditor_IsMiddleMousePanMode(TextEditor* self)
+{
+    return self->IsMiddleMousePanMode();
+}
+CIMGUI_API void TextEditor_SetSmoothScrollingEnabled(TextEditor* self,bool value)
+{
+    return self->SetSmoothScrollingEnabled(value);
+}
+CIMGUI_API bool TextEditor_IsSmoothScrollingEnabled(TextEditor* self)
+{
+    return self->IsSmoothScrollingEnabled();
+}
 CIMGUI_API void TextEditor_SetShowCurrentLineHighlightEnabled(TextEditor* self,bool value)
 {
     return self->SetShowCurrentLineHighlightEnabled(value);
@@ -282,25 +302,13 @@ CIMGUI_API bool TextEditor_IsOverwriteEnabled(TextEditor* self)
 {
     return self->IsOverwriteEnabled();
 }
-CIMGUI_API void TextEditor_SetMiddleMousePanMode(TextEditor* self)
+CIMGUI_API void TextEditor_SetLeftMargin(TextEditor* self,size_t value)
 {
-    return self->SetMiddleMousePanMode();
+    return self->SetLeftMargin(value);
 }
-CIMGUI_API void TextEditor_SetMiddleMouseScrollMode(TextEditor* self)
+CIMGUI_API size_t TextEditor_GetLeftMargin(TextEditor* self)
 {
-    return self->SetMiddleMouseScrollMode();
-}
-CIMGUI_API bool TextEditor_IsMiddleMousePanMode(TextEditor* self)
-{
-    return self->IsMiddleMousePanMode();
-}
-CIMGUI_API void TextEditor_SetLineNumberLeftMargin(TextEditor* self,size_t value)
-{
-    return self->SetLineNumberLeftMargin(value);
-}
-CIMGUI_API size_t TextEditor_GetLineNumberLeftMargin(TextEditor* self)
-{
-    return self->GetLineNumberLeftMargin();
+    return self->GetLeftMargin();
 }
 CIMGUI_API void TextEditor_SetDecorationLeftMargin(TextEditor* self,size_t value)
 {
@@ -926,53 +934,21 @@ CIMGUI_API void Iterator_destroy(Iterator* self)
 {
     IM_DELETE(self);
 }
-CIMGUI_API Iterator* Iterator_Iterator_GlyphPtr(Glyph* g)
+CIMGUI_API Iterator* Iterator_Iterator_GlyphPtr(Glyph* glyph)
 {
-    return IM_NEW(Iterator)(g);
+    return IM_NEW(Iterator)(glyph);
 }
-CIMGUI_API const Language* Language_C()
+CIMGUI_API Iterator* Iterator_Iterator_GlyphPtrGlyphPtr(Glyph* glyph,Glyph* start)
 {
-    return TextEditor::Language::C();
+    return IM_NEW(Iterator)(glyph,start);
 }
-CIMGUI_API const Language* Language_Cpp()
+CIMGUI_API bool Iterator_hasPrevious(Iterator* self)
 {
-    return TextEditor::Language::Cpp();
+    return self->hasPrevious();
 }
-CIMGUI_API const Language* Language_Cs()
+CIMGUI_API ImWchar Iterator_previous(Iterator* self)
 {
-    return TextEditor::Language::Cs();
-}
-CIMGUI_API const Language* Language_AngelScript()
-{
-    return TextEditor::Language::AngelScript();
-}
-CIMGUI_API const Language* Language_Lua()
-{
-    return TextEditor::Language::Lua();
-}
-CIMGUI_API const Language* Language_Python()
-{
-    return TextEditor::Language::Python();
-}
-CIMGUI_API const Language* Language_Glsl()
-{
-    return TextEditor::Language::Glsl();
-}
-CIMGUI_API const Language* Language_Hlsl()
-{
-    return TextEditor::Language::Hlsl();
-}
-CIMGUI_API const Language* Language_Json()
-{
-    return TextEditor::Language::Json();
-}
-CIMGUI_API const Language* Language_Markdown()
-{
-    return TextEditor::Language::Markdown();
-}
-CIMGUI_API const Language* Language_Sql()
-{
-    return TextEditor::Language::Sql();
+    return self->previous();
 }
 CIMGUI_API void TextEditor_SetLanguage(TextEditor* self,const Language* language)
 {
@@ -995,6 +971,14 @@ CIMGUI_API const char* TextEditor_GetLanguageName(TextEditor* self)
 CIMGUI_API void TextEditor_SetLanguageChangeCallback(TextEditor* self,void(*cb)())
 {
     return self->SetLanguageChangeCallback([cb](){cb();});
+}
+CIMGUI_API const Language* TextEditor_LookupLanguage(const char* name)
+{
+    return TextEditor::LookupLanguage(std::string(name));
+}
+CIMGUI_API const Language* TextEditor_LookupLanguageByExtension(const char* extension)
+{
+    return TextEditor::LookupLanguageByExtension(std::string(extension));
 }
 CIMGUI_API void TextEditor_IterateIdentifiers(TextEditor* self,void(*cb)(const char*))
 {
