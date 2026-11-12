@@ -19,8 +19,8 @@ file(GLOB IMGUI_SOURCES
     ImGuiColorTextEdit/TextEditor.cpp
     ImGuiColorTextEdit/TextDiff.cpp
     ImGuiColorTextEdit/example/dejavu.cpp
+    ImGuiColorTextEdit/example/notosans.cpp
     ImGuiColorTextEdit/extras/TrieAutoComplete.cpp
-    ImGuiColorTextEdit/extras/Notifications.h
 )
 
 if(IMGUI_FREETYPE)
